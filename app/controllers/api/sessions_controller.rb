@@ -8,7 +8,7 @@ class Api::SessionsController < ApplicationController
     if @user
       login(@user)
       #TODO make sure that this view renders the correct info for the
-      # feed
+      # feed, to where a signin will ultimately redirect
       render "api/users/show"
     else
       render json: ["Invalid username/password combination"], status: 401
@@ -19,9 +19,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      #TODO figure out where you want to render, probably the sign in page,
-      # perhaps the root?
-      render "api/users/show"
+      render json: {}
     else
       render json: ["Nobody signed in"], status: 404
     end
