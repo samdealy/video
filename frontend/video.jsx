@@ -1,13 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore  from './store/store';
+import Root from './components/root';
 
 //TODO Delete imports after testing
 import { join, login, logout } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
-  const store = configureStore();
+  let store;
+  if (window.currentUser) {
+    const preloadedState = {
+      session: { currentUser: window.currentUser }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
 
   //TODO Delete after testing
   window.getState = store.getState;
@@ -16,5 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
   window.login    = login;
   window.logout   = logout;
 
-  ReactDOM.render(<h1>Welcome to Video</h1>, root);
+  ReactDOM.render(<Root store={ store }/>, root);
 });
