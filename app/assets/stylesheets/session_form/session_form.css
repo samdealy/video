@@ -1,0 +1,13 @@
+.login-form-container {
+  height: 500px;
+  width: 412px;
+  border-radius: 5px;
+  border: 2px solid grey;
+  display: flex;
+  margin: 0px auto;
+  text-align: center
+}
+
+.login-form-container h3 {
+  width: 412px;
+}

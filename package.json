@@ -23,11 +23,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "w": "webpack --watch"
+    "w": "webpack --watch",
+    "postinstall": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samdealy/video.git"
+  },
+  "engines": {
+   "node": "6.7.0",
+   "npm": "3.10.7"
   },
   "keywords": [],
   "author": "",

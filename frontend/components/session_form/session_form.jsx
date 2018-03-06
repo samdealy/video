@@ -46,6 +46,7 @@ class SessionForm extends React.Component {
       nameClass
     } = this.props;
 
+    const submitTitle = formHeader == "Join" ? "Join" : "Log in";
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -74,7 +75,7 @@ class SessionForm extends React.Component {
               />
             <br/>
             {this.renderErrors()}
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit" type="submit" value={`${submitTitle} with Email`} />
             <br/>
             <Link to={`/${linkPath}`}>{linkPathTitle}</Link>
           </div>
