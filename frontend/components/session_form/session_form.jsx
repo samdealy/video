@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h3>{formHeader} Vimeo</h3>
+          <h3><span>{formHeader} Vimeo</span></h3>
           <br/>
           <div className="login-form">
             <br/>

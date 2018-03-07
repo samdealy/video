@@ -1,0 +1,19 @@
+.background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
+.welcome-content h1 {
+  display: block;
+  font-size: 72px;
+  font-family: Brown-Pro-Regular, sans-serif;
+  font-weight: 400;
+  position: relative;
+  top: 60px;
+  text-align: center;
+  box-si
+}

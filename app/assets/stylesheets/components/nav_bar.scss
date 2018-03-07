@@ -27,11 +27,19 @@
   margin-right: 10px;
 }
 
+.left-nav-section img {
+  width: 100px;
+  height: 40px;
+  color: white;
+}
+
 .nav-bar h2 {
   font-family: Black-rose;
 }
 
-.nav-bar a, input {
+
+
+.nav-bar input {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
 }
