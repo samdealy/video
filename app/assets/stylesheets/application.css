@@ -13,16 +13,13 @@
  *= require_tree .
  *= require_self
  */
-@font-face {
-  font-family: Black-rose;
-  src: url(fonts/black_rose.TTF);
-}
 
- // CSS Reset
- @import "base/reset.scss";
 
-// Components
-@import "components/*";
+ /* // CSS Reset */
+ /* @import "base/resets.scss"; */
+
+/* // Components */
+/* @import "components/*"; */
 
 
 #color-ribbon {
