@@ -23,3 +23,15 @@
 
 // Components
 @import "components/*";
+
+
+#color-ribbon {
+  display: block;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, #73D2F6, #08C 22%, #7FC400 36%, #FFD583 48%, #FFB21E 63%, #FF4D4D 76%, #503873);
+  z-index: 1;
+}

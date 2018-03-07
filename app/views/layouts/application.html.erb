@@ -7,9 +7,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
  </head>
 
  <body>
+   <script> window.logo = "<%= asset_path("video_logo.png") %>"</script>
    <%= yield %>
  </body>
 </html>
