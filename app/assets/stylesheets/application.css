@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+@font-face {
+  font-family: Black-rose;
+  src: url(fonts/black_rose.TTF);
+}
+
  // CSS Reset
  @import "base/reset.scss";
 

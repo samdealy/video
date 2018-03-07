@@ -1,9 +1,10 @@
 .nav-bar {
   width: 100%;
   height: 60px;
-  border: 2px solid black;
+  // border: 2px solid black;
   display: flex;
   justify-content: space-between;
+  background: grey;
 }
 
 .right-nav-section, .left-nav-section {
@@ -26,30 +27,68 @@
 .nav-bar h2 {
   position: relative;
   left: 30px;
+  font-family: Black-rose;
 }
 
 .nav-bar a, input {
   position: relative;
   top: 32%;
-}
-
-.nav-bar a, input {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-bar input {
+  height: 27px;
+  top: 25%;
+  width: 260px;
 }
 
 .nav-bar li span, ::-webkit-input-placeholder {
   font-size: 14px;
   box-sizing: content-box;
+  color: rgba(255,255,255,.5);
 }
-
 
 #join-button {
   background-color: #7FC400;
-  padding: 7px 10px;
+  padding: 7px 9px;
   border-radius: 3px;
-  font-size: 14px;
+  font-size: 13px;
   color: white;
   font-weight: 700;
   white-space: nowrap;
+}
+
+#upload-button {
+  border-color: #00ADEF;
+  background-color: #00ADEF;
+  border-top-left-radius: 0.1875rem;
+  border-top-right-radius: 0.1875rem;
+  border-bottom-right-radius: 0.1875rem;
+  border-bottom-left-radius: 0.1875rem;
+  padding: 5px 10px;
+}
+
+#upload-button span {
+  color: #FFF;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+#upload-button i, span {
+  // padding: 0 5px;
+}
+#upload-button i {
+  font-size: 1px;
+}
+
+#color-ribbon {
+  display: block;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right,#73D2F6,#08C 22%,#7FC400 36%,#FFD583 48%,#FFB21E 63%,#FF4D4D 76%,#503873);
+  z-index: 1;
 }
