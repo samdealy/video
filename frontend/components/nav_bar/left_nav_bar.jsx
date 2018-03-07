@@ -17,6 +17,7 @@ export default ({ loggedIn }) => {
 
   return(
     <ul className="left-nav-section">
+      <li><Link to='/'><h2>Video</h2></Link></li>
       <li>{element2}</li>
       {element3}
     </ul>

@@ -10,6 +10,7 @@ import { logout } from '../actions/session_actions';
 
 const App = () => (
   <div>
+    <div id="color-ribbon"></div>
     <NavBarContainer />
     <AuthRoute exact path='/' component={WelcomePageContainer} />
     <AuthRoute exact path="/log_in" component={LogInFormContainer} />
