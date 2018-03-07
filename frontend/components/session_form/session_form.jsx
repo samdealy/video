@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -47,6 +48,17 @@ class SessionForm extends React.Component {
     } = this.props;
 
     const submitTitle = formHeader == "Join" ? "Join" : "Log in";
+
+    let firstInput='';
+    if (formHeader === "Join") {
+      firstInput = <input type="text"
+        placeholder="First and last name"
+        value={this.state.username}
+        onChange={this.update('username')}
+        className={nameClass}
+      />;
+    }
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -54,12 +66,8 @@ class SessionForm extends React.Component {
           <br/>
           <div className="login-form">
             <br/>
-              <input type="text"
-                placeholder="First and last name"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className={nameClass}
-              />
+              {firstInput}
+            <br/>
               <input type="text"
                 placeholder="Email address"
                 value={this.state.email}
