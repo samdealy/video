@@ -1,18 +1,18 @@
 import * as APIUtil from '../util/session_api_util';
 
-export const RECEIVE_USER = 'RECEIVE_USER';
-export const REMOVE_CURRENT_USER = 'REMOVE_USER';
+export const RECEIVE_CURRENT_USER   = 'RECEIVE_CURRENT_USER';
+export const REMOVE_CURRENT_USER    = 'REMOVE_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 export const join = (user) => dispatch => {
    return APIUtil.join(user)
-    .then( payload => dispatch(receiveUser(payload)))
+    .then( user => dispatch(receiveCurrentUser(user)))
     .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
 export const login = user => dispatch => {
    return APIUtil.login(user)
-     .then( payload => dispatch(receiveUser(payload)) )
+     .then( user => dispatch(receiveCurrentUser(user)) )
      .fail( err => dispatch(receiveErrors(err.responseJSON)));
 };
 
@@ -27,10 +27,10 @@ export const receiveErrors = errors => {
   };
 };
 
-export const receiveUser = userBundle => {
+export const receiveCurrentUser = user => {
   return {
-    type: RECEIVE_USER,
-    userBundle
+    type: RECEIVE_CURRENT_USER,
+    user
   };
 };
 

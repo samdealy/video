@@ -9,10 +9,13 @@ import { join, login, logout } from './actions/session_actions';
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
-  
+
+
   if (window.currentUser) {
+    const { id } = window.currentUser;
     const preloadedState = {
-      session: { currentUser: window.currentUser }
+      session: { currentUserId: id },
+      entities: { users: {[window.currentUser.id]: window.currentUser}}
     };
     store = configureStore(preloadedState);
     delete window.currentUser;
@@ -29,3 +32,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   ReactDOM.render(<Root store={ store }/>, root);
 });
+// session: { currentUser: {id} }

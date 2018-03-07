@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import LeftNavBar from './left_nav_bar'
+import LeftNavBar from './left_nav_bar';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -9,8 +9,9 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { loggedIn } = this.props
-    const userIcon = <img src="images/Dealy_Headshot_MLS.jpg"></img>
+    const { loggedIn } = this.props;
+    const userIcon = <img src={this.props.currentUser.image_url}></img>;
+      
     return(
       <div className="nav-bar">
         <LeftNavBar className="left-nav-section" loggedIn={loggedIn} />
@@ -20,7 +21,7 @@ class NavBar extends React.Component {
           <li><Link to="/upload">Upload</Link></li>
         </ul>
       </div>
-    )
+    );
   }
 
 
