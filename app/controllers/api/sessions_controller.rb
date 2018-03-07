@@ -9,7 +9,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       #TODO make sure that this view renders the correct info for the
       # feed, to where a signin will ultimately redirect
-      render "api/users/show"
+      render "api/session/new"
     else
       render json: ["Invalid username/password combination"], status: 401
     end
@@ -17,6 +17,7 @@ class Api::SessionsController < ApplicationController
 
   def destroy
     @user = current_user
+    # debugger
     if @user
       logout
       render json: {}
