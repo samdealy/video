@@ -1,5 +1,5 @@
-import { connect } from 'react-redux';
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { join } from '../../actions/session_actions';
 import SessionForm from './session_form';
@@ -8,9 +8,8 @@ const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formHeader: 'Join',
-    linkTitle: "Already have an account?",
+    linkTitle: "Already have an account? Log in",
     linkPath: "log_in",
-    linkPathTitle: "Log in",
     nameClass: "login-input"
   };
 };

@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
     const {
       formHeader,
       linkPath,
-      linkPathTitle,
+      linkTitle,
       nameHidden,
       nameClass
     } = this.props;
@@ -77,7 +77,7 @@ class SessionForm extends React.Component {
             {this.renderErrors()}
             <input className="session-submit" type="submit" value={`${submitTitle} with Email`} />
             <br/>
-            <Link to={`/${linkPath}`}>{linkPathTitle}</Link>
+            <Link to={`/${linkPath}`}>{linkTitle}</Link>
           </div>
         </form>
       </div>
