@@ -8,18 +8,15 @@ export default ({ loggedIn }) => {
     element2 = <Link to='/home/myvideos'><span>My Videos</span></Link>
     element3 = ''
   } else  {
-    element2 = <Link to='/join'><span>Join</span></Link>
+    element2 = <Link to='/join'><span id="join-button">Join</span></Link>
     element3 =
       <li>
-        <Link to='/log_in'><span>Log in</span></Link>
+        <Link to='/log_in'><span id="login">Log in</span></Link>
       </li>
   }
 
   return(
-    <ul>
-      <li>
-        <Link to='/'><h2>Video</h2></Link>
-      </li>
+    <ul className="left-nav-section">
       <li>{element2}</li>
       {element3}
     </ul>

@@ -11,14 +11,15 @@ class NavBar extends React.Component {
   render() {
     const { loggedIn } = this.props;
     const userIcon = <img src={this.props.currentUser.image_url}></img>;
-      
+
     return(
       <div className="nav-bar">
-        <LeftNavBar className="left-nav-section" loggedIn={loggedIn} />
+        <Link to='/'><h2>Video</h2></Link>
+        <LeftNavBar  loggedIn={loggedIn} />
         <ul className="right-nav-section">
           <li><input placeholder="Search for videos..."></input></li>
           <li>{userIcon}</li>
-          <li><Link to="/upload">Upload</Link></li>
+          <li><Link to="/upload"><span>Upload</span></Link></li>
         </ul>
       </div>
     );

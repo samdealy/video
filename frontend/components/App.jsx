@@ -10,7 +10,6 @@ import { logout } from '../actions/session_actions';
 
 const App = () => (
   <div>
-    <h1>Vimeo</h1>
     <NavBarContainer />
     <AuthRoute exact path='/' component={WelcomePageContainer} />
     <AuthRoute exact path="/log_in" component={LogInFormContainer} />
