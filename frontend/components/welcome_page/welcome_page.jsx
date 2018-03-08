@@ -7,7 +7,7 @@ export default (props) => {
   const src = "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
   return(
     <div className="welcome-content">
-      <BackgroundVideo src={src} idName="welcome-video" type="video/mp4" />
+      <BackgroundVideo src={src} type="video/mp4" />
       <div className="welcome-text-container">
         <h1>Where videos come first</h1>
         <div id="join-large-button-container">

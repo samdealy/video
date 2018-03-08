@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
     linkTitle: "Don't have an account?",
     linkText: "Join",
     linkPath: "join",
-    nameClass: "hidden"
+    nameClass: "hidden",
+    src: "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
   };
 };
 

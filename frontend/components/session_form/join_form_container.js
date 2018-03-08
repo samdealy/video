@@ -11,7 +11,8 @@ const mapStateToProps = ({ errors }) => {
     linkTitle: "Already have an account?",
     linkText: "Log in",
     linkPath: "log_in",
-    nameClass: "login-input"
+    nameClass: "login-input",
+    src: "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
   };
 };
 

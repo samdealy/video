@@ -1,7 +1,7 @@
 .login-form-container {
   // height: 347px;
   box-sizing: border-box;
-  width: 405px;
+  width: 479px;
   border-radius: 5px;
   border: 1px solid grey;
   display: flex;
@@ -12,26 +12,22 @@
 
 .login-form-container h3 {
   width: 100%;
-  background: grey;
+
   padding: 25px 0;
   margin: 0;
-  background-color: #F2F4F5;
 
-  border-bottom-color: rgb(208, 216, 219) ;
+
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
 
 .login-form-container h3 span {
-  color: rgb(26, 46, 59);
+  color: white;
   font-size: 700px;
-  font-size: 20px;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 20px;
+  font-size: 36px;
   text-align: center;
   box-sizing: border-box;
 }
@@ -40,13 +36,14 @@
   text-align: left;
 }
 
-.login-form-container input {
+.login-form-container input[type="text"], input[type='password']  {
   box-sizing: border-box;
   border: 1px solid rgb(208, 216, 219);
   padding: 15px;
   width: 351px;
   margin: 13px 0px;
   border-radius: .1875rem;
+  background-color: white;
 }
 
 .login-form-container ::-webkit-input-placeholder {
@@ -68,7 +65,17 @@
   margin-left: 8px;
 }
 
+#link-title {
+  color: white;
+}
+
 .session-submit {
+  box-sizing: border-box;
+  border: 1px solid rgb(208, 216, 219);
+  padding: 15px;
+  width: 351px;
+  margin: 13px 0px;
+  border-radius: .1875rem;
   border-color: #7FC400;
   background-color: #7FC400;
   font-weight: 700;
@@ -86,9 +93,9 @@
   background-color: rgb(255, 237, 237);
   color: rgb(26, 46, 59);
   box-sizing: border-box;
-  padding: 20px;
+  padding: 25px 20px;
   width: 351px;
-  margin: 13px 0px;
+  margin: 13px auto;
   border-radius: .1875rem;
   font-size: 14px;
   text-align: left;

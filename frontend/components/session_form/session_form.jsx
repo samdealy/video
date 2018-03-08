@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link, Redirect } from 'react-router-dom';
-
+import BackgroundVideo from '../video_players/background_video';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -45,7 +45,8 @@ class SessionForm extends React.Component {
       linkTitle,
       linkText,
       nameHidden,
-      nameClass
+      nameClass,
+      src
     } = this.props;
 
     const submitTitle = formHeader == "Join" ? "Join" : "Log in";
@@ -61,29 +62,32 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h3><span>{formHeader} Video</span></h3>
-          <div className="login-form">
-              {firstInput}
-              <input type="text"
-                placeholder="Email address"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input"
-              />
-              <input type="password"
-                placeholder="Password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            {this.renderErrors()}
-            <input className="session-submit" type="submit" value={`${submitTitle} with email`} />
-            <br/>
-            {linkTitle}<Link to={`/${linkPath}`}>{linkText}</Link>
-          </div>
-        </form>
+      <div className="session-page-container">
+        <BackgroundVideo src={src} type="video/mp4" />
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            <h3><span>{formHeader} Video</span></h3>
+            <div className="login-form">
+                {firstInput}
+                <input type="text"
+                  placeholder="Email address"
+                  value={this.state.email}
+                  onChange={this.update('email')}
+                  className="login-input"
+                />
+                <input type="password"
+                  placeholder="Password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              {this.renderErrors()}
+              <input className="session-submit" type="submit" value={`${submitTitle} with email`} />
+              <br/>
+              <span id="link-title">{linkTitle}</span><Link to={`/${linkPath}`}>{linkText}</Link>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }
