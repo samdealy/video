@@ -6,7 +6,9 @@ git_source(:github) do |repo_name|
 end
 
 
-gem "paperclip", "~> 5.0.0.beta1"
+gem 'aws-sdk', '< 3.0'
+gem 'figaro'
+gem "paperclip", "~> 5.0.0"
 gem 'rails_12factor'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
