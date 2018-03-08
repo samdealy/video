@@ -8,7 +8,8 @@ const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formHeader: 'Join',
-    linkTitle: "Already have an account? Log in",
+    linkTitle: "Already have an account?",
+    linkText: "Log in",
     linkPath: "log_in",
     nameClass: "login-input"
   };

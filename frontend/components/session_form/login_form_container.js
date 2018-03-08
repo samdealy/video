@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     errors: state.errors.session,
     formHeader: 'Log in to',
-    linkTitle: "Don't have an account? Join",
+    linkTitle: "Don't have an account?",
+    linkText: "Join",
     linkPath: "join",
     nameClass: "hidden"
   };

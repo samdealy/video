@@ -43,6 +43,7 @@ class SessionForm extends React.Component {
       formHeader,
       linkPath,
       linkTitle,
+      linkText,
       nameHidden,
       nameClass
     } = this.props;
@@ -63,29 +64,24 @@ class SessionForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <h3><span>{formHeader} Vimeo</span></h3>
-          <br/>
           <div className="login-form">
-            <br/>
               {firstInput}
-            <br/>
               <input type="text"
                 placeholder="Email address"
                 value={this.state.email}
                 onChange={this.update('email')}
                 className="login-input"
               />
-            <br/>
               <input type="password"
                 placeholder="Password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="login-input"
               />
-            <br/>
             {this.renderErrors()}
-            <input className="session-submit" type="submit" value={`${submitTitle} with Email`} />
+            <input className="session-submit" type="submit" value={`${submitTitle} with email`} />
             <br/>
-            <Link to={`/${linkPath}`}>{linkTitle}</Link>
+            {linkTitle}<Link to={`/${linkPath}`}>{linkText}</Link>
           </div>
         </form>
       </div>
