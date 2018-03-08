@@ -5,6 +5,9 @@ import Root from './components/root';
 
 //TODO Delete imports after testing
 import { join, login, logout } from './actions/session_actions';
+import { createVideo } from './util/video_api_util';
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -24,11 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //TODO Delete after testing
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.join     = join;
-  window.login    = login;
-  window.logout   = logout;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+    window.join     = join;
+    window.login    = login;
+    window.logout   = logout;
+    window.createVideo = createVideo;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });
