@@ -31,6 +31,7 @@
   width: 100px;
   height: 40px;
   color: white;
+  margin-right: 9px
 }
 
 .nav-bar h2 {
@@ -39,15 +40,13 @@
 
 
 
-.nav-bar input {
+#search-bar {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
-}
-
-.nav-bar input {
   height: 27px;
   width: 260px;
 }
+
 
 #search-bar {
   text-indent: 10px;
@@ -90,12 +89,28 @@
   margin-left: 3px;
 }
 
+#search-bar-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.loggedIn #search-bar-wrapper {
+  background-color: white;
+}
+
+
+#search-bar-wrapper svg {
+  margin-right: 3px;
+  position: relative;
+  right: 9px;
+  font-size: 13px;
+  color: rgb(138, 149, 153);
+}
+
 #upload-button-link {
   display: flex;
   justify-content: space-around;
   width: 120px;
   align-items: center;
-
 }
 
 #upload-button-link span {
@@ -118,11 +133,10 @@
   border-color: #08C;
   background-color: #08C;
 }
-//TODO figure out how to get the focus working
+
 #search-bar:hover{
   background: rgba(255,255,255,.3);
   border-color: #879CAB
-
 }
 
 #search-bar:focus {
