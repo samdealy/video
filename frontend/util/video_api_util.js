@@ -5,3 +5,11 @@ export const createVideo = video => (
     data: { video }
   })
 );
+
+export const editVideo = video => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/videos/${video.id}`,
+    data: { video }
+  })
+);
