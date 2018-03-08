@@ -15,7 +15,7 @@ class NavBar extends React.Component {
     return(
       <div className="nav-bar">
         <LeftNavBar  loggedIn={loggedIn} />
-        <RightNavBar currentUser={currentUser} />
+        <RightNavBar loggedIn={loggedIn} currentUser={currentUser} />
       </div>
     );
   }

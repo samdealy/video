@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="session-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -63,7 +63,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          <h3><span>{formHeader} Vimeo</span></h3>
+          <h3><span>{formHeader} Video</span></h3>
           <div className="login-form">
               {firstInput}
               <input type="text"

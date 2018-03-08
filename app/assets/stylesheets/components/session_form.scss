@@ -81,6 +81,25 @@
   text-align: center;
 }
 
+
+//errors
+.session-errors {
+  padding: 0 25px;
+}
+
+.session-errors li {
+  background-color: rgb(255, 237, 237);
+  color: rgb(26, 46, 59);
+  box-sizing: border-box;
+  padding: 20px;
+  width: 351px;
+  margin: 13px 0px;
+  border-radius: .1875rem;
+  font-size: 14px;
+  text-align: left;
+}
+
+
 //Hover effects
 .session-submit:hover {
   cursor: pointer;

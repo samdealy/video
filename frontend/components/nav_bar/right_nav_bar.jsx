@@ -1,8 +1,15 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-export default ({ currentUser }) => {
-  const userIcon = <img src={currentUser.image_url}></img>;
+export default ({ currentUser, loggedIn }) => {
+  let userIcon;
+  if (loggedIn) {
+    debugger
+    userIcon =
+      <div className="avatar-wrapper">
+        <img src={currentUser.image_url} alt="current-user-avatar"></img>
+      </div>;
+  }
 
   return(
     <ul className="right-nav-section">
