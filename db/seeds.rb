@@ -6,7 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-
+Video.destroy_all
 users = User.create([
     {username: "Sam Dealy", email: "me.com", password: '123456'}
   ])
+
+5.times do |i|
+  Video.create(
+    {uploader_id: User.first.id, title: "Video #{i+1}", description: Faker::TwinPeaks.quote}
+  )
+end

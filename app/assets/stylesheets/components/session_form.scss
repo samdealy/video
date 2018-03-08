@@ -1,9 +1,10 @@
 .login-form-container {
   // height: 347px;
+  background: rgba(0,0,0,.6);
   box-sizing: border-box;
   width: 479px;
   border-radius: 5px;
-  border: 1px solid grey;
+
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -13,7 +14,8 @@
 .login-form-container h3 {
   width: 100%;
 
-  padding: 25px 0;
+  padding-bottom: 10px;
+  padding-top: 25px;
   margin: 0;
 
 
@@ -56,9 +58,6 @@
   padding-bottom: 13px;
 }
 
-.login-form {
-  margin-top: 15px
-}
 
 .login-form a {
   color: #00ADEF;
