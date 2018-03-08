@@ -17,7 +17,7 @@ export default ({ loggedIn }) => {
 
   return(
     <ul className="left-nav-section">
-      <li><Link to='/'> <img src={logo}></img></Link></li>
+      <li><Link to='/'> <img src={logoWhite}></img></Link></li>
       <li>{element2}</li>
       {element3}
     </ul>

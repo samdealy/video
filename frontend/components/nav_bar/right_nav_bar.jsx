@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default ({ currentUser, loggedIn }) => {
   let userIcon;
   if (loggedIn) {
-    debugger
+    
     userIcon =
       <div className="avatar-wrapper">
         <img src={currentUser.image_url} alt="current-user-avatar"></img>
