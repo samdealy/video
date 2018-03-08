@@ -5,7 +5,7 @@ import { join } from '../../actions/session_actions';
 import WelcomePage from './welcome_page';
 
 const mapStateToProps = ({ errors }) => {
-  return { };
+  return { src: "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4" };
 };
 
 const mapDispatchToProps = dispatch => {

@@ -6,6 +6,7 @@ import NavBarContainer from './nav_bar/nav_bar_container.js';
 import LogInFormContainer from './session_form/login_form_container';
 import JoinFormContainer from './session_form/join_form_container';
 import WelcomePageContainer from './welcome_page/welcome_page_container';
+import UploadPageContainer from './upload/upload_page_container';
 import { logout } from '../actions/session_actions';
 
 const App = () => (
@@ -15,7 +16,7 @@ const App = () => (
     <AuthRoute exact path='/' component={WelcomePageContainer} />
     <AuthRoute exact path="/log_in" component={LogInFormContainer} />
     <AuthRoute exact path="/join" component={JoinFormContainer} />
-
+    <Route exact path='/upload' component={UploadPageContainer} />
   </div>
 );
 

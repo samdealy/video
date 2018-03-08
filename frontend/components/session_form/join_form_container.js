@@ -24,6 +24,3 @@ const mapDispatchToProps = dispatch => {
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
 
-//NOTE
-// I'll have to create two new routes to redirect to a new page that has address:
-// "/join" and '/log_in'

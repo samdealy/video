@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import BackgroundVideo from '../video_players/background_video';
 
-export default (props) => {
-  const src = "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
+export default ({ src }) => {
+
   return(
     <div className="welcome-content">
       <BackgroundVideo src={src} type="video/mp4" />
