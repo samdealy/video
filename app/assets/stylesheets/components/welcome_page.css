@@ -1,3 +1,9 @@
+.welcome-content {
+  display: flex;
+  margin: 150px auto;
+  justify-content: center
+}
+
 .background-video {
     position: fixed;
     right: 0;
@@ -8,13 +14,31 @@
 }
 
 .welcome-content h1 {
-  display: block;
-  font-size: 72px;
-  font-family: Brown-Pro-Regular, sans-serif;
-  font-weight: 500;
+  font-size: 89px;
+  font-weight: 800px;
   /*  will be white*/
-  color: black;
-  position: relative;
-  top: 60px;
+  color: white;
   text-align: center;
+}
+
+#join-large-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px
+}
+
+#join-button-large {
+  background-color: #7FC400;
+  padding: 18px 29px;
+  border-radius: 3px;
+  font-size: 22px;
+  width: auto;
+  color: white;
+  font-weight: 400;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+#join-button-large:hover {
+  background-color: #8aac42;
 }
