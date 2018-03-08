@@ -6,7 +6,7 @@ export default ({ currentUser }) => {
 
   return(
     <ul className="right-nav-section">
-      <li><input placeholder="Search for videos..."></input></li>
+      <li><input id="search-bar" placeholder="Search for videos..."></input></li>
       <li>{userIcon}</li>
       <li id="upload-button">
         <Link to="/upload" id="upload-button-link">

@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background: grey;
+  background: rgba(48, 48, 48, 0.92);
 }
 
 .right-nav-section, .left-nav-section {
@@ -49,6 +49,10 @@
   width: 260px;
 }
 
+#search-bar {
+  text-indent: 10px;
+}
+
 .nav-bar li span, ::-webkit-input-placeholder {
   font-size: 14px;
   box-sizing: content-box;
@@ -59,16 +63,17 @@
   background-color: #7FC400;
   padding: 7px 9px;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 14px;
   color: white;
   font-weight: 700;
   white-space: nowrap;
 }
 
 #upload-button {
-  width: 87px;
+  box-sizing: border-box;
+  width: 96px;
   height: 30px;
-  padding: 0px;
+  padding: 2px;
   margin-right: 0px;
   border-color: #00ADEF;
   background-color: #00ADEF;
@@ -82,7 +87,7 @@
 .fa-cloud-upload-alt {
   color: white;
   font-size: 12px;
-  margin-left: 4px;
+  margin-left: 3px;
 }
 
 #upload-button-link {
@@ -95,7 +100,39 @@
 
 #upload-button-link span {
   color: white;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   margin-right: 3px;
+}
+
+//Hover Effects
+#join-button:hover {
+  background-color: #8aac42;
+}
+
+#login:hover{
+  color: #FFF;
+}
+
+#upload-button:hover {
+  border-color: #08C;
+  background-color: #08C;
+}
+//TODO figure out how to get the focus working
+#search-bar:hover{
+  background: rgba(255,255,255,.3);
+  border-color: #879CAB
+
+}
+
+#search-bar:focus {
+  color: #000;
+  background: #fff;
+  border: none;
+
+  transition-delay: 0s;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease-out;
+
 }
