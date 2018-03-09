@@ -26,7 +26,5 @@ export const createVideo = video => dispatch => {
 export const editVideo = video => dispatch => {
   return APIUtil.editVideo(video)
     .then( bench => dispatch( receiveVideo(video)),
-           err   => {
-
-             dispatch( receiveErrors(err.responseJSON))});
+           err   => dispatch( receiveErrors(err.responseJSON)));
 };

@@ -1,10 +1,13 @@
-export const createVideo = video => (
-  $.ajax({
+export const createVideo = video => {
+  return $.ajax({
     method: 'POST',
-    url: 'api/videos',
-    data: { video }
-  })
-);
+    url: '/api/videos',
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: video
+  });
+};
 
 export const editVideo = video => (
   $.ajax({

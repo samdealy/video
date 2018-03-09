@@ -1,5 +1,5 @@
 import React from "react";
-import UploadVideoInput from './upload_video_input';
+import UploadVideoInputContainer from './upload_video_input_container';
 
 export default (props) => {
   return(
@@ -16,7 +16,7 @@ export default (props) => {
         <div className="upload-button-wrapper">
           <div className="upload-button-container">
             <i className="fas fa-cloud-upload-alt"/>
-            <UploadVideoInput type="first" />
+            <UploadVideoInputContainer />
           </div>
         </div>
       </div>

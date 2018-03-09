@@ -8,31 +8,34 @@ class UploadVideoInput extends React.Component {
       videoFile: null,
       thumbNailUrl: null
     };
+    this.updateFile = this.updateFile.bind(this);
   }
 
+
   updateFile(e) {
-    const reader = new FileReader();
-    const file = e.currentTarget.files[0];
-    reader.onloadend = () =>
-    this.setState({ thumbNailUrl: reader.result, videoFile: file }, () =>{
-      if (file) {
-        this.props.uploadVideo(this.state.videoFile);
-        this.setState({ thumbNailUrl: "", videoFile: null });
-      }
-    });
-
-
+    const { createVideo} = this.props;
+    const videoFile = e.currentTarget.files[0];
+    const videoData  = new FormData();
+    videoData.append("video[clip]", videoFile);
+    createVideo(videoData);
   }
 
   render() {
+    const { type } = this.props;
     const inputText = type === 'first' ? "Choose File to Upload" : "Choose more files to upload";
 
     return (
-      <input className="upload-video-input" type="file" onChange={this.updateFile}>
-        {inputText}
-      </input>
-    )
+      <div>
+        <label htmlFor="upload-input">Choose file to upload</label>
+        <input
+          id="upload-input"
+          className="upload-video-input"
+          type="file"
+          onChange={this.updateFile}
+          />
+      </div>
+    );
   }
 }
 
-export default UploadVideoButton;
+export default UploadVideoInput;

@@ -6,9 +6,13 @@ git_source(:github) do |repo_name|
 end
 
 gem 'faker'
+
+#File Upload / Storage
 gem 'aws-sdk', '< 3.0'
 gem 'figaro'
 gem "paperclip", "~> 5.0.0"
+gem 'paperclip-av-transcoder'
+
 gem 'rails_12factor'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
