@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 
 class UploadVideoInput extends React.Component {
 
@@ -17,7 +18,9 @@ class UploadVideoInput extends React.Component {
     const videoFile = e.currentTarget.files[0];
     const videoData  = new FormData();
     videoData.append("video[clip]", videoFile);
-    createVideo(videoData);
+    createVideo(videoData).then( action => {
+      this.props.history.push(`${action.video.id}/settings`)});
+
   }
 
   render() {
@@ -39,4 +42,4 @@ class UploadVideoInput extends React.Component {
   }
 }
 
-export default UploadVideoInput;
+export default withRouter(UploadVideoInput);

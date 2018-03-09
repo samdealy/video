@@ -3,12 +3,11 @@ import React from 'react';
 export default class SettingsForm extends React.Component {
   constructor(props) {
     super(props);
-    const { videoTitle, videoDescription, videoId } = this.props;
+    const { videoTitle, videoDescription } = this.props;
     this.state = {
       title: videoTitle,
       description: videoDescription,
     };
-    debugger
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -18,7 +17,8 @@ export default class SettingsForm extends React.Component {
   }
 
   handleSubmit(e) {
-    const video = Object.assign(this.state, {id: this.props.videoId });
+    const { videoId } = this.props;
+    const video = Object.assign(this.state, {id: videoId });
     this.props.editVideo(video);
   }
 
