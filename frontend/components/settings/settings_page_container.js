@@ -10,8 +10,9 @@ const mapStateToProps = (state, { match }) => {
   return ({
     videoId,
     videoTitle: video.title || '',
-    videoDescription: video.description || '' 
-    
+    videoDescription: video.description || '',
+    videoTimeStamp: video.timestamp || '',
+    videoThumbUrl: video.thumb_url || ''
   });
 };
 

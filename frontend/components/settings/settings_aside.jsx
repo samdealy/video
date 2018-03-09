@@ -1,14 +1,15 @@
 import React from "react";
 
 export default class SettingsAside extends React.Component {
-  constructor(props) {
-    super(props);
-
-  }
 
   render() {
+    const { title, timeStamp, thumbUrl } = this.props
     return(
-      <div>I am the settings aside</div>
+      <div>
+        <img src={thumbUrl}></img>
+        <h4>{title}</h4>
+        <span>Uploaded {timeStamp}</span>
+      </div>
     );
   }
 }
