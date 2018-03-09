@@ -19,7 +19,8 @@ class UploadVideoInput extends React.Component {
     const videoData  = new FormData();
     videoData.append("video[clip]", videoFile);
     createVideo(videoData).then( action => {
-      this.props.history.push(`${action.video.id}/settings`)});
+      this.props.history.push(`${action.video.id}/settings`);
+    });
 
   }
 
