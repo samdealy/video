@@ -3,11 +3,12 @@ import React from 'react';
 export default class SettingsForm extends React.Component {
   constructor(props) {
     super(props);
-    const { video } = this.props;
+    const { videoTitle, videoDescription, videoId } = this.props;
     this.state = {
-      title: video.title || '',
-      description: video.description || '',
+      title: videoTitle,
+      description: videoDescription,
     };
+    debugger
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,13 +18,16 @@ export default class SettingsForm extends React.Component {
   }
 
   handleSubmit(e) {
-    this.props.editVideo(this.state);
+    const video = Object.assign(this.state, {id: this.props.videoId });
+    this.props.editVideo(video);
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.state.title !== nextProps.video.title) {
-      const description = nextProps.video.description || '';
-      this.setState({ title: nextProps.video.title, description });
+    if (this.state.title !== nextProps.videoTitle) {
+      this.setState({
+        title: nextProps.videoTitle,
+        description: nextProps.videoDescription
+      });
     }
   }
 
@@ -42,7 +46,7 @@ export default class SettingsForm extends React.Component {
         <textarea onChange={this.handleChange("description")}
                   id="settings-description"
                   value={this.state.description}>{this.state.description}</textarea>
-                <input>
+        <input type="submit" />
       </form>
     );
   }
