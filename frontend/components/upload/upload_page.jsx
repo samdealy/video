@@ -4,7 +4,7 @@ import UploadVideoInputContainer from './upload_video_input_container';
 export default (props) => {
   return(
     <div className="upload-page">
-      <h1>Upload your videos</h1>
+      <h1 className="page-header">Upload your videos</h1>
       <div className="upload-content-container">
         <aside className="video-upload-rules">
           <h1>Only upload videos that:</h1>
@@ -13,11 +13,9 @@ export default (props) => {
             <li> are allowed on Video.</li>
           </ol>
         </aside>
-        <div className="upload-button-wrapper">
-          <div className="upload-button-container">
-            <i className="fas fa-cloud-upload-alt"/>
-            <UploadVideoInputContainer />
-          </div>
+        <div className="upload-button-container">
+          <i className="fas fa-cloud-upload-alt"/>
+          <UploadVideoInputContainer />
         </div>
       </div>
 

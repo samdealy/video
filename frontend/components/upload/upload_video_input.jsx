@@ -25,13 +25,14 @@ class UploadVideoInput extends React.Component {
     const inputText = type === 'first' ? "Choose File to Upload" : "Choose more files to upload";
 
     return (
-      <div>
-        <label htmlFor="upload-input">Choose file to upload</label>
+      <div className="upload-page-button">
+        <label className="upload-button" htmlFor="upload-input"><span>Choose file to upload</span></label>
         <input
           id="upload-input"
           className="upload-video-input"
           type="file"
           onChange={this.updateFile}
+          style={{display: 'none'}}
           />
       </div>
     );

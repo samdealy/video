@@ -68,7 +68,7 @@
   white-space: nowrap;
 }
 
-#upload-button {
+.upload-button {
   box-sizing: border-box;
   width: 96px;
   height: 33px;
@@ -91,6 +91,7 @@
 
 #search-bar-wrapper {
   background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
 
 }
 
@@ -104,6 +105,9 @@
   font-size: 13px;
   color: rgb(138, 149, 153);
   background-color: #11ffee00;
+  position: absolute;
+  right: 5px;
+  top: 27%;
 }
 
 #upload-button-link {
@@ -129,7 +133,7 @@
   color: #FFF;
 }
 
-#upload-button:hover {
+.upload-button:hover {
   border-color: #08C;
   background-color: #08C;
 }
@@ -146,6 +150,7 @@
 }
 
 #search-bar {
+  border: 1px solid white;
   transition-delay: 0s;
   transition-duration: 0.25s;
   transition-property: all;

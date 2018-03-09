@@ -18,7 +18,7 @@ export default ({ currentUser, loggedIn }) => {
         <i className="fas fa-search"></i>
       </li>
       <li>{userIcon}</li>
-      <li id="upload-button">
+      <li className="upload-button">
         <Link to="/upload" id="upload-button-link">
           <i className="fas fa-cloud-upload-alt"></i>
           <span>Upload</span>
