@@ -5,7 +5,7 @@ class User < ApplicationRecord
 
   has_many :videos, foreign_key: :uploader_id, dependent: :destroy
 
-  has_attached_file :image, default_url: "Dealy_Headshot_MLS.jpg"
+  has_attached_file :image, default_url: "/images/Dealy_Headshot_MLS.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
