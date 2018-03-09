@@ -3,14 +3,19 @@ class Api::VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-
     @video.uploader_id = current_user.id
+
     if @video.save
       render "api/videos/show"
     else
-
       render json: @video.errors.full_messages, status: 422
     end
+  end
+
+  def show
+    @video = Video.find(params[:id])
+
+    render "api/videos/show"
   end
 
   def update
@@ -18,7 +23,6 @@ class Api::VideosController < ApplicationController
     if @video && @video.update_attributes(video_params)
       render "api/videos/show"
     else
-
       render json: @video.errors.full_messages, status: 422
     end
   end

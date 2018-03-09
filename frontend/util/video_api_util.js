@@ -9,6 +9,12 @@ export const createVideo = video => {
   });
 };
 
+export const fetchVideo = videoId => {
+  return $.ajax({
+    url: `api/videos/${videoId}`,
+  });
+};
+
 export const editVideo = video => (
   $.ajax({
     method: 'PATCH',

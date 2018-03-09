@@ -17,14 +17,20 @@ export const receiveErrors = errors => {
   });
 };
 
+export const fetchVideo = videoId => dispatch => {
+  return APIUtil.fetchVideo(videoId)
+    .then( video => dispatch( receiveVideo(video)),
+           err   => dispatch( receiveErrors(err.responseJSON)));
+};
+
 export const createVideo = video => dispatch => {
   return APIUtil.createVideo(video)
-    .then( bench => dispatch( receiveVideo(video)),
+    .then( video => dispatch( receiveVideo(video)),
            err   => dispatch( receiveErrors(err.responseJSON)));
 };
 
 export const editVideo = video => dispatch => {
   return APIUtil.editVideo(video)
-    .then( bench => dispatch( receiveVideo(video)),
+    .then( video => dispatch( receiveVideo(video)),
            err   => dispatch( receiveErrors(err.responseJSON)));
 };
