@@ -10,7 +10,7 @@ export default (props) => {
           <h1>Only upload videos that:</h1>
           <ol>
             <li> You have the right to upload.</li>
-            <li> are allowed on Video.</li>
+            <li> Are allowed on Video.</li>
           </ol>
         </aside>
         <div className="upload-button-container">
