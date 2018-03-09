@@ -7,7 +7,7 @@ export default (props) => {
       <h1 className="page-header">Upload your videos</h1>
       <div className="upload-content-container">
         <aside className="video-upload-rules">
-          <h1>Only upload videos that:</h1>
+          <h3 className="medium-header">Only upload videos that:</h3>
           <ol>
             <li> You have the right to upload.</li>
             <li> Are allowed on Video.</li>

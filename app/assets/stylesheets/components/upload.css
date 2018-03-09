@@ -17,12 +17,6 @@
   flex-direction: column;
 }
 
-.video-upload-rules {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-}
-
 .upload-button-container svg {
   color: rgb(135, 156, 171);
   font-size: 85px;
@@ -41,6 +35,36 @@
   padding: 10px;
   font-size: 14px;
   font-weight: 700px;
+}
+
+.video-upload-rules {
+  height: 106px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  background-color: rgb(246, 247, 248);
+  border: 1px solid rgb(227, 232, 233);
+  border-radius: 5px;
+  width: 300px;
+  box-sizing: border-box;
+}
+
+.video-upload-rules h3 {
+  border-bottom: 1px solid rgb(227, 232, 233);
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin: 0;
+}
+
+.video-upload-rules ol {
+  margin-top: 10px;
+}
+
+.video-upload-rules li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(78,90,94);
+  margin-bottom: 5px;
 }
 
 #upload-input {

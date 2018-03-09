@@ -7,3 +7,10 @@
   padding-right: 30px;
   padding-top: 30px;
 }
+
+.medium-header {
+  font-size: 18px;
+  font-weight: 700px;
+  color: rgb(26, 46, 59);
+  padding-left:  16px;
+}
