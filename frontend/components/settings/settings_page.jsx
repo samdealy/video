@@ -1,22 +1,25 @@
 import React from "react";
 import SettingsAside from './settings_aside';
 import SettingsForm from './settings_form';
+import { withRouter } from 'react-router-dom';
 
+class SettingsPage extends React.Component {
 
-export default class SettingsPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state.video = this.props.video;
+  componentDidMount() {
+    this.props.fetchVideo(this.props.videoId);
   }
 
   render() {
+    const { video, editVideo } = this.props;
     return (
-      <div>
+      <div className="settings-page-container">
         settings page
-        <SettingsAside videoInfo={"nothing for now"} />
-        <SettingsForm  videoInfo={"nothing for now"} />
+        <SettingsAside video={video} />
+        <SettingsForm  video={video} editVideo={editVideo} />
       </div>
 
-    )
+    );
   }
 }
+
+export default withRouter(SettingsPage);

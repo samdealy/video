@@ -4,7 +4,7 @@ class Api::VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @video.uploader_id = current_user.id
-
+    @video.title = @video.clip_file_name.split('.').first
     if @video.save
       render "api/videos/show"
     else
