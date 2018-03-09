@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router';
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav_bar/nav_bar_container.js';
 // import Footer from './footer/footer.js';
 import LogInFormContainer from './session_form/login_form_container';
@@ -16,7 +16,7 @@ const App = () => (
     <AuthRoute exact path='/' component={WelcomePageContainer} />
     <AuthRoute exact path="/log_in" component={LogInFormContainer} />
     <AuthRoute exact path="/join" component={JoinFormContainer} />
-    <Route exact path='/upload' component={UploadPageContainer} />
+    <ProtectedRoute exact path='/upload' component={UploadPageContainer} />
   </div>
 );
 
