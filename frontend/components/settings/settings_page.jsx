@@ -10,12 +10,15 @@ class SettingsPage extends React.Component {
   }
 
   render() {
-    const { video, editVideo } = this.props;
+    const { videoTitle, videoDescription, editVideo } = this.props;
     return (
       <div className="settings-page-container">
         settings page
         <SettingsAside video={video} />
-        <SettingsForm  video={video} editVideo={editVideo} />
+        <SettingsForm
+          videoTitle={videoTitle}
+          videoDescription={videoDescription}
+          editVideo={editVideo} />
       </div>
 
     );
