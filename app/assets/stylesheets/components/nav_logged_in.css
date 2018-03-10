@@ -137,3 +137,7 @@
 .icon-dropdown li:hover {
   background-color: rgb(246, 247, 248);
 }
+
+.dropdown-user-info:hover, .icon-dropdown li:hover {
+  cursor: pointer;
+}

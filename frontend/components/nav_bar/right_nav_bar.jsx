@@ -8,11 +8,22 @@ class RightNavBar extends React.Component {
       showHideDropdown: "hidden"
     };
     this.toggleDropdown = this.toggleDropdown.bind(this);
+    this.handleLogOut = this.handleLogOut.bind(this);
   }
 
   toggleDropdown() {
-    let css = (this.state.showHideDropdown === "hidden") ? "show" : "hidden";
-    this.setState({"showHideDropdown":css});
+    let css;
+    if (this.props.loggedIn) {
+      css = (this.state.showHideDropdown === "hidden") ? "show" : "hidden";
+    } else {
+      css = "hidden";
+    }
+    this.setState({ "showHideDropdown":css });
+  }
+
+  handleLogOut() {
+    this.toggleDropdown();
+    this.props.logout();
   }
 
   render() {
@@ -46,9 +57,7 @@ class RightNavBar extends React.Component {
           </div>
           </div>
           <ul>
-            <li>
-              <button onClick={() => logout()}>Log out</button>
-            </li>
+            <li onClick={this.handleLogOut}>Log out</li>
           </ul>
         </div>
 
