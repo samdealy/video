@@ -5,6 +5,21 @@
 
 }
 
+@media (max-width: 767px) {
+  .nav-bar {
+    background-color: white !important;
+    height: 60px !important;
+  }
+
+  .right-nav-section {
+    display: none !important;
+  }
+
+  .left-nav-section {
+    display: none !important;
+  }
+}
+
 .right-nav-section, .left-nav-section {
   display: flex;
 }

@@ -1,0 +1,23 @@
+
+.video-player-background {
+  background-color: black;
+}
+
+
+.video-player-size-container {
+  width: 961px;
+  margin: 0px auto;
+}
+
+@media (max-width: 1130px)  {
+  .video-player-size-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 556px)  {
+  .video-player-size-container {
+    padding-top: 6%;
+    padding-bottom: 6%;
+  }
+}

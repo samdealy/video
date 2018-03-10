@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import BackgroundVideo from '../video_players/background_video';
+import BackgroundVideo from '../background_videos/background_video';
 
 export default ({ src }) => {
 
