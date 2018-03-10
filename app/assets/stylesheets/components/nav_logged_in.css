@@ -15,8 +15,13 @@
   position: relative;
 }
 
-.icon-dropdown {
+.icon-dropdown.hidden {
+  display: none;
+}
+
+.icon-dropdown.show {
   position: absolute;
+  display: block;
   background-color: white;
   top: 54px;
   right: 132px;
@@ -25,6 +30,7 @@
   z-index: 300;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 }
+
 
 .dropdown-user-info h4 {
   margin: 0px;
