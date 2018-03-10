@@ -3,10 +3,11 @@ import * as APIUtil from '../util/video_api_util';
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
-export const receiveVideo = video => {
+export const receiveVideo = payload => {
   return({
     type: RECEIVE_VIDEO,
-    video
+    video: payload.video,
+    user: payload.user
   });
 };
 

@@ -12,7 +12,9 @@ const mapStateToProps = (state, { match }) => {
     videoTitle: video.title || '',
     videoDescription: video.description || '',
     videoTimeStamp: video.timestamp || '',
-    videoThumbUrl: video.thumb_url || ''
+    videoThumbUrl: video.thumb_url || '',
+    videoUploaderId: video.uploader_id || null,
+    currentUserId: state.session.currentUserId
   });
 };
 

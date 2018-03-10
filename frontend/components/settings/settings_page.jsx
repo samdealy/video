@@ -1,7 +1,7 @@
 import React from "react";
 import SettingsAside from './settings_aside';
 import SettingsForm from './settings_form';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 class SettingsPage extends React.Component {
 
@@ -16,8 +16,14 @@ class SettingsPage extends React.Component {
             videoThumbUrl,
             videoDescription,
             editVideo,
-            videoId
+            videoId,
+            videoUploaderId,
+            currentUserId
           } = this.props;
+
+    if (videoUploaderId !== currentUserId && videoUploaderId !== null) {
+      return(<Redirect to='/home'/>);
+    }
 
     return (
       <div className="settings-page-container">
