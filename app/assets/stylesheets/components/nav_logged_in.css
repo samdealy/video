@@ -8,10 +8,13 @@
   border-radius:50%;
   width: 36px;
   height: 36px;
-  margin: 0px 10px;
 }
 
-.right-nav-section .avatar-li {
+.loggedIn .right-nav-section .hover-container {
+  padding: 10px
+}
+
+.right-nav-section .avatar-wrapper {
   position: relative;
 }
 
@@ -40,7 +43,8 @@
 }
 
 .view-profile-wrapper {
-  margin-bottom: 3px
+  margin-bottom: 3px;
+  margin-left: 11px;
 }
 
 .view-profile-wrapper span {
@@ -87,7 +91,7 @@
 
  .my-videos {
   font-weight: 700;
-  font-size: 14px; 
+  font-size: 14px;
   color: rgb(96, 118, 128);
   font-weight: 700;
 }
@@ -111,7 +115,7 @@
   color: #4E5A5E;
 }
 
-.loggedIn  #search-bar:hover {
+.loggedIn  .search-bar-wrapper:hover {
   border: 1px solid #879CAB;
   transition-duration: 0.25s;
   transition-property: all;

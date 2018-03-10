@@ -22,7 +22,7 @@ class RightNavBar extends React.Component {
   }
 
   handleLogOut() {
-    this.toggleDropdown();
+    this.setState({ showHideDropdown: "hidden" });
     this.props.logout();
   }
 
@@ -40,26 +40,26 @@ class RightNavBar extends React.Component {
           <input id="search-bar" placeholder="Search for videos..."></input>
           <i className="fas fa-search"></i>
         </li>
-        <li className="avatar-li" onMouseEnter={this.toggleDropdown}>
-          <div className="avatar-wrapper">
-            {userIcon}
-          </div>
-        </li>
-        <div className={`icon-dropdown ${this.state.showHideDropdown}`}
-             onMouseLeave={this.toggleDropdown}>
-          <div className="dropdown-user-info-wrapper">
-            <div className="dropdown-user-info">
-            {userIcon}
-            <div className="view-profile-wrapper">
-              <h4>{currentUser.username}</h4>
-              <span>View profile</span>
+        <li className="avatar-li" >
+          <div className="hover-container" onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}>
+            <div className="avatar-wrapper">{userIcon}</div>
+            <div className={`icon-dropdown ${this.state.showHideDropdown}`}>
+              <div className="dropdown-user-info-wrapper">
+                <div className="dropdown-user-info">
+                {userIcon}
+                <div className="view-profile-wrapper">
+                  <h4>{currentUser.username}</h4>
+                  <span>View profile</span>
+                </div>
+              </div>
+              </div>
+              <ul>
+                <li onClick={this.handleLogOut}>Log out</li>
+              </ul>
             </div>
           </div>
-          </div>
-          <ul>
-            <li onClick={this.handleLogOut}>Log out</li>
-          </ul>
-        </div>
+        </li>
+
 
         <li className="upload-button">
           <Link to="/upload" id="upload-button-link">
@@ -73,52 +73,3 @@ class RightNavBar extends React.Component {
 }
 
 export default withRouter(RightNavBar);
-
-
-
-// const RightNavBar = ({ currentUser, loggedIn, logout, history }) => {
-//   let userIcon;
-//   if (loggedIn) {
-//     userIcon = <img src={currentUser.image_url} alt="current-user-avatar"></img>
-//   }
-//
-//   let hoverOverIcon = false
-//   return(
-//     <ul className="right-nav-section">
-//       <li id="search-bar-wrapper">
-//         <input id="search-bar" placeholder="Search for videos..."></input>
-//         <i className="fas fa-search"></i>
-//       </li>
-//       <li className="avatar-li">
-//         <div className="avatar-wrapper">
-//           {userIcon}
-//         </div>
-//       </li>
-//       <div className="icon-dropdown">
-//         <div className="dropdown-user-info-wrapper">
-//           <div className="dropdown-user-info">
-//           {userIcon}
-//           <div className="view-profile-wrapper">
-//             <h4>{currentUser.username}</h4>
-//             <span>View profile</span>
-//           </div>
-//         </div>
-//         </div>
-//         <ul>
-//           <li>
-//             <button onClick={() => logout()}>Log out</button>
-//           </li>
-//         </ul>
-//       </div>
-//
-//       <li className="upload-button">
-//         <Link to="/upload" id="upload-button-link">
-//           <i className="fas fa-cloud-upload-alt"></i>
-//           <span>Upload</span>
-//         </Link>
-//       </li>
-//     </ul>
-//   )
-// }
-//
-// export default withRouter(RightNavBar);
