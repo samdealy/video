@@ -3,7 +3,7 @@
   border-bottom: 1px solid rgb(208, 216, 219);
 }
 
-.avatar-wrapper img {
+.right-nav-section img {
   object-fit: cover;
   border-radius:50%;
   width: 36px;
@@ -11,8 +11,61 @@
   margin: 0px 10px;
 }
 
+.right-nav-section .avatar-li {
+  position: relative;
+}
+
+.icon-dropdown {
+  position: absolute;
+  top: 67px;
+  right: 135px;
+  border: 1px solid rgb(238, 241, 242);
+  width: 270px;
+  z-index: 300;
+}
+
+.dropdown-user-info h4 {
+  margin: 0px;
+  font-size: 14px;
+  color: rgb(23, 39, 46);
+  font-weight: 700;
+}
+
+.view-profile-wrapper {
+  margin-bottom: 3px
+}
+
+.view-profile-wrapper span {
+  font-size: 11.2px;
+  color: #00adef;
+  letter-spacing: 0.16px;
+  font-weight: 500;
+}
+
+.dropdown-user-info-wrapper{
+  display: flex;
+  align-items: center;
+  height: 73px;
+  border-bottom: 1px solid rgb(238, 241, 242);
+}
+
+.dropdown-user-info {
+  width: 270px;
+  padding: 4px 0px;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-user-info img {
+  width: 46px;
+  height: 46px;
+  margin-left: 16px;
+
+}
+
 #MyVideos {
   color: rgb(96, 118, 128);
+  font-weight: 700;
 }
 
 .loggedIn .left-nav-section span:hover {
@@ -34,9 +87,25 @@
   color: #4E5A5E;
 }
 
-.loggedIn #search-bar:active, #search-bar:hover {
+.loggedIn  #search-bar:hover {
   border: 1px solid #879CAB;
   transition-duration: 0.25s;
   transition-property: all;
   transition-timing-function: ease-out;
+}
+
+.loggedIn #search-bar:focus {
+  border: 1px solid #879CAB;
+  transition-duration: 0.25s;
+  transition-property: all;
+  transition-timing-function: ease-out;
+}
+
+.left-nav-section a:hover span {
+  color: rgb(23, 39, 46);
+}
+
+
+.dropdown-user-info:hover {
+  background-color: rgb(246, 247, 248)
 }
