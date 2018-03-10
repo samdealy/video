@@ -52,7 +52,7 @@
   text-indent: 10px;
 }
 
-.nav-bar li span, ::-webkit-input-placeholder {
+.nav-bar ::-webkit-input-placeholder {
   font-size: 14px;
   box-sizing: content-box;
   color: rgba(255, 255, 255, 0.5);

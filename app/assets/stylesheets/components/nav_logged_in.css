@@ -85,12 +85,14 @@
 
 }
 
-#MyVideos {
+ .my-videos {
+  font-weight: 700;
+  font-size: 14px; 
   color: rgb(96, 118, 128);
   font-weight: 700;
 }
 
-.loggedIn .left-nav-section span:hover {
+ .my-videos:hover {
   color: #17272E;
 }
 
