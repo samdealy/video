@@ -34,19 +34,27 @@ export default class SettingsForm extends React.Component {
   render() {
     return(
       <form onSubmit={this.handleSubmit} className="settings-form">
-        <h3 className="medium-header">Basic</h3>
+        <h3 className="page-header">Settings</h3>
 
         <label htmlFor="settings-title">Title</label>
-        <input onChange={this.handleChange("title")}
+        <p>
+          Videos are more interesting when they have creative titles.
+          We know you can do better than "My Video"
+        </p>
+        <input className="settings-input" onChange={this.handleChange("title")}
                id="settings-title"
                type="text"
                value={this.state.title}/>
 
         <label htmlFor="settings-description">Description</label>
-        <textarea onChange={this.handleChange("description")}
+        <p>
+          Tell the story behind your video, and how you
+          were involved in making it. (No HTML, but links are OK.)
+        </p>
+        <textarea className="settings-input" onChange={this.handleChange("description")}
                   id="settings-description"
                   value={this.state.description}>{this.state.description}</textarea>
-        <input type="submit" />
+        <input className="upload-button" type="submit" value="Save" />
       </form>
     );
   }

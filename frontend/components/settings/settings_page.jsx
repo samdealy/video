@@ -21,7 +21,6 @@ class SettingsPage extends React.Component {
 
     return (
       <div className="settings-page-container">
-        settings page
         <SettingsAside
           title={videoTitle}
           timeStamp={videoTimeStamp}
