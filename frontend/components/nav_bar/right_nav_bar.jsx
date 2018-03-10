@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom';
 
-export default ({ currentUser, loggedIn }) => {
+const RightNavBar = ({ currentUser, loggedIn, logout, history }) => {
   let userIcon;
   if (loggedIn) {
     userIcon = <img src={currentUser.image_url} alt="current-user-avatar"></img>
   }
 
+  let hoverOverIcon = false
   return(
     <ul className="right-nav-section">
       <li id="search-bar-wrapper">
@@ -30,7 +31,7 @@ export default ({ currentUser, loggedIn }) => {
         </div>
         <ul>
           <li>
-            <button>Log out</button>
+            <button onClick={() => logout()}>Log out</button>
           </li>
         </ul>
       </div>
@@ -44,3 +45,5 @@ export default ({ currentUser, loggedIn }) => {
     </ul>
   )
 }
+
+export default withRouter(RightNavBar);

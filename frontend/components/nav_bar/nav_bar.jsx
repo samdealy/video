@@ -10,12 +10,12 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { loggedIn, currentUser } = this.props;
+    const { loggedIn, currentUser, logout } = this.props;
     const className = "nav-bar " + (loggedIn ? "loggedIn" : "loggedOut");
     return(
       <div className={className}>
         <LeftNavBar  loggedIn={loggedIn} className={className} />
-        <RightNavBar loggedIn={loggedIn} currentUser={currentUser} />
+        <RightNavBar loggedIn={loggedIn} currentUser={currentUser} logout={logout} />
       </div>
     );
   }

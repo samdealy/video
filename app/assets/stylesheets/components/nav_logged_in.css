@@ -17,11 +17,13 @@
 
 .icon-dropdown {
   position: absolute;
-  top: 67px;
-  right: 135px;
+  background-color: white;
+  top: 54px;
+  right: 132px;
   border: 1px solid rgb(238, 241, 242);
   width: 270px;
   z-index: 300;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 5px 0px;
 }
 
 .dropdown-user-info h4 {
@@ -43,17 +45,31 @@
 }
 
 .dropdown-user-info-wrapper{
-  display: flex;
+  position: relative;
   align-items: center;
-  height: 73px;
+  height: 74px;
   border-bottom: 1px solid rgb(238, 241, 242);
 }
 
 .dropdown-user-info {
+  position: absolute;
+  top: 10px;
   width: 270px;
   padding: 4px 0px;
   display: flex;
   align-items: center;
+}
+
+.icon-dropdown ul {
+  padding: 12px 0;
+}
+
+.icon-dropdown li {
+  padding: 4px 16px;
+  color: rgb(26, 46, 59);
+  font-size: 14px;
+  letter-spacing: .16px;
+  text-decoration-color: rgb(26, 46, 59);
 }
 
 .dropdown-user-info img {
@@ -108,4 +124,10 @@
 
 .dropdown-user-info:hover {
   background-color: rgb(246, 247, 248)
+}
+
+
+/* Hover effects and dropdown display */
+.icon-dropdown li:hover {
+  background-color: rgb(246, 247, 248);
 }
