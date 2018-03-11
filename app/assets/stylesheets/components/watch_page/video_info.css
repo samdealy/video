@@ -1,0 +1,24 @@
+@media(min-width: 1432px) {
+  .beneath-video {
+    margin-left: 13% !important;
+  }
+}
+
+.beneath-video {
+  /* margin-left: 32px; */
+  padding-left: 2.5rem;
+}
+
+.video-info .page-header {
+  padding: 0;
+  font-weight: 500;
+}
+
+.video-info .time-stamp {
+  color: rgb(134, 153, 166);
+  font-size: 14px;
+}
+
+.video-info {
+  padding: 20px 0;
+}

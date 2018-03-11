@@ -1,0 +1,11 @@
+.user-icon {
+  object-fit: cover;
+  border-radius:50%;
+  width: 36px;
+  height: 36px;
+}
+
+.user-list-item .user-icon {
+  width: 30px;
+  height: 30px;
+}

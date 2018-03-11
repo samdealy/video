@@ -1,5 +1,6 @@
 import React from 'react';
 import ControlBar from './control_bar';
+import LikeButtonContainer from './like_button/like_button_container';
 
 class VideoPlayer extends React.Component {
   constructor(props) {
@@ -7,7 +8,8 @@ class VideoPlayer extends React.Component {
     this.state = {
       currentTime: 0,
       showHide: "show",
-      hasStarted: false
+      hasStarted: false,
+      hasEnded: false,
     };
     this.getDuration = this.getDuration.bind(this);
     this.getCurrentTime = this.getCurrentTime.bind(this);
@@ -57,7 +59,8 @@ class VideoPlayer extends React.Component {
                  ref={ videoEl => this.videoEl = videoEl}
                  onLoadedMetadata={this.getDuration}
                  onTimeUpdate={this.getCurrentTime}
-                 onPlay={this.updateHasStarted} />
+                 onPlay={this.updateHasStarted}
+                 onEnded={this.setEnded} />
           <ControlBar videoEl={this.videoEl}
                       duration={this.duration}
                       currentTime={this.state.currentTime}

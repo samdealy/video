@@ -30,7 +30,7 @@ class RightNavBar extends React.Component {
     const { currentUser, loggedIn, logout, history } = this.props;
     let userIcon;
     if (loggedIn) {
-      userIcon = <img src={currentUser.image_url} alt="current-user-avatar"></img>;
+      userIcon = <img className="user-icon" src={currentUser.image_url} alt="current-user-avatar"></img>;
     }
 
     let hoverOverIcon = false;

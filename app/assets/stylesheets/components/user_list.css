@@ -1,0 +1,12 @@
+.user-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.user-list-item h4 {
+  color: rgb(26, 46, 59);
+  font-size: 14px;
+  margin: 0;
+  margin-left: 6px;
+  font-weight: 600;
+}
