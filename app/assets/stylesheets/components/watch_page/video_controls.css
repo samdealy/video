@@ -1,10 +1,26 @@
-#video-controls {
+#video-controls.hide {
+  display: none
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+#video-controls.show {
   display: flex;
   align-items: flex-end;
   position: absolute;
   width: 100%;
   top: 492px;
   right: -9px;
+  -webkit-animation: fadeIn .25s;
+  animation: fadeIn .25s;
+
 }
 
 #playpause {
