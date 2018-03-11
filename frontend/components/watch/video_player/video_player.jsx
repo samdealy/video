@@ -1,5 +1,5 @@
 import React from 'react';
-import ControlBar from './control_bar'
+import ControlBar from './controls/control_bar';
 
 class VideoPlayer extends React.Component {
   constructor(props) {

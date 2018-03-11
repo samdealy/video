@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PlayPauseButton from './play_pause_button';
 
 class ControlBar extends React.Component {
 
@@ -15,21 +15,16 @@ class ControlBar extends React.Component {
   }
 
   render() {
+    const { videoEl } = this.props;
     return(
-      <ul id="video-controls" className="controls">
-         <li>
-           <div id="playpause"
-             ref={(playPause) => { this.playPause = playPause; }}
-             onClick={this.handlePlayPause}>
-           </div>
-         </li>
+      <ul id="video-controls">
+         <li><PlayPauseButton videoEl={videoEl}/></li>
          <li className="progress">
             <progress id="progress" value="0" min="0">
                <span id="progress-bar"></span>
             </progress>
          </li>
-         <li><button id="mute" type="button">Mute/Unmute</button></li>
-         <li>
+         <li id="volume-slider">
            <div id="vol1" />
            <div id="vol2" />
            <div id="vol3" />

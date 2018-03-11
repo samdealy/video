@@ -1,0 +1,19 @@
+#video-controls {
+  display: flex;
+  
+}
+#playpause {
+  width: 65px;
+  height: 40px;
+  margin-right: .9em;
+  color: white;
+  background-color: rgba(23, 35, 34, 0.75);
+  border-radius: 5px;
+  transition-duration: 0.25s, 0.04s, 0.04s ;
+  transition-property: opacity, background-color, color ;
+  transition-timing-function: ease-out, ease, ease ;
+}
+
+#playpause:hover {
+  background-color: rgb(0, 173, 239);
+}
