@@ -27,9 +27,9 @@ export default class PlayPauseButton extends React.Component {
 
   pauseIcon() {
     return(
-      <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
-        <rect class="fill" width="6" height="20" x="0" y="0"></rect>
-        <rect class="fill" width="6" height="20" x="12" y="0"></rect>
+      <svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabIndex="-1">
+        <rect className="fill" width="6" height="20" x="0" y="0"></rect>
+        <rect className="fill" width="6" height="20" x="12" y="0"></rect>
       </svg>);
   }
 

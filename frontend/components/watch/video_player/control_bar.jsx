@@ -1,5 +1,6 @@
 import React from 'react';
-import PlayPauseButton from './play_pause_button';
+import PlayPauseButton from './control_features/play_pause_button';
+import ProgressBar from './control_features/progress_bar';
 
 class ControlBar extends React.Component {
 
@@ -15,15 +16,15 @@ class ControlBar extends React.Component {
   }
 
   render() {
-    const { videoEl } = this.props;
+    const { videoEl, duration, currentTime } = this.props;
     return(
-      <ul id="video-controls">
-         <li><PlayPauseButton videoEl={videoEl}/></li>
-         <li className="progress">
-            <progress id="progress" value="0" min="0">
-               <span id="progress-bar"></span>
-            </progress>
-         </li>
+      <div id="video-controls">
+         <div><PlayPauseButton videoEl={videoEl}/></div>
+         <div className="playbar">
+           <ProgressBar videoEl={videoEl}
+                        duration={duration}
+                        currentTime={currentTime} />
+         </div>
          <li id="volume-slider">
            <div id="vol1" />
            <div id="vol2" />
@@ -32,7 +33,7 @@ class ControlBar extends React.Component {
            <div id="vol5" />
          </li>
          <li><button id="fs" type="button">Fullscreen</button></li>
-      </ul>
+      </div>
 
     );
   }

@@ -33,3 +33,8 @@
 .pp-icon-wrapper svg:focus {
   outline: none;
 }
+
+.playbar {
+  background-color: rgba(23, 35, 34, 0.75);
+  width: 100%;
+}
