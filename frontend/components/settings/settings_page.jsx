@@ -31,6 +31,7 @@ class SettingsPage extends React.Component {
           title={videoTitle}
           timeStamp={videoTimeStamp}
           thumbUrl={videoThumbUrl}
+          videoId={videoId}
           />
         <SettingsForm
           videoTitle={videoTitle}

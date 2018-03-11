@@ -16,8 +16,10 @@ users = User.create([
     {username: "Joe Buddy", email: "joe.com", password: '123456'},
   ])
 
-# 5.times do |i|
-#   Video.create(
-#     {uploader_id: User.first.id, title: "Video #{i+1}", description: Faker::TwinPeaks.quote}
-#   )
-# end
+first_video_url = "http://s3.amazonaws.com/fsp-video-dev/" +
+                  "videos/clips/000/000/050/original/" +
+                  "grass_hopper.mp4?1520721819"
+fist_video = File.new(first_video_url)
+
+Video.create({ title: "Grass Hopper takes flight", uploader_id: User.first.id,
+               asset: first_video })

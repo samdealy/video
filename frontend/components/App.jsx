@@ -20,8 +20,8 @@ const App = () => (
     <AuthRoute exact path="/log_in" component={LogInFormContainer} />
     <AuthRoute exact path="/join" component={JoinFormContainer} />
     <ProtectedRoute exact path='/upload' component={UploadPageContainer} />
+    <Route exact path='/watch/:videoId' component={WatchPage} />
     <ProtectedRoute exact path='/:videoId/settings' component={SettingsPageContainer} />
-    <Route exact path='/:videoId' component={WatchPage} />
   </div>
 );
 

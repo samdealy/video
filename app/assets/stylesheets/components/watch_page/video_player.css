@@ -8,6 +8,7 @@
 .video-player-size-container {
   width: 961px;
   margin: 0px auto;
+  position: relative;
 }
 
 @media (max-width: 1130px)  {

@@ -1,6 +1,10 @@
 #video-controls {
   display: flex;
   align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  top: 492px;
+  right: -9px;
 }
 
 #playpause {
