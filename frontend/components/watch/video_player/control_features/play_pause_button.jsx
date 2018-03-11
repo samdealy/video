@@ -41,7 +41,6 @@ export default class PlayPauseButton extends React.Component {
     );
   }
 
-
   render() {
     return(
       <button id="playpause" ref={this.setRef} onClick={this.handleClick}>
