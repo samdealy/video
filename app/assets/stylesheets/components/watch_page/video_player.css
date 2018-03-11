@@ -1,6 +1,8 @@
 
 .video-player-background {
   background-color: black;
+  display: flex;
+  align-items: center;
 }
 
 
@@ -15,9 +17,17 @@
   }
 }
 
-@media (max-width: 556px)  {
+@media (max-width: 470px)  {
   .video-player-size-container {
+
+  }
+
+  .video-player-background {
+    box-sizing: border-box;
+    height: 256px;
     padding-top: 6%;
     padding-bottom: 6%;
   }
+
+
 }

@@ -1,20 +1,25 @@
 import React from 'react';
+import ControlBar from './control_bar'
 
 class VideoPlayer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     this.props.fetchVideo(this.props.videoId);
   }
 
   render() {
     const { videoClipUrl, clipType } = this.props;
-    // const videoClipUrl =
-    //    "http://s3.amazonaws.com/fsp-video-dev/videos/clips/000/000/050/original/grass_hopper.mp4?1520721819"
-    // const clipType = "video/mp4"
     return(
       <div className="video-player-background">
-        <div className="video-player-size-container">
-          <video src={videoClipUrl} width="100%" />
-        </div>
+        <figure className="video-player-size-container">
+          <video src={videoClipUrl}
+                 width="100%"
+                 ref={ videoEl => this.videoEl = videoEl} />
+           <ControlBar videoEl={this.videoEl} />
+        </figure>
       </div>
     );
   }
