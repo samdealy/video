@@ -12,13 +12,13 @@ export default class ProgressBar extends React.Component {
 
   setRef(progressBar) {
     this.progressBar = progressBar;
+
   }
 
   skipAhead(e) {
     const { videoEl } = this.props;
     const pos = (e.pageX  - this.progressBar.offsetLeft) / this.progressBar.offsetWidth;
     videoEl.currentTime = pos * videoEl.duration;
-    // this.setState({ width: pos });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,7 +30,7 @@ export default class ProgressBar extends React.Component {
   render() {
     const { duration } = this.props;
     return(
-      <div className="progress-bar-container"
+      <div className="progress-bar-container">
         <progress id="progress-bar"
                   ref={this.setRef}
                   value="0"
