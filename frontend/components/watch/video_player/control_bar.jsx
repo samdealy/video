@@ -6,6 +6,9 @@ class ControlBar extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      showHide: this.props.showHide
+    };
     this.handlePlayPause = this.handlePlayPause.bind(this);
   }
 
@@ -16,23 +19,24 @@ class ControlBar extends React.Component {
   }
 
   render() {
-    const { videoEl, duration, currentTime } = this.props;
+    const { videoEl, duration, currentTime, showHide } = this.props;
+
     return(
-      <div id="video-controls">
-         <div><PlayPauseButton videoEl={videoEl}/></div>
+      <div className={showHide} id="video-controls" >
+         <div><PlayPauseButton videoEl={videoEl} /></div>
          <div className="playbar">
            <ProgressBar videoEl={videoEl}
                         duration={duration}
                         currentTime={currentTime} />
+           <li id="volume-slider">
+             <div id="vol1" />
+             <div id="vol2" />
+             <div id="vol3" />
+             <div id="vol4" />
+             <div id="vol5" />
+           </li>
+           <li><button id="fs" type="button">Fullscreen</button></li>
          </div>
-         <li id="volume-slider">
-           <div id="vol1" />
-           <div id="vol2" />
-           <div id="vol3" />
-           <div id="vol4" />
-           <div id="vol5" />
-         </li>
-         <li><button id="fs" type="button">Fullscreen</button></li>
       </div>
 
     );

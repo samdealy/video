@@ -41,6 +41,7 @@
 .playbar {
   background-color: rgba(23, 35, 34, 0.75);
   width: 100%;
+  margin-right: 17px;
   height: 35px;
   display: flex;
   align-items: center;
@@ -58,8 +59,16 @@
 }
 
 #progress-bar {
-  background-color: rgb(0, 173, 239);
   color: none;
   height: 9px;
   margin-left: 1px
+}
+
+#progress-bar[value] {
+  -webkit-appearance: none;
+   appearance: none;
+}
+
+#progress-bar[value]::-webkit-progress-bar {
+  background-color: rgb(0, 173, 239);
 }

@@ -4,7 +4,7 @@ export default class PlayPauseButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      icon: this.playIcon()
+      icon: this.playIcon(),
     };
     this.handleClick = this.handleClick.bind(this);
     this.setRef = this.setRef.bind(this);
@@ -17,7 +17,7 @@ export default class PlayPauseButton extends React.Component {
   }
 
   handleClick() {
-    const { videoEl } = this.props;
+    const { videoEl, toggleShowHide } = this.props;
     if (videoEl.paused || videoEl.ended) videoEl.play();
     else videoEl.pause();
 
