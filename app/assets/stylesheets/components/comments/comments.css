@@ -42,3 +42,10 @@
   margin-bottom: 20px;
   max-width: 468px;
 }
+
+.new-comment-form h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(26, 46, 59);
+}

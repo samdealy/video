@@ -1,5 +1,6 @@
 import React from "react";
 import CommentListItemContainer from './comment_list_item_container';
+import CreateCommentContainer from './comment_form/create_comment_container';
 
 export default class Comments extends React.Component {
   constructor(props) {
@@ -19,6 +20,7 @@ export default class Comments extends React.Component {
         <ul className="comments-list">
           {commentsList}
         </ul>
+        <CreateCommentContainer />
       </div>);
   }
 }
