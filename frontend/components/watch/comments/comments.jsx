@@ -1,0 +1,22 @@
+import React from "react";
+import CommentListItemContainer from './comment_list_item_container';
+
+export default class Comments extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const { comments } = this.props;
+    const commentsList = comments.map( (comment, i) => {
+      return (<CommentListItemContainer key={i} comment={comment} />);
+    });
+
+    return(
+      <div>
+        <ul>
+          {commentsList}
+        </ul>
+      </div>);
+  }
+}

@@ -9,3 +9,7 @@ export const getUser = (state, userId) => {
 export const currentVideo = (state, videoId) => {
   return state.entities.videos[videoId];
 };
+
+export const getComments = (state, commentIds) => {
+  return commentIds.map( id => state.entities.comments[id]);
+};
