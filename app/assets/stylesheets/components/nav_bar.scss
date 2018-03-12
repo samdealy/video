@@ -53,8 +53,6 @@
   font-family: Black-rose;
 }
 
-
-
 #search-bar {
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
@@ -73,30 +71,9 @@
   color: rgba(255, 255, 255, 0.5);
 }
 
-#join-button {
-  background-color: #7FC400;
-  padding: 7px 9px;
-  border-radius: 3px;
-  font-size: 14px;
-  color: white;
-  font-weight: 700;
-  white-space: nowrap;
-}
 
-.upload-button {
-  box-sizing: border-box;
-  width: 96px;
-  height: 33px;
-  padding: 2px;
-  margin-right: 0px;
-  border-color: #00ADEF;
-  background-color: #00ADEF;
-  border-top-left-radius: 0.1875rem;
-  border-top-right-radius: 0.1875rem;
-  border-bottom-right-radius: 0.1875rem;
-  border-bottom-left-radius: 0.1875rem;
-  display: flex;
-}
+
+
 
 .fa-cloud-upload-alt {
   color: white;
@@ -114,7 +91,6 @@
   background-color: white;
 }
 
-
 #search-bar-wrapper svg {
   margin-right: 3px;
   font-size: 13px;
@@ -125,25 +101,7 @@
   top: 27%;
 }
 
-#upload-button-link {
-  display: flex;
-  justify-content: space-around;
-  width: 120px;
-  align-items: center;
-}
-
-#upload-button-link span {
-  color: white;
-  font-size: 14px;
-  font-weight: 700;
-  margin-right: 3px;
-}
-
 //Hover Effects
-#join-button:hover {
-  background-color: #8aac42;
-}
-
 #login {
   color: rgba(255,255,255,.5);
   font-weight: 700;
@@ -152,11 +110,6 @@
 
 #login:hover{
   color: #FFF;
-}
-
-.upload-button:hover {
-  border-color: #08C;
-  background-color: #08C;
 }
 
 #search-bar:hover{

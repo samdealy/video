@@ -9,16 +9,24 @@
   padding-left: 2.5rem;
 }
 
-.video-info .page-header {
+.player-video-info .page-header {
   padding: 0;
   font-weight: 500;
 }
 
-.video-info .time-stamp {
+.player-video-info .time-stamp {
   color: rgb(134, 153, 166);
   font-size: 14px;
 }
 
-.video-info {
+.player-video-info {
   padding: 20px 0;
+}
+
+.player-video-info .user-list {
+  display: flex;
+}
+
+.player-video-info > * {
+  margin-bottom: 10px;
 }

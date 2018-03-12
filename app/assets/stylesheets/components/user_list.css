@@ -1,6 +1,7 @@
 .user-list-item {
   display: flex;
   align-items: center;
+  margin-right: 11px;
 }
 
 .user-list-item h4 {

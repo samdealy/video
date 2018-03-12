@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import VideoInfo from './video_info';
 import { withRouter } from 'react-router-dom';
-import { currentVideo, getUser } from '../../../reducers/selectors';
+import { currentVideo, getUser } from '../../reducers/selectors';
 // import { fetchVideo } from '../../../actions/video_actions';
 
 const mapStateToProps = (state, { match }) => {
@@ -10,12 +10,14 @@ const mapStateToProps = (state, { match }) => {
   const video = currentVideo(state, videoId) || {};
   const user = getUser(state, video.uploader_id) || {};
   return ({
+    className: 'player-video-info',
     videoTitle: video.title || '',
     videoDescription: video.description || '',
     viewCount: video.views || '',
     videoTimeStamp: video.timestamp || '',
     iconUrl: user.image_url || '',
-    userName: user.username || ''
+    userName: user.username || '',
+    followPresent: true
   });
 };
 

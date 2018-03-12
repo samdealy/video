@@ -1,0 +1,31 @@
+.follow-button {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border-color: #00ADEF;
+  background-color: rgb(0, 173, 239);
+  width: 85px;
+  height: 34px;
+
+}
+
+.follow-button svg {
+  height: 14px;
+}
+
+.follow-button path {
+  fill: white;
+}
+
+.follow-button span {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .1px;
+  color: white;
+}
+
+.follow-button:hover {
+  
+}
