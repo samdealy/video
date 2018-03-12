@@ -1,12 +1,17 @@
 @media(min-width: 1432px) {
   .beneath-video {
-    margin-left: 13% !important;
+    margin-left: 22% !important;
   }
 }
+
+/* @media(max-width: 1432px ){
+  .beneath-video:
+} */
 
 .beneath-video {
   /* margin-left: 32px; */
   padding-left: 2.5rem;
+
 }
 
 .player-video-info .page-header {
@@ -21,12 +26,21 @@
 
 .player-video-info {
   padding: 20px 0;
+  width: 904px;
 }
 
 .player-video-info .user-list {
   display: flex;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgb(227, 232, 233);
 }
 
 .player-video-info > * {
   margin-bottom: 10px;
+}
+
+.player-video-info  p {
+  color: #1a2e3b;
+  font-weight: 400;
+  font-size: 14px;
 }

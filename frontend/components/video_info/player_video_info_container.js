@@ -17,7 +17,8 @@ const mapStateToProps = (state, { match }) => {
     videoTimeStamp: video.timestamp || '',
     iconUrl: user.image_url || '',
     userName: user.username || '',
-    followPresent: true
+    followPresent: true, 
+    statsPresent: true
   });
 };
 
