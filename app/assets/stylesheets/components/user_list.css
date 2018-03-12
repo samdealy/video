@@ -11,3 +11,16 @@
   margin-left: 6px;
   font-weight: 600;
 }
+
+.username-timestamp {
+  display: flex;
+  align-items: center;
+}
+
+.username-timestamp h6 {
+  margin: 0;
+  color: rgb(134, 153, 166);
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 3px;
+}

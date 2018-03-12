@@ -10,6 +10,7 @@ const mapStateToProps = (state, { comment }) => {
   return ({
     iconUrl: commentAuthor.image_url || "",
     userName: commentAuthor.username || "",
+    timeStamp: comment.timestamp || "",
     body: comment.body || ""
   });
 };
