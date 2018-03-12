@@ -2,27 +2,30 @@ class Api::CommentsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
-    if @comment.save!
+    comment = Comment.new(comment_params)
+    comment.user_id = current_user.id
+    if comment.save!
+      @video = comment.video
       render 'api/videos/show'
     else
-        render json: @comment.errors.full_messages, status: 422
+        render json: comment.errors.full_messages, status: 422
     end
   end
 
   def update
-    @comment = current_user.comments.find(params[:id])
-    if @comment && @comment.update_attributes(video_params)
-      render "api/videos/show"
+    comment = current_user.comments.find(params[:id])
+    if comment && comment.update_attributes(video_params)
+      @video = comment.video
+      render 'api/videos/show'
     else
-      render json: @comment.errors.full_messages, status: 422
+      render json: comment.errors.full_messages, status: 422
     end
   end
 
   def destroy
     comment = Comment.find(params[:id])
     if comment && comment.user_id == current_user.id
+      @video = tweet.video
       tweet.destroy
       render "api/videos/show"
     elsif comment && comment.user_id != current_user.id
@@ -34,6 +37,6 @@ class Api::CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permite(:body, :video_id, :parent_comment_id)
+    params.require(:comment).permit(:body, :video_id, :parent_comment_id)
   end
 end
