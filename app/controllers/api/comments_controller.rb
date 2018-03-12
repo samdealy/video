@@ -14,7 +14,7 @@ class Api::CommentsController < ApplicationController
 
   def update
     comment = current_user.comments.find(params[:id])
-    if comment && comment.update_attributes(video_params)
+    if comment && comment.update_attributes(comment_params)
       @video = comment.video
       render 'api/videos/show'
     else
@@ -25,8 +25,8 @@ class Api::CommentsController < ApplicationController
   def destroy
     comment = Comment.find(params[:id])
     if comment && comment.user_id == current_user.id
-      @video = tweet.video
-      tweet.destroy
+      comment.destroy
+      @video = comment.video
       render "api/videos/show"
     elsif comment && comment.user_id != current_user.id
       render json: {error: ["Can't delete another users comment"]}, status: 403

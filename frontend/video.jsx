@@ -6,6 +6,7 @@ import Root from './components/root';
 //TODO Delete imports after testing
 import { logout } from './actions/session_actions';
 import { createVideo, editVideo, fetchVideo } from './actions/video_actions';
+import { createComment, editComment, deleteComment } from './actions/comment_actions';
 
 
 
@@ -33,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
     window.createVideo = createVideo;
     window.editVideo = editVideo;
     window.fetchVideo = fetchVideo;
+    window.createComment = createComment;
+    window.editComment = editComment;
+    window.deleteComment = deleteComment;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

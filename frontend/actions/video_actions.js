@@ -7,7 +7,8 @@ export const receiveVideo = payload => {
   return({
     type: RECEIVE_VIDEO,
     video: payload.video,
-    user: payload.user
+    user: payload.user,
+    comments: payload.comments
   });
 };
 

@@ -29,7 +29,6 @@ class VideoPlayer extends React.Component {
   }
 
   getCurrentTime(e) {
-    console.log("UPDATE", e.target.currentTime)
     this.setState({ currentTime: e.target.currentTime });
   }
 
