@@ -16,10 +16,14 @@ users = User.create([
     {username: "Joe Buddy", email: "joe.com", password: '123456'},
   ])
 
-first_video_url = "http://s3.amazonaws.com/fsp-video-dev/" +
-                  "videos/clips/000/000/050/original/" +
-                  "grass_hopper.mp4?1520721819"
-fist_video = File.new(first_video_url)
+video_url_1 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_1_4.mp4"
+video_url_2 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin+(2%3A4).mp4"
+video_url_3 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin+(3%3A4).mp4"
+video_url_4 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin+(4%3A4).mp4"
 
-Video.create({ title: "Grass Hopper takes flight", uploader_id: User.first.id,
-               asset: first_video })
+Video.create([
+    { title: "Boys Latin (1/4)", uploader_id: User.first.id, clip: video_url_1 },
+    # { title: "Boys Latin (2/4)", uploader_id: User.first.id, clip: video_url_2 },
+    # { title: "Boys Latin (3/4)", uploader_id: User.first.id, clip: video_url_3 },
+    # { title: "Boys Latin (4/4)", uploader_id: User.first.id, clip: video_url_4 }
+  ])
