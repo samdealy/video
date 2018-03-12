@@ -22,3 +22,10 @@ export const editVideo = video => (
     data: { video }
   })
 );
+
+export const increaseViews = videoId => (
+  $.ajax({
+    method: 'PATCH',
+    url: `api/videos/${videoId}/views`
+  })
+);

@@ -1,6 +1,7 @@
 import React from 'react';
 import PlayPauseButton from './control_features/play_pause_button';
 import ProgressBar from './control_features/progress_bar';
+import Fullscreen from './control_features/fullscreen';
 
 class ControlBar extends React.Component {
 

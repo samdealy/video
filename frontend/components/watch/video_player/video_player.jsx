@@ -16,6 +16,7 @@ class VideoPlayer extends React.Component {
     this.updateHasStarted = this.updateHasStarted.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
+    this.updateViews = this.updateViews.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +29,7 @@ class VideoPlayer extends React.Component {
   }
 
   getCurrentTime(e) {
+    console.log("UPDATE", e.target.currentTime)
     this.setState({ currentTime: e.target.currentTime });
   }
 
@@ -47,6 +49,12 @@ class VideoPlayer extends React.Component {
     if (!this.state.hasStarted) this.setState({ hasStarted: true});
   }
 
+  //Increase views after video has played
+  updateViews() {
+    const { videoId, increaseViews} = this.props;
+    increaseViews(videoId);
+  }
+
   render() {
     const { videoClipUrl, clipType, hasStarted } = this.props;
     return(
@@ -60,7 +68,7 @@ class VideoPlayer extends React.Component {
                  onLoadedMetadata={this.getDuration}
                  onTimeUpdate={this.getCurrentTime}
                  onPlay={this.updateHasStarted}
-                 onEnded={this.setEnded} />
+                 onEnded={this.updateViews} />
           <ControlBar videoEl={this.videoEl}
                       duration={this.duration}
                       currentTime={this.state.currentTime}

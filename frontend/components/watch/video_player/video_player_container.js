@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import VideoPlayer from './video_player';
 import { withRouter } from 'react-router-dom';
 import { currentVideo } from '../../../reducers/selectors';
-import { fetchVideo } from '../../../actions/video_actions';
+import { fetchVideo, increaseViews } from '../../../actions/video_actions';
 
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
@@ -18,7 +18,8 @@ const mapStateToProps = (state, { match }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchVideo: videoId => dispatch(fetchVideo(videoId))
+    fetchVideo: videoId => dispatch(fetchVideo(videoId)), 
+    increaseViews:  videoId => dispatch(increaseViews(videoId))
   };
 };
 

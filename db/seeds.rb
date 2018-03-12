@@ -8,9 +8,11 @@
 User.destroy_all
 Video.destroy_all
 
+didion_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didion.png"
+
 users = User.create([
     {username: "Sam Dealy", email: "me.com", password: '123456'},
-    {username: "Joan Didion", email: "joan.com", password: '123456'},
+    {username: "Joan Didion", email: "joan.com", password: '123456', image: didion_image},
     {username: "Mahershala Ali", email: "ali.com", password: '123456'},
     {username: "Noah Lennox", email: "noah.com", password: '123456'},
     {username: "Joe Buddy", email: "joe.com", password: '123456'},

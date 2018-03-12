@@ -1,6 +1,6 @@
 @media(min-width: 1432px) {
   .beneath-video {
-    margin-left: 22% !important;
+    margin-left: calc(50% - 527px)
   }
 }
 

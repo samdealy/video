@@ -35,3 +35,9 @@ export const editVideo = video => dispatch => {
     .then( video => dispatch( receiveVideo(video)),
            err   => dispatch( receiveErrors(err.responseJSON)));
 };
+
+export const increaseViews = videoId => dispatch => {
+  return APIUtil.increaseViews(videoId)
+    .then( video => dispatch( receiveVideo(video)),
+           err   => dispatch( receiveErrors(err.responseJSON)));
+};

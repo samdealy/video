@@ -2,13 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import VideoInfo from './video_info';
 import { withRouter } from 'react-router-dom';
-import { currentVideo, getUser } from '../../reducers/selectors';
+import { currentVideo, getUser, getCurrentUser } from '../../reducers/selectors';
 // import { fetchVideo } from '../../../actions/video_actions';
 
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
   const user = getUser(state, video.uploader_id) || {};
+  const currentUser = getCurrentUser(state);
+  
+  const followPresent = video.uploader_id !== currentUser.id ? true : false;
+  
   return ({
     className: 'player-video-info',
     videoTitle: video.title || '',
@@ -17,7 +21,7 @@ const mapStateToProps = (state, { match }) => {
     videoTimeStamp: video.timestamp || '',
     iconUrl: user.image_url || '',
     userName: user.username || '',
-    followPresent: true, 
+    followPresent, 
     statsPresent: true
   });
 };

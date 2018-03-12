@@ -27,6 +27,17 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def increase_views
+    @video = Video.find(params[:id])
+    if @video
+      @video.views += 1
+      @video.save!
+      render "api/videos/show"
+    else
+      render json: @video.errors.full_messages, status: 422
+    end
+  end
+
 
   private
   def video_params
