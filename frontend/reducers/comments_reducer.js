@@ -5,7 +5,7 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_VIDEO:
-      return merge({}, state, action.comments);
+      return action.comments;
     default:
       return state;
   }
