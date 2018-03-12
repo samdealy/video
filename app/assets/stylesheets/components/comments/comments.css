@@ -1,0 +1,44 @@
+.comments-section {
+  border-top: 1px solid rgb(227, 232, 233);
+}
+
+.comments-section h3 {
+  margin-top: 23px;
+  margin-bottom: 0;
+  color: #1a2e3b;
+  font-size: 18px;
+}
+
+.comments-section .user-list-item .user-icon {
+  height: 40px;
+  width: 40px;
+  margin-bottom: 12px
+}
+
+.comment-icon-wrapper {
+  width: 71px;
+  height: 95px;
+  display: flex;
+  align-items: center;
+}
+
+.comment-body {
+  width: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid rgb(227, 232, 233);
+}
+
+.user-list-item .comment-body h4 {
+  margin: 0;
+  color: rgb(26, 46, 59);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.user-list-item .comment-body p {
+  font-size: 14px;
+  color: rgb(26, 46, 59);
+  font-weight: 400px;
+  margin-bottom: 20px;
+  max-width: 468px;
+}

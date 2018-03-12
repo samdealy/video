@@ -8,13 +8,15 @@ export default class Comments extends React.Component {
 
   render() {
     const { comments } = this.props;
+    const commentSize = comments.length;
     const commentsList = comments.map( (comment, i) => {
       return (<CommentListItemContainer key={i} comment={comment} />);
     });
 
     return(
-      <div>
-        <ul>
+      <div className="comments-section">
+        <h3>{commentSize} Comments</h3>
+        <ul className="comments-list">
           {commentsList}
         </ul>
       </div>);

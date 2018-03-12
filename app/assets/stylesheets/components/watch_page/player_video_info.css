@@ -6,7 +6,7 @@
 
 .beneath-video {
   padding-left: 2.5rem;
-
+  width: 904px;
 }
 
 .player-video-info .page-header {
@@ -21,7 +21,6 @@
 
 .player-video-info {
   padding: 20px 0;
-  width: 904px;
 }
 
 .player-video-info .user-list {
