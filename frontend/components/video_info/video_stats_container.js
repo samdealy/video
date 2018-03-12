@@ -9,7 +9,7 @@ const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
   return ({
-    plays: video.plays || "",
+    views: video.views || 0,
     likes: "",
     comments: ""
   });

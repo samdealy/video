@@ -1,6 +1,7 @@
 import React from "react";
 import UserListItem from '../user/user_list_item';
 import FollowButtonContainer from "../buttons/follow_button_container";
+import VideoStatsContainer from './video_stats_container'
 import videoStats from './video_stats_container';
 
 

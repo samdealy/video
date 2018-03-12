@@ -4,12 +4,7 @@
   }
 }
 
-/* @media(max-width: 1432px ){
-  .beneath-video:
-} */
-
 .beneath-video {
-  /* margin-left: 32px; */
   padding-left: 2.5rem;
 
 }
@@ -43,4 +38,30 @@
   color: #1a2e3b;
   font-weight: 400;
   font-size: 14px;
+}
+
+.video-stat-icon {
+  width: 18px;
+  height: 18px;
+  color: rgb(26, 46, 59);
+  font-size: 16px;
+}
+
+.video-stats {
+  display: flex;
+}
+
+.video-stats li {
+  margin-left: 10px;
+  display: flex
+}
+
+.video-stats li svg {
+  margin-right: 5px;
+}
+
+.video-stats li span {
+  color: rgb(26, 46, 59);
+  font-size: 16px;
+  font-weight: 400px;
 }
