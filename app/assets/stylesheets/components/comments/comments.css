@@ -112,3 +112,11 @@
   color: #b3bfc8;
   font-size: 14px;
 }
+
+.comment-form-buttons.hide {
+  display: none
+}
+
+.comment-form-buttons.show {
+  display: flex;
+}

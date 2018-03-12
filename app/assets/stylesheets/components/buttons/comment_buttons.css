@@ -15,9 +15,6 @@
 
 }
 
-.comment-form-buttons {
-  display: none;
-}
 
 .create-comment-section .comment-submit:hover {
   border-color: #08C;
@@ -26,8 +23,4 @@
   transition-duration: .1s;
   transition-property: all;
   transition-timing-function: ease-in-out;
-}
-
-textarea:focus + .comment-form-buttons {
-  display: flex;
 }
