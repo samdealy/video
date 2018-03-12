@@ -36,7 +36,6 @@ class ControlBar extends React.Component {
              <div id="vol4" />
              <div id="vol5" />
            </li>
-           <li><button id="fs" type="button">Fullscreen</button></li>
          </div>
       </div>
 

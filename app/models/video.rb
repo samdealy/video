@@ -3,7 +3,8 @@ class Video < ApplicationRecord
     unless: Proc.new {|video| video.title.blank? }
 
   belongs_to :uploader, class_name: :User
-
+  has_many :comments, dependent: :destroy
+  
   has_attached_file :clip, styles: {
     :medium => {
       :geometry => "640x480",

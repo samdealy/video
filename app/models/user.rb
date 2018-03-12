@@ -4,6 +4,7 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   has_many :videos, foreign_key: :uploader_id, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_attached_file :image, default_url: "Dealy_Headshot_MLS.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
