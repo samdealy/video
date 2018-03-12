@@ -2,7 +2,7 @@ class Api::CommentsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    debugger
+    
     comment = Comment.new(comment_params)
     comment.user_id = current_user.id
     if comment.save!

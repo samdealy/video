@@ -1,0 +1,33 @@
+.create-comment-section .comment-submit {
+  height: 42px;
+  width: 129px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border-color: #00ADEF;
+  background-color: rgb(0, 173, 239);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+
+}
+
+.comment-form-buttons {
+  display: none;
+}
+
+.create-comment-section .comment-submit:hover {
+  border-color: #08C;
+  background-color: #08C;
+  transition-delay: 0s;
+  transition-duration: .1s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+textarea:focus + .comment-form-buttons {
+  display: flex;
+}

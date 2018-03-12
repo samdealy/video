@@ -7,6 +7,7 @@
 .beneath-video {
   padding-left: 2.5rem;
   width: 904px;
+  border-right: 1px solid rgb(227, 232, 233);
 }
 
 .player-video-info .page-header {
@@ -25,6 +26,7 @@
 
 .player-video-info .user-list {
   display: flex;
+  width: 98%;
   padding-bottom: 18px;
   border-bottom: 1px solid rgb(227, 232, 233);
 }

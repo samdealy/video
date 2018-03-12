@@ -10,7 +10,6 @@ class CommentForm extends React.Component {
   }
 
   updateBody(e) {
-    debugger
     this.setState({body: e.target.value});
   }
 
@@ -24,22 +23,21 @@ class CommentForm extends React.Component {
   }
 
   render () {
-    const { formType, header, className } = this.props;
+    const { formType, header, className, placeholder } = this.props;
     const cancelButton = formType === "Add" ? "" : this.cancelButton();
 
     return (
       <div className={className}>
         <h4>{header}</h4>
         <form onSubmit={this.handleSubmit}>
-          <label>
             <textarea
               value={this.state.body}
-              onChange={this.updateBody} />
-          </label>
-          <div className="comment-form-buttons">
-            <input type="submit" value={`${formType} comment`} />
-            {cancelButton}
-          </div>
+              onChange={this.updateBody}
+              placeholder={placeholder}/>
+            <div className="comment-form-buttons">
+              <input className="comment-submit" type="submit" value={`${formType} comment`} />
+              {cancelButton}
+            </div>
         </form>
       </div>
     );

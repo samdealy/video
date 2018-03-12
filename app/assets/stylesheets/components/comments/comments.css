@@ -1,4 +1,5 @@
 .comments-section {
+  width: 98%;
   border-top: 1px solid rgb(227, 232, 233);
 }
 
@@ -7,6 +8,11 @@
   margin-bottom: 0;
   color: #1a2e3b;
   font-size: 18px;
+}
+
+
+.comments-section .comments-list .user-list-item {
+  margin-right: 0px;
 }
 
 .comments-section .user-list-item .user-icon {
@@ -23,7 +29,7 @@
 }
 
 .comment-body {
-  width: 100%;
+  width: 92%;
   padding: 20px 0;
   border-bottom: 1px solid rgb(227, 232, 233);
 }
@@ -43,9 +49,66 @@
   max-width: 468px;
 }
 
+.create-comment-section {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.create-comment-section .user-icon {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 19px;
+
+  position: absolute;
+  top: 26px;
+  left: 2px;
+}
+
+.new-comment-form {
+  width: 100%;
+  margin-left: 59px;
+}
+
 .new-comment-form h4 {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
   color: rgb(26, 46, 59);
+}
+
+.new-comment-form textarea {
+  background-color: white;
+  border: 1px solid rgb(134, 153, 166);
+  border-radius: 3px;
+  box-shadow: inset 0 0 0 0 #FFF;
+  height: auto;
+  width: 97%;
+  margin-top: 9px;
+  padding: 11px;
+
+  transition-delay: 0s;
+  transition-duration: 0.8s;
+  transition-property: all;
+  transition-timing-function: ease-out;
+}
+
+.comments-list li:last-child div {
+  border: none;
+}
+
+.new-comment-form textarea:focus {
+  box-shadow: 0 0 0 0.0625rem #08c;
+  border-color: #08c;
+    box-shadow: 0 0 0 0.0625rem #08c
+}
+
+.new-comment-form .comment-form-buttons {
+  margin-top: 25px;
+}
+
+.new-comment-form ::-webkit-input-placeholder {
+  color: #b3bfc8;
+  font-size: 14px;
 }

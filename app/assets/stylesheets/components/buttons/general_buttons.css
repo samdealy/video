@@ -1,4 +1,4 @@
-.upload-button:hover, .follow-button:hover {
+.upload-button:hover, .follow-button:hover,  {
   border-color: #08C;
   background-color: #08C;
   transition-delay: 0s;
