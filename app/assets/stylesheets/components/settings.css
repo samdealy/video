@@ -64,26 +64,7 @@
   margin-left: 30px;
 }
 
-.settings-aside-wrapper > a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  margin-top: 23px;
-  border: 1px solid rgb(134, 153, 166);
-  border-radius: 3px;
 
-  font-size: 14px;
-  font-weight: 700;
-  color: rgb(134, 153, 166);
-
-  transition-delay: 0s;
-  transition-duration: 0.1s;
-  transition-property: all;
-  transition-timing-function: ease-in-out;
-
-
-}
 
 .settings-aside {
   position: relative;
@@ -114,10 +95,4 @@
 
 .settings-form .upload-button:hover {
   cursor: pointer;
-}
-
-.settings-aside-wrapper > a:hover {
-  color: rgb(26, 46, 59);
-  border: 1px solid rgb(227, 232, 233);
-  background-color: rgb(227, 232, 233);
 }

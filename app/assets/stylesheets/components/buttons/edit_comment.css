@@ -1,0 +1,47 @@
+.edit-comment-section .comment-submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 132px;
+  border: 1px solid rgb(238, 241, 242);
+  border-radius: 3px;
+
+  font-size: 14px;
+  font-weight: 700;
+  color: rgb(26, 46, 59);
+  background-color: #EEF1F2;
+
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+
+.comment-cancel-button {
+  width: 84px;
+  border: 1px solid rgb(26, 46, 59);
+  border-radius: 3px;
+  color: rgb(26, 46, 59);
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.edit-comment-section .comment-submit:hover {
+  background-color: rgb(208, 216, 219);
+}
+
+.comment-cancel-button:hover {
+  background-color: #3A5161;
+  border-color: #3A5161;
+  color: white;
+}
+
+.edit-comment-section .comment-form-buttons {
+  margin-top: 20px;
+}

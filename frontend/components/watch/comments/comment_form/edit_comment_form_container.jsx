@@ -12,7 +12,7 @@ const mapStateToProps = (state, { match, commentId, cancel, hideEditForm }) => {
     formType: "Edit",
     header: "",
     className: "edit-comment-section",
-    placeholder: comment.body,
+    placeholder: "",
     hideEditForm: hideEditForm
   });
 };

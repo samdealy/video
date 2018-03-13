@@ -1,5 +1,8 @@
 .edit-comment-section textarea {
   border: 1px solid rgb(208, 216, 219);
+  font-size: 14px;
+  font-stretch: 100%;
+  color: rgb(78, 90, 94);
 }
 
 .comments-section .comments-list .user-list-item {
@@ -7,14 +10,12 @@
 }
 
 .edit-delete-comment {
+  display: none;
   position: absolute;
   top: 2px;
   right: 0px;
-}
 
-.edit-delete-comment {
   font-size: 11px;
-  display: flex;
   font-weight: 700;
   width: 67px;
   justify-content: space-between;
@@ -37,4 +38,8 @@
 }
 .delete-comment:hover {
   color: #D93636;
+}
+
+.user-list-item:hover > .edit-delete-comment {
+  display:flex;
 }
