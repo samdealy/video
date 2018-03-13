@@ -1,7 +1,7 @@
 import React from "react";
 import { likeIcon, commentIcon, viewIcon } from "./video_stat_icons"
 
-export default ({ views, likes, comments }) => {
+export default ({ views, likes, numberComments }) => {
   return(
     <ul className="video-stats">
       <li className="views">
@@ -14,7 +14,7 @@ export default ({ views, likes, comments }) => {
       </li>
       <li className="comments">
         {commentIcon}
-        {comments}
+        {numberComments}
       </li>
     </ul>
   )

@@ -8,10 +8,12 @@ import { currentVideo } from '../../reducers/selectors';
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
+  const commentIds = video.comment_ids || [];
+  const numberComments = commentIds.length
   return ({
     views: video.views || 0,
     likes: "",
-    comments: ""
+    numberComments
   });
 };
 
