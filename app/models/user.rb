@@ -6,6 +6,23 @@ class User < ApplicationRecord
   has_many :videos, foreign_key: :uploader_id, dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  has_many :followings_as_follower,
+    class_name: :Followings,
+    foreign_key: :follower_id,
+    dependent: :destroy
+
+  has_many :followings_as_leader,
+    class_name: :Followings,
+    foreign_key: :leader_id,
+    dependent: :destroy
+
+  has_many :leaders,
+    through: :followings_as_follower,
+    source: :leader
+
+  has_many :followers,
+    through: :followings_as_leader,
+    source: :follower
 
   has_attached_file :image, default_url: "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/no_pic.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
