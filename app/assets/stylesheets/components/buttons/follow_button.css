@@ -34,3 +34,26 @@
   display: flex;
   align-items: center;
 }
+
+.follow-button.following {
+  background-color: #7fc400;
+  width: 105px;
+}
+
+.follow-button span {
+  margin-left: 4px;
+}
+
+.follow-button.following:hover {
+  border-color: #e3e8e9;
+  background-color: #e3e8e9;
+}
+
+.follow-button.following:hover span {
+  font-weight: 700;
+  color: rgb(26, 46, 59)
+}
+
+.follow-button.following:hover path {
+  fill: rgb(26, 46, 59)
+}
