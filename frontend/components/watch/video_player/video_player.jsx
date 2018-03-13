@@ -12,8 +12,10 @@ class VideoPlayer extends React.Component {
       hasEnded: false,
     };
     this.getDuration = this.getDuration.bind(this);
-    this.getCurrentTime = this.getCurrentTime.bind(this);
-    this.updateHasStarted = this.updateHasStarted.bind(this);
+    this.stopInterval = this.stopInterval.bind(this);
+    // this.getCurrentTime = this.getCurrentTime.bind(this);
+    this.handlePlay = this.handlePlay.bind(this);
+    this.handleEnd = this.handleEnd.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
     this.toggleHide = this.toggleHide.bind(this);
     this.updateViews = this.updateViews.bind(this);
@@ -28,9 +30,9 @@ class VideoPlayer extends React.Component {
     this.duration = e.target.duration;
   }
 
-  getCurrentTime(e) {
-    this.setState({ currentTime: e.target.currentTime });
-  }
+  // getCurrentTime(e) {
+  //   this.setState({ currentTime: e.target.currentTime });
+  // }
 
   //Show and hide the controls methods
   toggleShow() {
@@ -44,10 +46,22 @@ class VideoPlayer extends React.Component {
     this.setState({ showHide: nextShowHide});
   }
 
-  updateHasStarted(e) {
-    if (!this.state.hasStarted) this.setState({ hasStarted: true});
+  handlePlay(e) {
+    if (!this.state.hasStarted) this.setState({ hasStarted: true, currentTime: 0});
+    this.intervalId = setInterval( ()=> {
+      this.setState({ currentTime: this.state.currentTime + 0.01 });
+    }, 10);
   }
 
+  stopInterval() {
+    clearInterval(this.intervalId);
+  }
+
+  handleEnd() {
+    this.stopInterval();
+    this.updateViews();
+    this.setState({ currentTime: 0 });
+  }
   //Increase views after video has played
   updateViews() {
     const { videoId, increaseViews} = this.props;
@@ -65,9 +79,9 @@ class VideoPlayer extends React.Component {
                  width="100%"
                  ref={ videoEl => this.videoEl = videoEl}
                  onLoadedMetadata={this.getDuration}
-                 onTimeUpdate={this.getCurrentTime}
-                 onPlay={this.updateHasStarted}
-                 onEnded={this.updateViews} />
+                 onPlay={this.handlePlay}
+                 onPause={this.stopInterval}
+                 onEnded={this.handleEnd} />
           <ControlBar videoEl={this.videoEl}
                       duration={this.duration}
                       currentTime={this.state.currentTime}

@@ -13,7 +13,6 @@ export default class ProgressBar extends React.Component {
 
   setRef(progressBar) {
     this.progressBar = progressBar;
-
   }
 
   skipAhead(e) {
