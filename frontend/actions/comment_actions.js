@@ -15,6 +15,7 @@ export const editComment = comment => dispatch => {
 };
 
 export const deleteComment = commentId => dispatch => {
+  
   return APIUtil.deleteComment(commentId)
     .then( video => dispatch( receiveVideo(video)),
            err   => dispatch( receiveErrors(err.responseJSON)));

@@ -28,7 +28,7 @@ class CommentForm extends React.Component {
     this.handleClickOutside();
   }
 
-  handleClickOutside(e) {
+  handleClickOutside() {
     this.setState({ hideShow: "hide" });
   }
 
@@ -38,7 +38,10 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then( () => this.setState({ body: '' }));
+    this.props.action(this.state).then( () => {
+      this.handleClickOutside();
+      this.setState({ body: '' });
+    });
   }
 
   cancelButton() {

@@ -27,6 +27,7 @@ class Api::CommentsController < ApplicationController
     if comment && comment.user_id == current_user.id
       comment.destroy
       @video = comment.video
+      
       render "api/videos/show"
     elsif comment && comment.user_id != current_user.id
       render json: {error: ["Can't delete another users comment"]}, status: 403

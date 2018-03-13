@@ -5,18 +5,26 @@ import CommentListItem from './comment_list_item';
 import { getComments, currentVideo } from '../../../reducers/selectors';
 import { createComment, editComment, deleteComment } from '../../../actions/comment_actions';
 
-const mapStateToProps = (state, { comment }) => {
+const mapStateToProps = (state, { comment, match }) => {
   const commentAuthor = state.entities.users[comment.user_id] || {};
+
+  
   return ({
     iconUrl: commentAuthor.image_url || "",
     userName: commentAuthor.username || "",
     timeStamp: comment.timestamp || "",
-    body: comment.body || ""
+    body: comment.body || "",
+    commentId: comment.id || "",
+    userId: comment.user_id || "",
+    videoId: match.params.videoId || "",
+    currentUserId: state.session.currentUserId || "",
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    editComment: comment => dispatch(editComment(comment)), 
+    deleteComment: commentId => dispatch(deleteComment(commentId))
   };
 };
 
