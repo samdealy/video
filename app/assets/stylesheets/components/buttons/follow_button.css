@@ -27,5 +27,10 @@
 }
 
 .follow-button:hover {
-  
+
+}
+
+.follow-button-inner-wrapper {
+  display: flex;
+  align-items: center;
 }

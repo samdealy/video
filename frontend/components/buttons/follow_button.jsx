@@ -5,7 +5,7 @@ export default class FollowButton extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hover: false
+      hover: false,
     };
   }
 
@@ -21,12 +21,12 @@ export default class FollowButton extends React.Component {
   }
 
   render() {
-    const { uploaderId, follow, unfollow, alreadyFollows } = this.props;
+    const { uploaderId, follow, unfollow,
+            alreadyFollows, classState } = this.props;
     const buttonInnerHtml = this.determineHtml();
     const action = alreadyFollows ? unfollow : follow;
-
     return(
-      <button className="follow-button" onClick={() => action(uploaderId)}
+      <button className={`follow-button ${classState}`}onClick={() => action(uploaderId)}
               onMouseEnter={() => this.setState({ hover: true  })}
               onMouseLeave={() => this.setState({ hover: false })}>
         {buttonInnerHtml}
