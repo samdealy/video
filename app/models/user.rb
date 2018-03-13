@@ -7,12 +7,12 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   has_many :followings_as_follower,
-    class_name: :Followings,
+    class_name: :Following,
     foreign_key: :follower_id,
     dependent: :destroy
 
   has_many :followings_as_leader,
-    class_name: :Followings,
+    class_name: :Following,
     foreign_key: :leader_id,
     dependent: :destroy
 

@@ -6,7 +6,7 @@ class Api::FollowingsController < ApplicationController
     following.follower_id = current_user.id
     if following.save!
       @users   = [following.follower, following.leader]
-      render 'api/users/index'
+      render 'api/users/users'
     else
       render json: following.errors.full_messages, status: 422
     end
@@ -17,7 +17,7 @@ class Api::FollowingsController < ApplicationController
     if following_is_destroyable?(following)
       following.destroy
       @users = [following.follower, following.leader]
-      render 'api/users/index'
+      render 'api/users/users'
     elsif following && !(following_is_destroyable?(following))
       render json: {error: ["Can't edit another users follows"]}, status: 403
     else
