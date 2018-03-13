@@ -24,6 +24,10 @@ class User < ApplicationRecord
     through: :followings_as_leader,
     source: :follower
 
+  has_many :followed_videos,
+    through: :leaders,
+    source: :videos
+
   has_attached_file :image, default_url: "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/no_pic.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 

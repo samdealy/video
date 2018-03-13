@@ -37,6 +37,11 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def feed_videos
+    @videos = current_user.followed_videos
+    render "api/videos/index"
+  end
+
 
   private
   def video_params

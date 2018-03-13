@@ -6,7 +6,7 @@ class Api::FollowingsController < ApplicationController
     following.follower_id = current_user.id
     if following.save!
       @users   = [following.follower, following.leader]
-      render 'api/users/users'
+      render 'api/users/index'
     else
       render json: following.errors.full_messages, status: 422
     end
@@ -17,7 +17,7 @@ class Api::FollowingsController < ApplicationController
     if following
       following.destroy
       @users = [following.follower, following.leader]
-      render 'api/users/users'
+      render 'api/users/index'
     else
       render json: {error: ["Can't find follower / followed user"]}, status: 404
     end

@@ -1,6 +1,14 @@
-json.extract! video,
-  :id, :uploader_id, :title, :description, :views, :clip_content_type
-json.clip_url video_path(video.clip.url)
-json.thumb_url image_path(video.clip.url(:thumb))
-json.partial! "util/time", timestamp: video.created_at
-json.comment_ids video.comments.map{|com| com.id}
+json.partial! "api/videos/video_info", video: video
+
+all_users = [video.uploader] + video.comments.map{|com| com.user }
+json.set! :users do
+  all_users.each do |user|
+    json.set! user.id do
+      json.partial! "api/users/user", user: user
+    end
+  end
+end
+
+json.set! :comments do
+  json.partial! "api/comments/index", comments: video.comments
+end

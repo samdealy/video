@@ -21,13 +21,19 @@
 }
 
 .player-video-info {
-  padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 12px;
+}
+
+.player-video-info .page-header {
+  margin-bottom: 0;
 }
 
 .player-video-info .user-list {
   display: flex;
   width: 98%;
   padding-bottom: 18px;
+  margin-top: 13px;
   border-bottom: 1px solid rgb(227, 232, 233);
 }
 
@@ -50,6 +56,7 @@
 
 .video-stats {
   display: flex;
+  margin-top: 31px;
 }
 
 .video-stats li {
