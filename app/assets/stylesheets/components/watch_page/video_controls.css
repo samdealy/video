@@ -3,7 +3,8 @@
   align-items: flex-end;
   position: absolute;
   width: 100%;
-  top: 492px;
+  height: 7%;
+  top: 91%;
   right: -9px;
 
   transition: opacity .25s ease-out;
