@@ -1,4 +1,4 @@
-export const createFollowing = leader_id => {
+export const follow = leader_id => {
   return $.ajax({
     method: 'POST',
     url: '/api/followings',
