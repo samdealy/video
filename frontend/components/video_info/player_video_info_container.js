@@ -21,6 +21,7 @@ const mapStateToProps = (state, { match }) => {
     videoTimeStamp: video.timestamp || '',
     iconUrl: user.image_url || '',
     userName: user.username || '',
+    uploaderId: video.uploader_id || '',
     followPresent, 
     statsPresent: true
   });
