@@ -15,7 +15,7 @@ export default class VideoInfo extends React.Component {
     videoDescription = videoDescription || "";
 
     const followButton = followPresent ?
-      <FollowButtonContainer uploaderId={uploaderid}/> : "";
+      <FollowButtonContainer uploaderId={uploaderId}/> : "";
     const videoStats = statsPresent ?
       <VideoStatsContainer /> : "";
 
