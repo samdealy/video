@@ -16,9 +16,9 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     const { handleClickOutside, formType, hideEditForm } = this.props;
     e.preventDefault();
+    this.setState({ body: '' });
     this.props.action(this.state).then( () => {
-      this.setState({ body: '' });
-      (formType === "Edit") ? hideEditForm() : handleClickOutside()
+      (formType === "Edit") ? hideEditForm() : handleClickOutside();
     });
   }
 
