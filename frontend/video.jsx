@@ -5,9 +5,9 @@ import Root from './components/root';
 
 //TODO Delete imports after testing
 import { logout } from './actions/session_actions';
-import { createVideo, editVideo, fetchVideo } from './actions/video_actions';
-import { createComment, editComment, deleteComment } from './actions/comment_actions';
-
+// import { createVideo, editVideo, fetchVideo } from './actions/video_actions';
+// import { createComment, editComment, deleteComment } from './actions/comment_actions';
+import { createFollowing, unfollow, removeFollower } from './util/user_util';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,13 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //TODO Delete after testing
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.logout   = logout;
-    window.createVideo = createVideo;
-    window.editVideo = editVideo;
-    window.fetchVideo = fetchVideo;
-    window.createComment = createComment;
-    window.editComment = editComment;
-    window.deleteComment = deleteComment;
+
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

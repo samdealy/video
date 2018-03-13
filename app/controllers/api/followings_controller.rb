@@ -2,7 +2,7 @@ class Api::FollowingsController < ApplicationController
   before_action :require_logged_in
 
   def create
-    following = Following.new(following_params)
+    following = Following.new(leader_id: params[:leader_id])
     following.follower_id = current_user.id
     if following.save!
       @users   = [following.follower, following.leader]
@@ -24,10 +24,6 @@ class Api::FollowingsController < ApplicationController
   end
 
   private
-  def following_params
-    params.require(:following).permit(:leader_id)
-  end
-
   def following_as_follower
     current_user.followings_as_follower.find_by(leader_id: params[:id])
   end

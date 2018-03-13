@@ -1,11 +1,22 @@
-export const createFollowing = (followerId, leaderId)=> {
+export const createFollowing = leader_id => {
   return $.ajax({
     method: 'POST',
     url: '/api/followings',
-    data: { following:
-      {follower_id: followerId, leader_id: leaderId}
-    }
+    data: { leader_id }
   });
 };
 
-export const deleteFollowing
+export const unfollow = leaderId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/followings/${leaderId}`,
+    data: { unfollow: true }
+  });
+};
+
+export const removeFollower= followerId => {
+  return $.ajax({
+    method: 'DELETE',
+    url: `/api/followings/${followerId}`,
+  });
+};
