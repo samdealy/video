@@ -70,6 +70,7 @@ class VideoPlayer extends React.Component {
 
   render() {
     const { videoClipUrl, clipType, hasStarted } = this.props;
+
     return(
       <div className="video-player-background">
         <figure className="video-player-size-container"

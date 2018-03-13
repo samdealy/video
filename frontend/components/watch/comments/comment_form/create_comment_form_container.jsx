@@ -26,14 +26,49 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 class CreateCommentFormContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hideShow: "hide"
+    };
+    this.handleClick = this.handleClick.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.setRef = this.setRef.bind(this);
+  }
+
+  setRef(form) {
+    this.form = form;
+  }
+
+  componentWillMount() {
+    document.addEventListener("mousedown", this.handleClick, false);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.handleClick, false);
+  }
+
+  handleClick(e) {
+    if (this.form.contains(e.target)) {
+      this.setState({ hideShow: "show"});
+      return;
+    }
+    this.handleClickOutside();
+  }
+
+  handleClickOutside() {
+    this.setState({ hideShow: "hide" });
+  }
+
   render() {
     const { iconUrl, comment, formType,
             header, className, placeholder, action } = this.props;
     return(
       <div className="create-comment-section">
         <img className="user-icon" src={iconUrl}></img>
-        <CommentForm comment={comment} formType={formType} header={header}
-            className={className} placeholder={placeholder} action={action} />
+        <CommentForm comment={comment} hideShow={this.state.hideShow}
+                     formType={formType} header={header} className={className} placeholder={placeholder} action={action}
+                     handleClickOutside={this.handleClickOutside} setRef={this.setRef}/>
       </div>);
   }
 }
