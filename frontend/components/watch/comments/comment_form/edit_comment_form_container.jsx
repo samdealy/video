@@ -3,10 +3,18 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import CommentForm from './comment_form';
 import { editComment } from '../../../../actions/comment_actions';
-import { getCurrentUser } from '../../../../reducers/selectors';
+import { getCurrentUser, getComment } from '../../../../reducers/selectors';
 
-const mapStateToProps = (state, { match }) => {
-
+const mapStateToProps = (state, { match, commentId, cancel, hideEditForm }) => {
+  const comment = getComment(state, commentId);
+  return({
+    comment,
+    formType: "Edit",
+    header: "",
+    className: "edit-comment-section",
+    placeholder: comment.body,
+    hideEditForm: hideEditForm
+  });
 };
 
 const mapDispatchToProps = dispatch => {
@@ -17,10 +25,19 @@ const mapDispatchToProps = dispatch => {
 
 class EditCommentFormContainer extends React.Component {
 
+  setRef() {
+    return;
+  }
+
   render() {
-    return(<div>hello</div>)
+    const { comment, action, formType, header,
+            className, placeholder, hideEditForm} = this.props;
+    return(
+      <CommentForm comment={comment} action={action} formType={formType} header={header}
+                  className={className} placeholder={placeholder}
+                  setRef={this.setRef} hideEditForm={hideEditForm}/>
+    );
   }
 }
 
-// const { comment, formType, className, placeholder, action } = this.props
-// <CommentForm comment={comment} formType={formType} header
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditCommentFormContainer))

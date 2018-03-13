@@ -23,7 +23,6 @@ const mapStateToProps = (state, { comment, match }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    editComment: comment => dispatch(editComment(comment)), 
     deleteComment: commentId => dispatch(deleteComment(commentId))
   };
 };

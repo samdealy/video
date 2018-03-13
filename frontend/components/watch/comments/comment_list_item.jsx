@@ -7,13 +7,24 @@ export default class CommentListItem extends React.Component {
     this.state = {
       edit: false
     };
+    this.handleEditClick = this.handleEditClick.bind(this);
+    this.hideEditForm = this.hideEditForm.bind(this);
+  }
+
+  handleEditClick() {
+    this.setState({ edit: true });
+  }
+
+  hideEditForm() {
+
+    this.setState({ edit: false });
   }
 
   editDelete() {
     const { deleteComment, commentId } = this.props;
     return(
       <div className="edit-delete-comment">
-        <button className="edit-comment">Edit</button>
+        <button onClick={this.handleEditClick} className="edit-comment">Edit</button>
         <button onClick={ () => deleteComment(commentId)}
                 className="delete-comment">Delete</button>
       </div>
@@ -21,9 +32,13 @@ export default class CommentListItem extends React.Component {
   }
 
   render() {
-    const { iconUrl, userName, timeStamp, body, currentUserId, userId } = this.props;
+    const { iconUrl, userName, timeStamp,
+            body, currentUserId, userId, commentId } = this.props;
     const editDelete = currentUserId === userId ? this.editDelete() : "";
-    const bodyOrEdit =  body;
+    const editForm = <EditCommentFormContainer commentId={commentId}
+                      hideEditForm={this.hideEditForm} />  ;
+
+    const bodyOrEdit = this.state.edit ? editForm : <p>{body}</p>;
 
     return(
       <li className="user-list-item">
@@ -35,7 +50,7 @@ export default class CommentListItem extends React.Component {
             <h4>{userName}</h4>
             <h6>{timeStamp}</h6>
           </div>
-          <p>{bodyOrEdit}</p>
+          {bodyOrEdit}
         </div>
         {editDelete}
       </li>

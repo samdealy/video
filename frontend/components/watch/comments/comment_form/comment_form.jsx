@@ -14,23 +14,24 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit(e) {
-    const { handleClickOutside } = this.props;
+    const { handleClickOutside, formType, hideEditForm } = this.props;
     e.preventDefault();
     this.props.action(this.state).then( () => {
-      this.handleClickOutside();
       this.setState({ body: '' });
+      (formType === "Edit") ? hideEditForm() : handleClickOutside()
     });
   }
 
   cancelButton() {
-    return(<button onClick={(e) => e.stopPropagation()}
+    const { hideEditForm } = this.props;
+    return(<button onClick={hideEditForm}
           className="comment-cancel-button">Cancel</button>);
   }
 
   render () {
     const { formType, header, className, placeholder, setRef } = this.props;
     const cancelButton = formType === "Add" ? "" : this.cancelButton();
-    const hideShow = this.props.hideShow || "hide";
+    const hideShow = this.props.hideShow || "show";
 
     return (
       <div className={className}>

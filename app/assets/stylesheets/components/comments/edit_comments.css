@@ -1,0 +1,40 @@
+.edit-comment-section textarea {
+  border: 1px solid rgb(208, 216, 219);
+}
+
+.comments-section .comments-list .user-list-item {
+  position: relative;
+}
+
+.edit-delete-comment {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+}
+
+.edit-delete-comment {
+  font-size: 11px;
+  display: flex;
+  font-weight: 700;
+  width: 67px;
+  justify-content: space-between;
+}
+
+.edit-comment {
+  color: rgb(101, 121, 135);
+  border-right: 2px solid rgb(101, 121, 135);
+  font-stretch: 100%;
+  padding-right: 3px;
+}
+
+.edit-comment:hover {
+  color: #3A5161;
+}
+
+.delete-comment {
+  margin-right: .3125rem;
+  color: #FF4D4D;
+}
+.delete-comment:hover {
+  color: #D93636;
+}

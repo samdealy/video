@@ -13,3 +13,7 @@ export const currentVideo = (state, videoId) => {
 export const getComments = (state, commentIds) => {
   return commentIds.map( id => state.entities.comments[id]);
 };
+
+export const getComment = (state, commentId) => {
+  return state.entities.comments[commentId];
+};

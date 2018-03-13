@@ -78,9 +78,9 @@
   color: rgb(26, 46, 59);
 }
 
-.new-comment-form textarea {
+.comments-section textarea {
   background-color: white;
-  border: 1px solid rgb(134, 153, 166);
+
   border-radius: 3px;
   box-shadow: inset 0 0 0 0 #FFF;
   height: auto;
@@ -94,6 +94,9 @@
   transition-timing-function: ease-out;
 }
 
+.new-comment-form textarea{
+  border: 1px solid rgb(134, 153, 166);
+}
 .comments-list li:last-child div {
   border: none;
 }
@@ -119,31 +122,4 @@
 
 .comment-form-buttons.show {
   display: flex;
-}
-
-.edit-delete-comment {
-  font-size: 11px;
-  display: flex;
-  font-weight: 700;
-  width: 73px;
-  justify-content: space-between;
-}
-
-.edit-comment {
-  color: rgb(101, 121, 135);
-  border-right: 2px solid rgb(101, 121, 135);
-  font-stretch: 100%;
-  padding-right: 3px;
-}
-
-.edit-comment:hover {
-  color: #3A5161;
-}
-
-.delete-comment {
-  margin-right: .3125rem;
-  color: #FF4D4D;
-}
-.delete-comment:hover {
-  color: #D93636;
 }
