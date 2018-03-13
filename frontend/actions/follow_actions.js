@@ -1,13 +1,13 @@
-import * as APIUtil from '../util/user_util';
+import * as APIUtil from '../util/follow_util';
 
 
 export const RECEIVE_FOLLOW = "RECEIVE_FOLLOW";
 export const RECEIVE_FOLLOW_ERRORS  = "FOLLOW_ERRORS";
 
-export const receiveFollow = users => {
+export const receiveFollow = payload => {
   return({
     type: RECEIVE_FOLLOW,
-    users
+    users: payload.users
   });
 };
 
@@ -19,7 +19,7 @@ export const receiveFollowErrors = errors => {
 };
 
 export const follow = leaderId => dispatch => {
-   return APIUtil.follower(leaderId)
+   return APIUtil.follow(leaderId)
     .then( users => dispatch(receiveFollow(users)))
     .fail( err   => dispatch(receiveFollowErrors(err.responseJSON)));
 };

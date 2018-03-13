@@ -14,7 +14,7 @@ export const unfollow = leaderId => {
   });
 };
 
-export const removeFollower= followerId => {
+export const removeFollower = followerId => {
   return $.ajax({
     method: 'DELETE',
     url: `/api/followings/${followerId}`,

@@ -7,7 +7,7 @@ import Root from './components/root';
 import { logout } from './actions/session_actions';
 // import { createVideo, editVideo, fetchVideo } from './actions/video_actions';
 // import { createComment, editComment, deleteComment } from './actions/comment_actions';
-import { createFollowing, unfollow, removeFollower } from './util/user_util';
+import { follow, unfollow, removeFollower } from './actions/follow_actions';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //TODO Delete after testing
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.follow = follow;
+    window.unfollow = unfollow;
+    window.removeFollower = removeFollower;
 
 
   ReactDOM.render(<Root store={ store }/>, root);
