@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 //Page Pages
 import NavBarContainer from './nav_bar/nav_bar_container.js';
-// import Footer from './footer/footer.js';
+import Footer from './footer/footer';
 import LogInFormContainer from './join_login/login_form_container';
 import JoinFormContainer from './join_login/join_form_container';
 import WelcomePageContainer from './welcome_page/welcome_page_container';
@@ -22,6 +22,7 @@ const App = () => (
     <ProtectedRoute exact path='/upload' component={UploadPageContainer} />
     <ProtectedRoute exact path='/watch/:videoId' component={WatchPage} />
     <ProtectedRoute exact path='/:videoId/settings' component={SettingsPageContainer} />
+    <ProtectedRoute Footer component={Footer} />
   </div>
 );
 
