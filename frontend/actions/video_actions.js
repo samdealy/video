@@ -4,10 +4,11 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
 export const receiveVideo = payload => {
+
   return({
     type: RECEIVE_VIDEO,
     video: payload.video,
-    user: payload.user,
+    users: payload.users,
     comments: payload.comments
   });
 };

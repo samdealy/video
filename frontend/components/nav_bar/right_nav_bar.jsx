@@ -23,7 +23,7 @@ class RightNavBar extends React.Component {
 
   handleLogOut() {
     this.setState({ showHideDropdown: "hidden" });
-    this.props.logout();
+    this.props.logout().then(this.props.history.push('/'));
   }
 
   render() {

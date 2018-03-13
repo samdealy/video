@@ -8,14 +8,15 @@
 User.destroy_all
 Video.destroy_all
 
+dealy_image  = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Dealy_Headshot_MLS.jpg"
 didion_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didion.png"
 
 users = User.create([
-    {username: "Sam Dealy", email: "me.com", password: '123456'},
-    {username: "Joan Didion", email: "joan.com", password: '123456', image: didion_image},
-    {username: "Mahershala Ali", email: "ali.com", password: '123456'},
-    {username: "Noah Lennox", email: "noah.com", password: '123456'},
-    {username: "Joe Buddy", email: "joe.com", password: '123456'},
+    {username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image},
+    {username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image},
+    {username: "Mahershala Ali", email: "ali.com",  password: '123456'},
+    {username: "Noah Lennox",    email: "noah.com", password: '123456'},
+    {username: "Larissa Jones",  email: "la.com",  password: '123456'},
   ])
 
 video_url_1 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_1_4.mp4"

@@ -13,7 +13,7 @@ export default (state = _nullUsers, action) => {
       const newUser = action.user;
       return merge({}, { [newUser.id]: newUser });
     case RECEIVE_VIDEO:
-      return merge({}, state, { [action.user.id]: action.user});
+      return merge({}, state, action.users);
     default:
       return state;
   }
