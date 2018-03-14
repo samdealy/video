@@ -56,7 +56,6 @@ class VideoList extends React.Component {
 
   }
 
-
   render() {
     const { videos, type } = this.props;
     const videoListItems = this.createVideoListItems();
