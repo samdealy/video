@@ -7,7 +7,7 @@ import { getUser, getCurrentUser } from '../../../reducers/selectors';
 const mapStateToProps = state => { 
   
   return ({
-    type: "FEEEED VIDEO"
+    type: "feed"
   });
 };
 
