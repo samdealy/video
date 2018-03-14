@@ -7,6 +7,7 @@ class VideoListItem extends React.Component {
 
   render() {
     const { video } = this.props;
+    
     return(
       <li className="video-list-item">
         <aside>I am the aside</aside>
@@ -15,3 +16,5 @@ class VideoListItem extends React.Component {
     );
   }
 }
+
+export default VideoListItem;
