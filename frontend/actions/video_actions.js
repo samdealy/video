@@ -1,10 +1,10 @@
 import * as APIUtil from '../util/video_api_util';
 
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
+export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 
 export const receiveVideo = payload => {
-
   return({
     type: RECEIVE_VIDEO,
     video: payload.video,
@@ -13,7 +13,14 @@ export const receiveVideo = payload => {
   });
 };
 
+export const receiveVideos = payload => {
 
+  return({
+    type: RECEIVE_VIDEOS,
+    videos: payload.videos,
+    users: payload.users,
+  });
+};
 
 export const receiveErrors = errors => {
   return({
@@ -25,8 +32,8 @@ export const receiveErrors = errors => {
 
 export const fetchFeedVideos = requestCounter => dispatch => {
   return APIUtil.fetchFeedVideos(requestCounter)
-    .then( videos => dispatch( receiveVideo(videos)),
-           err   => dispatch( receiveErrors(err.responseJSON)));
+    .then( videos => dispatch( receiveVideos(videos)),
+           err   => dispatch(  receiveErrors(err.responseJSON)));
 };
 
 export const fetchVideo = videoId => dispatch => {

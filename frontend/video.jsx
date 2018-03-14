@@ -4,11 +4,7 @@ import configureStore  from './store/store';
 import Root from './components/root';
 
 //TODO Delete imports after testing
-import { logout } from './actions/session_actions';
-// import { createVideo, editVideo, fetchVideo } from './actions/video_actions';
-// import { createComment, editComment, deleteComment } from './actions/comment_actions';
-import { follow, unfollow, removeFollower } from './actions/follow_actions';
-
+import { fetchFeedVideos } from './actions/video_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -30,10 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   //TODO Delete after testing
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.follow = follow;
-    window.unfollow = unfollow;
-    window.removeFollower = removeFollower;
-
+    window.fetchFeedVideos = fetchFeedVideos;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

@@ -28,7 +28,7 @@ class User < ApplicationRecord
     through: :leaders,
     source: :videos
 
-  has_attached_file :image, default_url: "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/no_pic.png"
+  has_attached_file :image, default_url: "https://s3.amazonaws.com/fsp-video-pro/default_icon.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   attr_reader :password

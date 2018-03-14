@@ -44,7 +44,7 @@ class Api::VideosController < ApplicationController
     if @videos
       render "api/videos/feed"
     else
-      render json: {}
+      render json: {users: {}, videos: {}}
     end
   end
 
