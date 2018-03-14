@@ -1,7 +1,8 @@
 class Api::VideosController < ApplicationController
   before_action :require_logged_in
+
   FEED_VIDEO_COUNT = 3
-  
+
   def create
     @video = Video.new(video_params)
     @video.uploader_id = current_user.id
@@ -47,7 +48,6 @@ class Api::VideosController < ApplicationController
       render json: {users: {}, videos: {}}
     end
   end
-
 
   private
   def video_params
