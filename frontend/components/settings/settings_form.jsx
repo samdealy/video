@@ -17,6 +17,7 @@ export default class SettingsForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault()
     const { videoId } = this.props;
     const video = Object.assign(this.state, {id: videoId });
     this.props.editVideo(video);

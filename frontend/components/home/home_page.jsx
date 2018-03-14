@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import UploadButton from '../buttons/upload_button';
+import FeedLinkBar from './feed_link_bar'
+import FeedVideosContainer from './feed_videos/feed_videos_container';
 
 export default ({ userName }) => {
   return(
@@ -8,11 +9,8 @@ export default ({ userName }) => {
       <h1 className="page-header">Welcome home, {userName}</h1>
       <div className="home-page-content">
         <div className="feed-nav-feed-videos">
-          <div className="feed-link-bar">
-            <div className="tabs"></div>
-            <Link to='/home'>My Feed</Link>
-            <Link to='/myvideos'>My Videos</Link>
-          </div>
+          <FeedLinkBar />
+          <FeedVideosContainer />
         </div>
         <aside className="feed-aside">
           <UploadButton text={"Upload a video"} />

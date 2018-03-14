@@ -14,7 +14,6 @@ export const receiveVideo = payload => {
 };
 
 export const receiveVideos = payload => {
-
   return({
     type: RECEIVE_VIDEOS,
     videos: payload.videos,
