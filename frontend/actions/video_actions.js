@@ -28,7 +28,6 @@ export const receiveErrors = errors => {
   });
 };
 
-
 export const fetchFeedVideos = requestCounter => dispatch => {
   return APIUtil.fetchFeedVideos(requestCounter)
     .then( videos => dispatch( receiveVideos(videos)),

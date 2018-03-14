@@ -5,6 +5,21 @@ import MyVideoListItemContainer from './my_videos/my_video_list_item_container';
 
 class VideoList extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      numberOfRequests: 1
+    };
+  }
+
+  componentDidMount() {
+    const { type } = this.props;
+    if (type === "feed") {
+      action(this.state.numberOfRequests);
+      this.setState({ numberOfRequests: numberOfRequests + 1});
+    }
+  }
+
   createVideoListItems() {
     const { videos, type } = this.props;
     return videos.map( (video, i) => {
