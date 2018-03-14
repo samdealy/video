@@ -49,6 +49,11 @@ class Api::VideosController < ApplicationController
     end
   end
 
+  def my_videos_index
+    @videos = current_user.videos
+    render "api/videos/my_videos"
+  end
+
   private
   def video_params
     params.require(:video).permit(:clip, :title, :description, :views)
