@@ -6,11 +6,16 @@ json.set! :videos do
   end
 end
 
-all_users = @videos.map{ |vid| vid.uploader }
+
+all_users = [current_user] + @videos.map{ |vid| vid.uploader }
+
 json.set! :users do
   all_users.each do |user|
     json.set! user.id do
       json.partial! "api/users/user", user: user
+      if user == current_user
+        json.feed_video_ids @videos.map{ |vid| vid.id }
+      end
     end
   end
 end
