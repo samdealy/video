@@ -4,7 +4,7 @@ import configureStore  from './store/store';
 import Root from './components/root';
 
 //TODO Delete imports after testing
-import { fetchFeedVideos } from './actions/video_actions';
+import { fetchFeedVideos, fetchMyVideos } from './actions/video_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     window.fetchFeedVideos = fetchFeedVideos;
+    window.fetchMyVideos = fetchMyVideos;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

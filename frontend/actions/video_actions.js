@@ -28,10 +28,16 @@ export const receiveErrors = errors => {
   });
 };
 
+export const fetchMyVideos = () => dispatch => {
+  return APIUtil.fetchMyVideos()
+    .then( videos => dispatch( receiveVideos(videos)),
+           err    => dispatch( receiveErrors(err.responseJSON)));
+};
+
 export const fetchFeedVideos = requestCounter => dispatch => {
   return APIUtil.fetchFeedVideos(requestCounter)
     .then( videos => dispatch( receiveVideos(videos)),
-           err   => dispatch(  receiveErrors(err.responseJSON)));
+           err    => dispatch( receiveErrors(err.responseJSON)));
 };
 
 export const fetchVideo = videoId => dispatch => {

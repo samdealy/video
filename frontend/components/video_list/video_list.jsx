@@ -23,7 +23,7 @@ class VideoList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
+    
     if (this.props.videos.length === nextProps.videos.length ) {
       this.setState({ noMoreVideosText: true });
     }

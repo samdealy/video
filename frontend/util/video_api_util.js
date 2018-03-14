@@ -36,3 +36,10 @@ export const fetchFeedVideos = requestCounter => (
     url: `/api/videos/feed/${requestCounter}`
   })
 );
+
+export const fetchMyVideos = () => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/videos/myvideos`
+  })
+);
