@@ -11,7 +11,7 @@ import WelcomePageContainer from './welcome_page/welcome_page_container';
 import UploadPageContainer from './upload/upload_page_container';
 import SettingsPageContainer from './settings/settings_page_container';
 import WatchPage from './watch/watch_page';
-import HomePageContainer from './home/home_page_container';
+import HomePageContainer from './home/home_page_container.jsx';
 
 const App = () => (
   <div>
@@ -23,7 +23,7 @@ const App = () => (
     <ProtectedRoute exact path='/upload' component={UploadPageContainer} />
     <ProtectedRoute exact path='/watch/:videoId' component={WatchPage} />
     <ProtectedRoute exact path='/:videoId/settings' component={SettingsPageContainer} />
-    <ProtectedRoute exact path='/home' component={HomePageContainer} />
+    <ProtectedRoute path='/home' component={HomePageContainer} />
     <ProtectedRoute Footer component={Footer} />
   </div>
 );
