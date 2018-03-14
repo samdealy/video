@@ -5,12 +5,13 @@ import { withRouter } from 'react-router-dom';
 import { currentVideo } from '../../../reducers/selectors';
 import { fetchVideo, increaseViews } from '../../../actions/video_actions';
 
-const mapStateToProps = (state, { match, video }) => {
-  const videoId =  video ? video.id : parseInt(match.params.videoId);
-  const video =    video || currentVideo(state, videoId) || {};
+const mapStateToProps = (state, { match, feedVideo }) => {
+  const videoId =  feedVideo ? feedVideo.id : parseInt(match.params.videoId);
+  const video   =  feedVideo || currentVideo(state, videoId) || {};
+  const type    =  feedVideo ? "feed-player" : "watch-player";
   return ({
     videoId,
-    type: "watch-player", 
+    type,
     videoThumbUrl: video.thumb_url || '',
     videoClipUrl: video.clip_url || '',
     clipType: video.clip_content_type || ''
