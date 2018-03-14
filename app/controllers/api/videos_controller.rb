@@ -1,5 +1,6 @@
 class Api::VideosController < ApplicationController
   before_action :require_logged_in
+  FEED_VIDEO_COUNT = 3
 
   def create
     @video = Video.new(video_params)
@@ -38,10 +39,10 @@ class Api::VideosController < ApplicationController
   end
 
   def feed_index
-    @videos = current_user.followed_videos
+    slice_idx = (params[:request_counter].to_i - 1) * FEED_VIDEO_COUNT
+    @videos = current_user.followed_videos[slice_idx, FEED_VIDEO_COUNT]
     if @videos
-      debugger
-      render "api/videos/index"
+      render "api/videos/feed"
     else
       render json: {}
     end

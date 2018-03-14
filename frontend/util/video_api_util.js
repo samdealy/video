@@ -29,3 +29,10 @@ export const increaseViews = videoId => (
     url: `api/videos/${videoId}/views`
   })
 );
+
+export const fetchFeedVideos = requestCounter => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/videos/feed/${requestCounter}`
+  })
+);
