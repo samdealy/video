@@ -22,6 +22,7 @@ class VideoPlayer extends React.Component {
 
   componentDidMount() {
     const { type } = this.props;
+    debugger
     if (type === 'watch-player') {
       this.props.fetchVideo(this.props.videoId);
     }

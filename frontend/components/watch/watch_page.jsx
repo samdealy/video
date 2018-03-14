@@ -6,7 +6,7 @@ import CommentsContainer from './comments/comments_container';
 export default (props) => {
   return(
     <div className="watch-video-page">
-      <VideoPlayerContainer />
+      <VideoPlayerContainer type="watch-player" />
       <div className="beneath-video">
         <PlayerVideoInfoContainer />
         <CommentsContainer />

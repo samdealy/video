@@ -5,10 +5,9 @@ import { withRouter } from 'react-router-dom';
 import { currentVideo } from '../../reducers/selectors';
 import { fetchVideo, increaseViews } from '../../actions/video_actions';
 
-const mapStateToProps = (state, { match, feedVideo }) => {
+const mapStateToProps = (state, { match, feedVideo, type }) => {
   const videoId =  feedVideo ? feedVideo.id : parseInt(match.params.videoId);
   const video   =  feedVideo || currentVideo(state, videoId) || {};
-  const type    =  feedVideo ? "feed-player" : "watch-player";
   
   return ({
     videoId,

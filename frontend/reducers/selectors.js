@@ -16,6 +16,11 @@ export const getFeedVideos = state => {
   return feedVideoIds.map( videoId => state.entities.videos[videoId]);
 };
 
+export const getUserVideos = (state, userId) => {
+  const user = state.entities.users[userId];
+  return user.video_ids.map( id => state.entities.videos[id]);
+};
+
 export const getComments = (state, commentIds) => {
   return commentIds.map( id => state.entities.comments[id]);
 };

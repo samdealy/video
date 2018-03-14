@@ -6,12 +6,12 @@ import VideoPlayerContainer from '../video_player/video_player_container';
 class VideoListItem extends React.Component {
 
   render() {
-    const { video } = this.props;
-    
+    const { video, type } = this.props;
+
     return(
       <li className="video-list-item">
         <aside>I am the aside</aside>
-        <VideoPlayerContainer feedVideo={video} />
+        <VideoPlayerContainer type={type} feedVideo={video} />
       </li>
     );
   }

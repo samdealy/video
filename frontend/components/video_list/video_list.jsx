@@ -19,11 +19,13 @@ class VideoList extends React.Component {
     const { type, action } = this.props;
     if (type === "feed") {
       this.handleLoadMore();
+    } else {
+      action();
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    
+
     if (this.props.videos.length === nextProps.videos.length ) {
       this.setState({ noMoreVideosText: true });
     }
@@ -53,7 +55,6 @@ class VideoList extends React.Component {
           onClick={this.handleLoadMore}>{innerText}</button>
       );
     }
-
   }
 
   render() {
