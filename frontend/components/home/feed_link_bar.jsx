@@ -23,7 +23,7 @@ export default class FeedLinkBar extends React.Component {
       <div className="feed-link-bar">
         <div className="tabs"></div>
         <Link onClick={this.handleClick("feed")} to='/home'>My Feed</Link>
-        <Link onClick={this.handleClick("link")} to='/myvideos'>My Videos</Link>
+        <Link onClick={this.handleClick("link")} to='/home/myvideos'>My Videos</Link>
       </div>
     );
   }

@@ -1,7 +1,8 @@
 import React from 'react';
 import VideoList from '../video_list';
 import { connect } from 'react-redux';
-import { getUser, getCurrentUser } from '../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
+import { getUser, getCurrentUser } from '../../../reducers/selectors';
 
 const mapStateToProps = state => { 
   
@@ -14,4 +15,4 @@ const mapDispatchToProps = dispatch => {
   return { };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(FeedVideos));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoList));
