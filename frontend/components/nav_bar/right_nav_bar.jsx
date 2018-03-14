@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
+import UploadButton from '../buttons/upload_button';
 
 class RightNavBar extends React.Component {
   constructor(props) {
@@ -61,11 +62,8 @@ class RightNavBar extends React.Component {
         </li>
 
 
-        <li className="upload-button">
-          <Link to="/upload" id="upload-button-link">
-            <i className="fas fa-cloud-upload-alt"></i>
-            <span>Upload</span>
-          </Link>
+        <li>
+          <UploadButton text={"Upload"} />
         </li>
       </ul>
     );

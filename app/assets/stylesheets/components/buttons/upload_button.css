@@ -4,25 +4,30 @@
   height: 33px;
   padding: 2px;
   margin-right: 0px;
+
   border-color: #00ADEF;
   background-color: #00ADEF;
+  color: white;
+
   border-top-left-radius: 0.1875rem;
   border-top-right-radius: 0.1875rem;
   border-bottom-right-radius: 0.1875rem;
   border-bottom-left-radius: 0.1875rem;
-  display: flex;
-}
-
-#upload-button-link {
+  
   display: flex;
   justify-content: space-around;
-  width: 120px;
   align-items: center;
 }
 
-#upload-button-link span {
+.upload-button span {
   color: white;
   font-size: 14px;
   font-weight: 700;
   margin-right: 3px;
+}
+
+.fa-cloud-upload-alt {
+  color: white;
+  font-size: 12px;
+  margin-left: 3px;
 }

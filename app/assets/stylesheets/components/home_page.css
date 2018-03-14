@@ -1,0 +1,35 @@
+.home-page-container {
+  padding-top: 20px;
+  margin: 0 auto 90px;
+  width: 960px;
+}
+
+.home-page-container .page-header {
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.home-page-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feed-link-bar {
+  box-sizing: border-box;
+  background-color: rgb(240, 241, 244);
+  display: flex;
+  align-items: center;
+  width: 630px;
+}
+
+.feed-link-bar .tabs {
+  width: 7px;
+  height: 41px;
+  background: #cdd1df
+}
+
+.feed-link-bar a {
+  padding: 10px 14px 9px;
+  font-size: 16px;
+  color: rgb(23, 39, 46);
+}

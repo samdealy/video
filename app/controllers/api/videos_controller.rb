@@ -37,9 +37,14 @@ class Api::VideosController < ApplicationController
     end
   end
 
-  def feed_videos
+  def feed_index
     @videos = current_user.followed_videos
-    render "api/videos/index"
+    if @videos
+      debugger
+      render "api/videos/index"
+    else
+      render json: {}
+    end
   end
 
 

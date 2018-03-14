@@ -54,6 +54,10 @@
   border-bottom: 1px solid rgb(238, 241, 242);
 }
 
+.icon-dropdown li {
+  margin-right: 0;
+}
+
 .dropdown-user-info {
   position: absolute;
   top: 10px;
