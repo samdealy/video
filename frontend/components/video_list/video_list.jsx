@@ -2,10 +2,10 @@ import React from "react";
 
 export default class VideoList extends React.Component {
   render() {
-    const { videos,  } = this.props
+    const { videos, type } = this.props;
     return(
-      <div>
-        
+      <div >
+        {type}
       </div>
     );
   }

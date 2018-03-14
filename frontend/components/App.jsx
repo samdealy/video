@@ -23,12 +23,10 @@ const App = () => (
     <ProtectedRoute exact path='/upload' component={UploadPageContainer} />
     <ProtectedRoute exact path='/watch/:videoId' component={WatchPage} />
     <ProtectedRoute exact path='/:videoId/settings' component={SettingsPageContainer} />
-    <ProtectedRoute path='/home' component={HomePageContainer} />
+    <ProtectedRoute exact path='/home' component={HomePageContainer} />
+    <ProtectedRoute exact path='/home/myvideos' component={HomePageContainer} />
     <ProtectedRoute Footer component={Footer} />
   </div>
 );
 
 export default App;
-
-//TODO Place the footer in here
-// <ProtectedRoute exact path='/home' component={HomePageContainer}
