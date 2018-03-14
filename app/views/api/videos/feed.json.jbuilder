@@ -6,7 +6,6 @@ json.set! :videos do
   end
 end
 
-
 all_users = [current_user] + @videos.map{ |vid| vid.uploader }
 
 json.set! :users do

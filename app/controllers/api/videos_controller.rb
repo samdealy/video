@@ -41,7 +41,7 @@ class Api::VideosController < ApplicationController
 
   def feed_index
     @slice_factor= params[:request_counter].to_i * FEED_VIDEO_COUNT
-    @videos = current_user.followed_videos[0...@slice_factor]
+    @videos = current_user.followed_videos.sort_by{|vid| -1 * vid.id}[0...@slice_factor]
     if @videos
       render "api/videos/feed"
     else

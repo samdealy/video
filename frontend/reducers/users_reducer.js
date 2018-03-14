@@ -16,7 +16,7 @@ export default (state = _nullUsers, action) => {
     case RECEIVE_VIDEO:
       return merge({}, state, action.users);
     case RECEIVE_VIDEOS:
-      return merge({}, state, action.users);
+      return action.users;
     case RECEIVE_FOLLOW:
       return action.users;
     default:
