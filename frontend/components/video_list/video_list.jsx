@@ -44,16 +44,16 @@ class VideoList extends React.Component {
 
   createLoadButton() {
     const { videos, type } = this.props;
-    let innerText;
     if (this.state.noMoreVideosText) {
-      innerText = "THAT'S ALL FOLKS!";
+      return <div>THAT'S ALL FOLKS!</div>;
     } else {
-      innerText = "+ Load more videos"  ;
+      const innerText = "+ Load more videos";
+      return(
+        <button className="load-more-button"
+          onClick={this.handleLoadMore}>{innerText}</button>
+      );
     }
-    return(
-      <button className="load-more-button"
-        onClick={this.handleLoadMore}>{innerText}</button>
-    );
+
   }
 
 
