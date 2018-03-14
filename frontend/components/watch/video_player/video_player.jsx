@@ -13,7 +13,6 @@ class VideoPlayer extends React.Component {
     };
     this.getDuration = this.getDuration.bind(this);
     this.stopInterval = this.stopInterval.bind(this);
-    // this.getCurrentTime = this.getCurrentTime.bind(this);
     this.handlePlay = this.handlePlay.bind(this);
     this.handleEnd = this.handleEnd.bind(this);
     this.toggleShow = this.toggleShow.bind(this);
@@ -22,7 +21,10 @@ class VideoPlayer extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchVideo(this.props.videoId);
+    const { type } = this.props;
+    if (type === 'watch-player') {
+      this.props.fetchVideo(this.props.videoId);
+    }
   }
 
   //Progress bar methods
@@ -30,11 +32,6 @@ class VideoPlayer extends React.Component {
     this.duration = e.target.duration;
   }
 
-  // getCurrentTime(e) {
-  //   this.setState({ currentTime: e.target.currentTime });
-  // }
-
-  //Show and hide the controls methods
   toggleShow() {
     this.setState({ showHide: "show" });
   }
@@ -62,7 +59,7 @@ class VideoPlayer extends React.Component {
     this.updateViews();
     this.setState({ currentTime: 0 });
   }
-  //Increase views after video has played
+
   updateViews() {
     const { videoId, increaseViews} = this.props;
     increaseViews(videoId);
