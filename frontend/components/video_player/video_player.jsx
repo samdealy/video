@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import ControlBar from './control_bar';
 import LikeButtonContainer from './like_button/like_button_container';
 
@@ -21,9 +22,9 @@ class VideoPlayer extends React.Component {
   }
 
   componentDidMount() {
-    const { type } = this.props;
-    
-    if (type === 'watch-player') {
+    const { match } = this.props;
+
+    if (match.path === '/watch/:videoId') {
       this.props.fetchVideo(this.props.videoId);
     }
   }
@@ -91,4 +92,4 @@ class VideoPlayer extends React.Component {
   }
 }
 
-export default VideoPlayer;
+export default withRouter(VideoPlayer);

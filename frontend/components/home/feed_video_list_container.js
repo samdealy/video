@@ -9,11 +9,7 @@ const mapStateToProps = state => {
   const videos = getFeedVideos(state) || [];
 
   const pageNumber = state.ui.feedPage;
-  return ({
-    type: "feed",
-    pageNumber,
-    videos
-  });
+  return ({ pageNumber, videos });
 };
 
 const mapDispatchToProps = dispatch => {

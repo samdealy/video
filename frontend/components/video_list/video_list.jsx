@@ -13,8 +13,8 @@ class VideoList extends React.Component {
   }
 
   componentDidMount() {
-    const { type, action } = this.props;
-    if (type === "feed") {
+    const { match, action } = this.props;
+    if (match.path === "/home") {
       this.handleLoadMore();
     } else {
       action();
@@ -22,8 +22,8 @@ class VideoList extends React.Component {
   }
 
   componentWillUnmount() {
-    const { type, resetFeedPage } = this.props;
-    if (type === "feed") {
+    const { match, resetFeedPage } = this.props;
+    if (match.path === "/home") {
       resetFeedPage();
     }
   }
@@ -39,25 +39,25 @@ class VideoList extends React.Component {
   }
 
   noMoreVideosShouldReset(oldCount, newCount) {
-    const { type } = this.props;
-    return ((oldCount !== 0) && (oldCount === newCount) && (type === "feed")) ? true : false;
+    const { match } = this.props;
+    return ((oldCount !== 0) && (oldCount === newCount) && (match.path === "/home")) ? true : false;
   }
 
   createVideoListItems() {
-    const { videos, type } = this.props;
+    const { videos } = this.props;
     return videos.map( (video, i) => {
-      return <VideoListItem type={type} video={video} key={i} />;
+      return <VideoListItem video={video} key={i} />;
     });
   }
 
   handleLoadMore(e) {
     const { action, incrementFeedPage, pageNumber } = this.props;
-    debugger
+
     action(pageNumber);
   }
 
   createLoadButton() {
-    const { videos, type } = this.props;
+    const { videos } = this.props;
     if (this.state.noMoreVideosText) {
       return <span className="thats-all">THAT'S ALL FOLKS!</span>;
     } else {
@@ -70,10 +70,10 @@ class VideoList extends React.Component {
   }
 
   render() {
-    const { videos, type } = this.props;
+    const { videos, match } = this.props;
 
     const videoListItems = this.createVideoListItems();
-    const loadMoreButton = type === "feed" ? this.createLoadButton() : '';
+    const loadMoreButton = match.path === "/home" ? this.createLoadButton() : '';
     return(
       <ul className="video-list">
         {videoListItems}

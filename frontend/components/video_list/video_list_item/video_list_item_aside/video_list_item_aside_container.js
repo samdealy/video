@@ -4,7 +4,7 @@ import VideoListItemAside from "./video_list_item_aside";
 import { getUser } from '../../../../reducers/selectors';
 import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, { video, type }) => {
+const mapStateToProps = (state, { video }) => {
 
   const currentVideo = video || {};
   const title        = currentVideo.title || "";
@@ -15,7 +15,7 @@ const mapStateToProps = (state, { video, type }) => {
   const userName     = uploader.username || "";
   const iconUrl      = uploader.image_url || "";
 
-  return ({ type, timeStamp, userName, iconUrl });
+  return ({ timeStamp, userName, iconUrl });
 };
 
 export default withRouter(connect(mapStateToProps, null)(VideoListItemAside));

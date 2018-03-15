@@ -8,14 +8,11 @@ import { fetchMyVideos } from '../../actions/video_actions';
 const mapStateToProps = state => {
   const currentUserId = state.session.currentUserId;
   const videos = getUserVideos(state, currentUserId);
-  return ({
-    type: "myVideo",
-    videos
-  });
+  return ({ videos });
 };
 
 const mapDispatchToProps = dispatch => {
-  return { 
+  return {
     action: () => dispatch(fetchMyVideos())
   };
 };

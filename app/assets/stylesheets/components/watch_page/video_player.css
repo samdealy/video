@@ -22,7 +22,7 @@ video {
 
 @media (max-width: 470px)  {
 
-  .video-player-background {
+  .watch-video-page .video-player-background {
     box-sizing: border-box;
     height: 256px;
     padding-top: 6%;
