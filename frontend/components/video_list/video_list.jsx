@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
-import VideoListItem from './video_list_item';
+import VideoListItem from './video_list_item/video_list_item';
 
 class VideoList extends React.Component {
 

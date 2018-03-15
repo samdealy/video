@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import VideoPlayer from '../video_player/video_player';
+import VideoPlayer from '../../video_player/video_player';
 
 const mapStateToProps = (state, { video, type }) => {
   const feedVideo = video || {};

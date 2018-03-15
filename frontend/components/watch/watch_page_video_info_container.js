@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import VideoInfo from '../video_info/video_info';
+import WatchPageVideoInfo from '../video_info/watch_page_video_info';
 import { withRouter } from 'react-router-dom';
 import { currentVideo, getUser, getCurrentUser } from '../../reducers/selectors';
-// import { fetchVideo } from '../../../actions/video_actions';
+
 
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => {
   return { };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(VideoInfo));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(WatchPageVideoInfo));
