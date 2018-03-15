@@ -10,6 +10,7 @@
 
 .video-list-item aside {
   width: 89px;
+  position: relative;
 }
 
 .video-list-item-info {

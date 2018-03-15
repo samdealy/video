@@ -9,9 +9,25 @@
 
 .video-list-item-aside h6 {
   margin: 0;
+  margin-left: 2px;
+}
+
+.video-list-item-aside .action {
+  margin-top: 16px;
+}
+
+.video-list-item-aside a {
+  position: relative;
 }
 
 .video-list-item-aside span {
-  background-image: url(https://s3.amazonaws.com/fsp-video-dev/general/sprite_icon.png);
+  background-image: url(https://s3.amazonaws.com/fsp-video-dev/general/upload_icon_2.png);
   z-index: 2;
+  position: absolute;
+  top: 64px;
+  left: -6px;
+
+  border-radius: 5px;
+  height: 25px;
+  width: 27px;
 }
