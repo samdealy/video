@@ -16,7 +16,6 @@ export default class CommentListItem extends React.Component {
   }
 
   hideEditForm() {
-
     this.setState({ edit: false });
   }
 

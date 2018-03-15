@@ -4,6 +4,9 @@
   align-items: center;
 }
 
+video {
+  display: block;
+}
 
 .video-player-size-container {
   width: 961px;

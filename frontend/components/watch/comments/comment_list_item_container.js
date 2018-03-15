@@ -6,16 +6,16 @@ import { getComments, currentVideo } from '../../../reducers/selectors';
 import { createComment, editComment, deleteComment } from '../../../actions/comment_actions';
 
 const mapStateToProps = (state, { comment, match }) => {
-  const commentAuthor = state.entities.users[comment.user_id] || {};
+  const currentComment = comment || {};
+  const commentAuthor = state.entities.users[currentComment.user_id] || {};
 
-  
   return ({
     iconUrl: commentAuthor.image_url || "",
     userName: commentAuthor.username || "",
-    timeStamp: comment.timestamp || "",
-    body: comment.body || "",
-    commentId: comment.id || "",
-    userId: comment.user_id || "",
+    timeStamp: currentComment.timestamp || "",
+    body: currentComment.body || "",
+    commentId: currentComment.id || "",
+    userId: currentComment.user_id || "",
     videoId: match.params.videoId || "",
     currentUserId: state.session.currentUserId || "",
   });
