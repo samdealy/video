@@ -11,7 +11,7 @@ const mapStateToProps = (state, { video }) => {
 
   const uploader = getUser(state, video.uploader_id) || {};
   const userName = uploader.username || "";
-  const iconUrl = uploader.icon_url || "";
+  const iconUrl = uploader.image_url || "";
   return ({ title, description, timeStamp, userName, iconUrl });
 };
 
