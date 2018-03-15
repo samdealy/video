@@ -1,0 +1,12 @@
+.video-list-item-aside img {
+  width: 75px;
+  height: 75px;
+}
+
+.video-list-item-aside .action {
+  color: #90d5ec;
+}
+
+.video-list-item-aside h6 {
+  margin: 0;
+}

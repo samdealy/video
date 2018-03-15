@@ -7,8 +7,8 @@ export default ({ iconUrl, userName, timeStamp }) => {
         <Link to='/'>
           <img className="user-icon" src={iconUrl}></img>
         </Link>
-        <span className="upload-icon"></span>
-        <h6>Uploaded by</h6>
+        <span className="action-icon"></span>
+        <h6 className="action">Uploaded by</h6>
         <h6 className="aside-username">{userName}</h6>
       </div>
     );
