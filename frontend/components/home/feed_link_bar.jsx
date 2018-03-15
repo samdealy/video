@@ -5,7 +5,7 @@ export default class FeedLinkBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      myFeedActive: false,
+      myFeedActive: true,
       myVideosActive: false
     };
     this.handleClick = this.handleClick.bind(this);
@@ -13,6 +13,7 @@ export default class FeedLinkBar extends React.Component {
 
   handleClick(type) {
     const newState = type == "feed" ? [true, false] : [false, true];
+
     return (e) => this.setState({
       myFeedActive: newState[0], myVideosActive: newState[1]
     });
@@ -22,6 +23,7 @@ export default class FeedLinkBar extends React.Component {
     const { myFeedActive, myVideosActive } = this.state;
     const myFeedClass   = myFeedActive ? "active" : "";
     const myVideosClass = myVideosActive ? "active" : "";
+    // debugger
     return(
       <div className="feed-link-bar">
         <div className="tabs"></div>

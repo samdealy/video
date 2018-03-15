@@ -4,7 +4,7 @@ import configureStore  from './store/store';
 import Root from './components/root';
 
 //TODO Delete imports after testing
-
+import { incrementFeedPage, resetFeedPage } from './actions/feed_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //TODO Delete after testing
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-
+    window.incrementFeedPage = incrementFeedPage;
+    window.resetFeedPage = resetFeedPage;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });
