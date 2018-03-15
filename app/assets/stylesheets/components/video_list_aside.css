@@ -10,3 +10,8 @@
 .video-list-item-aside h6 {
   margin: 0;
 }
+
+.video-list-item-aside span {
+  background-image: url(https://s3.amazonaws.com/fsp-video-dev/general/sprite_icon.png);
+  z-index: 2;
+}
