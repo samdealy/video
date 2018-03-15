@@ -23,7 +23,12 @@ class VideoList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.videos.length === nextProps.videos.length ) {
+    const { type, videos } = this.props;
+    const { newNumberOfVideos } = nextProps.videos.length;
+    const   oldNumberOfVideos = videos.length;
+    
+    if ((oldNumberOfVideos === newNumberOfVideos)  && (type === "feed")) {
+      debugger;
       this.setState({ noMoreVideosText: true });
     }
   }
