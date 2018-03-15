@@ -26,7 +26,8 @@ class HomePage extends React.Component {
           </div>
           <aside className="feed-aside">
             <UploadButton text={"Upload a video"} />
-            <div> About me </div>
+            <div className="aside-section about-me">About me</div>
+            <div className="aside-section my-links">My Links</div>
           </aside>
         </div>
       </div>
@@ -35,33 +36,3 @@ class HomePage extends React.Component {
 }
 
 export default withRouter(HomePage);
-
-// class HomePage extends React.Component {
-//
-//   videoListContainer() {
-//     const { match } = this.props;
-//     return match.path === "/home" ?
-//       <FeedVideoListContainer /> : <MyVideoListContainer />;
-//   }
-//
-//   render() {
-//     const { userName } = this.props;
-//     return(
-//       <div className="home-page-container">
-//         <h1 className="page-header">Welcome home, {userName}</h1>
-//         <div className="home-page-content">
-//           <div className="feed-nav-feed-videos">
-//             <FeedLinkBar />
-//             {this.videoListContainer()}
-//           </div>
-//           <aside className="feed-aside">
-//             <UploadButton text={"Upload a video"} />
-//             <div> About me </div>
-//           </aside>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-//
-// export default withRouter(HomePage);

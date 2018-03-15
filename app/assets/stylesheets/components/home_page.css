@@ -33,3 +33,29 @@
   font-size: 16px;
   color: rgb(23, 39, 46);
 }
+
+.feed-link-bar a.active  {
+  background: #f9f9fa;
+  border-color: #e6e8ef;
+  color: #4bf;
+}
+
+.aside-section {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 200px;
+  padding: 7px 10px;
+  font-weight: 700;
+}
+
+.about-me {
+    background: #fdebf3;
+    border-left: 5px solid #eddbe3;
+    color: #f49ac1;
+}
+
+.my-links {
+  background: #fdf0d5;
+  border-left: 5px solid #fce4b3;
+  color: #f7b42c;
+}
