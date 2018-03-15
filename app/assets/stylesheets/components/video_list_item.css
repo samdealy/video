@@ -3,7 +3,14 @@
   box-sizing: border-box;
   width: 540px;
 }
+.video-list-item {
+  display: flex;
+  margin-top: 40px;
+}
 
+.video-list-item aside {
+  width: 89px;
+}
 
 .video-list-item-info {
     display: flex;
@@ -71,4 +78,23 @@
 
 .video-list-item .playbar {
   display: none;
+}
+
+.load-button-wrapper {
+  margin-top: 45px;
+  margin-left: 88px;
+  border-top: 1px dotted rgb(211, 211, 211);
+  padding: 16px 0;
+}
+
+.load-more-button {
+  color: rgb(23, 39, 46);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.thats-all {
+  font-weight: 400;
+  font-size: 32px;
+  color: #d3d3d3;
 }

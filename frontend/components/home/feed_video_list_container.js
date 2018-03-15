@@ -5,9 +5,9 @@ import { withRouter } from 'react-router-dom';
 import { getFeedVideos } from '../../reducers/selectors';
 import { fetchFeedVideos } from '../../actions/video_actions';
 
-const mapStateToProps = state => { 
+const mapStateToProps = state => {
   const videos = getFeedVideos(state) || [];
-  
+
   return ({
     type: "feed",
     videos
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  return { 
+  return {
     action: (requestCounter) => dispatch(fetchFeedVideos(requestCounter))
   };
 };

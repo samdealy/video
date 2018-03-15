@@ -16,7 +16,6 @@ class VideoList extends React.Component {
   componentDidMount() {
     const { type, action } = this.props;
     if (type === "feed") {
-
       this.handleLoadMore();
     } else {
       action();
@@ -24,7 +23,6 @@ class VideoList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-
     if (this.props.videos.length === nextProps.videos.length ) {
       this.setState({ noMoreVideosText: true });
     }
@@ -46,7 +44,7 @@ class VideoList extends React.Component {
   createLoadButton() {
     const { videos, type } = this.props;
     if (this.state.noMoreVideosText) {
-      return <div>THAT'S ALL FOLKS!</div>;
+      return <span className="thats-all">THAT'S ALL FOLKS!</span>;
     } else {
       const innerText = "+ Load more videos";
       return(
@@ -63,7 +61,9 @@ class VideoList extends React.Component {
     return(
       <ul className="video-list">
         {videoListItems}
-        {loadMoreButton}
+        <div className="load-button-wrapper">
+          {loadMoreButton}
+        </div>
       </ul>
     );
   }

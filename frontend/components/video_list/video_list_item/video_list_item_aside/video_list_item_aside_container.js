@@ -1,12 +1,13 @@
 import React from "react";
 import { connect } from 'react-redux';
-import VideoListItemInfo from "./video_list_item_info";
+import VideoListItemAside from "./video_list_item_aside";
 import { getUser } from '../../../../reducers/selectors';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = (state, { video }) => {
+const mapStateToProps = (state, { video, type }) => {
+
   const currentVideo = video || {};
   const title        = currentVideo.title || "";
-  const description  = currentVideo.description || "";
   const timeStamp    = currentVideo.timestamp || "";
   const videoId      = currentVideo.id || "";
 
@@ -14,7 +15,7 @@ const mapStateToProps = (state, { video }) => {
   const userName     = uploader.username || "";
   const iconUrl      = uploader.image_url || "";
 
-  return ({ title, description, timeStamp, videoId, userName, iconUrl });
+  return ({ type, timeStamp, userName, iconUrl });
 };
 
-export default connect(mapStateToProps, null)(VideoListItemInfo);
+export default withRouter(connect(mapStateToProps, null)(VideoListItemAside));
