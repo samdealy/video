@@ -1,37 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-export default class FeedLinkBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      myFeedActive: true,
-      myVideosActive: false
-    };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(type) {
-    const newState = type == "feed" ? [true, false] : [false, true];
-
-
-    return (e) => this.setState({
-      myFeedActive: newState[0], myVideosActive: newState[1]
-    });
-  }
+class FeedLinkBar extends React.Component {
 
   render() {
-    const { myFeedActive, myVideosActive } = this.state;
-    const myFeedClass   = myFeedActive ? "active" : "";
-    const myVideosClass = myVideosActive ? "active" : "";
+    const { match } = this.props;
+    let linkClasses = ["active", ""];
+    if (match.path !== "/home") linkClasses = linkClasses.reverse();
+
     return(
       <div className="feed-link-bar">
         <div className="tabs"></div>
-        <Link className={myFeedClass} onClick={this.handleClick("feed")} to='/home'>
-          My Feed</Link>
-        <Link className={myVideosClass} onClick={this.handleClick("link")} to='/home/myvideos'>
-          My Videos</Link>
+        <Link className={linkClasses[0]} to='/home'>My Feed</Link>
+        <Link className={linkClasses[1]} to='/home/myvideos'>My Videos</Link>
       </div>
     );
   }
 }
+
+export default withRouter(FeedLinkBar);
