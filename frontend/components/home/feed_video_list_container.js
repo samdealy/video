@@ -3,20 +3,23 @@ import VideoList from '../video_list/video_list';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { getFeedVideos } from '../../reducers/selectors';
-import { fetchFeedVideos } from '../../actions/video_actions';
+import { fetchFeedVideos, resetFeedPage } from '../../actions/video_actions';
 
 const mapStateToProps = state => {
   const videos = getFeedVideos(state) || [];
 
+  const pageNumber = state.ui.feedPage;
   return ({
     type: "feed",
+    pageNumber,
     videos
   });
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: (requestCounter) => dispatch(fetchFeedVideos(requestCounter))
+    action: (requestCounter) => dispatch(fetchFeedVideos(requestCounter)),
+    resetFeedPage: () => dispatch(resetFeedPage()),
   };
 };
 

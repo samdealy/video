@@ -1,8 +1,17 @@
 import * as APIUtil from '../util/video_api_util';
 
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
-export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
+export const RECEIVE_MY_VIDEOS = "RECEIVE_MY_VIDEOS";
+export const RECEIVE_FEED_VIDEOS = "RECEIVE_FEED_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
+export const RESET_FEED_PAGE = "RESET_FEED_PAGE";
+
+
+export const resetFeedPage = () => {
+  return({
+    type: RESET_FEED_PAGE
+  });
+};
 
 export const receiveVideo = payload => {
   return({
@@ -13,9 +22,17 @@ export const receiveVideo = payload => {
   });
 };
 
-export const receiveVideos = payload => {
+export const receiveMyVideos = payload => {
   return({
-    type: RECEIVE_VIDEOS,
+    type: RECEIVE_MY_VIDEOS,
+    videos: payload.videos,
+    users: payload.users,
+  });
+};
+
+export const receiveFeedVideos = payload => {
+  return({
+    type: RECEIVE_FEED_VIDEOS,
     videos: payload.videos,
     users: payload.users,
   });
@@ -30,13 +47,13 @@ export const receiveErrors = errors => {
 
 export const fetchMyVideos = () => dispatch => {
   return APIUtil.fetchMyVideos()
-    .then( videos => dispatch( receiveVideos(videos)),
+    .then( videos => dispatch( receiveMyVideos(videos)),
            err    => dispatch( receiveErrors(err.responseJSON)));
 };
 
 export const fetchFeedVideos = requestCounter => dispatch => {
   return APIUtil.fetchFeedVideos(requestCounter)
-    .then( videos => dispatch( receiveVideos(videos)),
+    .then( videos => dispatch( receiveFeedVideos(videos)),
            err    => dispatch( receiveErrors(err.responseJSON)));
 };
 

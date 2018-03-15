@@ -23,7 +23,7 @@ export default class FeedLinkBar extends React.Component {
     const { myFeedActive, myVideosActive } = this.state;
     const myFeedClass   = myFeedActive ? "active" : "";
     const myVideosClass = myVideosActive ? "active" : "";
-    // debugger
+    // 
     return(
       <div className="feed-link-bar">
         <div className="tabs"></div>

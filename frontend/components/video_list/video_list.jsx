@@ -7,7 +7,6 @@ class VideoList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      numberOfRequests: 1,
       noMoreVideosText: false
     };
     this.handleLoadMore = this.handleLoadMore.bind(this);
@@ -22,14 +21,26 @@ class VideoList extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-    const { type, videos }  = this.props;
-    const newNumberOfVideos = nextProps.videos.length;
-    const oldNumberOfVideos = videos.length;
+  componentWillUnmount() {
+    const { type, resetFeedPage } = this.props;
+    if (type === "feed") {
+      resetFeedPage();
+    }
+  }
 
-    if ((oldNumberOfVideos === newNumberOfVideos)  && (type === "feed")) {
+  componentWillReceiveProps(nextProps) {
+    const { videos }  = this.props;
+    const oldNumberOfVideos = videos.length;
+    const newNumberOfVideos = nextProps.videos.length;
+
+    if (this.noMoreVideosShouldReset(oldNumberOfVideos, newNumberOfVideos)) {
       this.setState({ noMoreVideosText: true });
     }
+  }
+
+  noMoreVideosShouldReset(oldCount, newCount) {
+    const { type } = this.props;
+    return ((oldCount !== 0) && (oldCount === newCount) && (type === "feed")) ? true : false;
   }
 
   createVideoListItems() {
@@ -40,9 +51,9 @@ class VideoList extends React.Component {
   }
 
   handleLoadMore(e) {
-    const { action } = this.props;
-    action(this.state.numberOfRequests);
-    this.setState({ numberOfRequests: this.state.numberOfRequests + 1});
+    const { action, incrementFeedPage, pageNumber } = this.props;
+    debugger
+    action(pageNumber);
   }
 
   createLoadButton() {
@@ -60,6 +71,7 @@ class VideoList extends React.Component {
 
   render() {
     const { videos, type } = this.props;
+
     const videoListItems = this.createVideoListItems();
     const loadMoreButton = type === "feed" ? this.createLoadButton() : '';
     return(
