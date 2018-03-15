@@ -6,19 +6,25 @@ import videoStats from './video_stats_container';
 
 
 export default class VideoInfo extends React.Component {
-  render() {
-    let { className, videoTitle, videoTimeStamp,
-          userName, iconUrl, videoDescription,
-          followPresent, statsPresent, uploaderId } = this.props;
 
-    videoTimeStamp   = videoTimeStamp || "";
-    videoDescription = videoDescription || "";
-
-    const followButton = followPresent ?
+  followButton() {
+    const { followPresent, uploaderId } = this.props;
+    return followPresent ?
       <FollowButtonContainer uploaderId={uploaderId}/> : "";
-    const videoStats = statsPresent ?
-      <VideoStatsContainer /> : "";
+  }
 
+  videoStats() {
+    const { statsPresent } = this.props;
+    return statsPresent ? <VideoStatsContainer /> : "";
+  }
+
+  render() {
+    const { className, videoTitle, videoTimeStamp,
+          userName, iconUrl, videoDescription,
+       } = this.props;
+
+    const videoStats   = this.videoStats();
+    const followButton = this.followButton();
 
     return(
       <div className={className}>

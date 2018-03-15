@@ -2,8 +2,8 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import UploadButton from '../buttons/upload_button';
 import FeedLinkBar from './feed_link_bar';
-import FeedVideoListContainer from '../video_list/feed_videos/feed_video_list_container';
-import MyVideoListContainer from '../video_list/my_videos/my_video_list_container';
+import FeedVideoListContainer from './feed_video_list_container';
+import MyVideoListContainer from './my_video_list_container';
 
 
 

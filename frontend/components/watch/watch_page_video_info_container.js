@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import VideoInfo from './video_info';
+import VideoInfo from '../video_info/video_info';
 import { withRouter } from 'react-router-dom';
 import { currentVideo, getUser, getCurrentUser } from '../../reducers/selectors';
 // import { fetchVideo } from '../../../actions/video_actions';

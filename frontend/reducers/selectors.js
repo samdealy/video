@@ -18,7 +18,8 @@ export const getFeedVideos = state => {
 
 export const getUserVideos = (state, userId) => {
   const user = state.entities.users[userId];
-  return user.video_ids.map( id => state.entities.videos[id]);
+  return user.video_ids.map( id => state.entities.videos[id])
+    .filter(video => video !== undefined);
 };
 
 export const getComments = (state, commentIds) => {

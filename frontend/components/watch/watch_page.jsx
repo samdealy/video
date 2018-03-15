@@ -1,14 +1,14 @@
 import React from "react";
-import VideoPlayerContainer from '../video_player/video_player_container';
-import PlayerVideoInfoContainer from '../video_info/player_video_info_container';
+import WatchPageVideoPlayerContainer from './watch_page_video_player_container';
+import WatchPageVideoInfoContainer from './watch_page_video_info_container';
 import CommentsContainer from './comments/comments_container';
 
 export default (props) => {
   return(
     <div className="watch-video-page">
-      <VideoPlayerContainer type="watch-player" />
+      <WatchPageVideoPlayerContainer  />
       <div className="beneath-video">
-        <PlayerVideoInfoContainer />
+        <WatchPageVideoInfoContainer />
         <CommentsContainer />
       </div>
     </div>

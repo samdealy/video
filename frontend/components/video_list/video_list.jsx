@@ -1,7 +1,5 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
-import FeedVideoListItemContainer from './feed_videos/feed_video_list_item_container';
-import MyVideoListItemContainer from './my_videos/my_video_list_item_container';
 import VideoListItem from './video_list_item';
 
 class VideoList extends React.Component {
@@ -18,6 +16,7 @@ class VideoList extends React.Component {
   componentDidMount() {
     const { type, action } = this.props;
     if (type === "feed") {
+
       this.handleLoadMore();
     } else {
       action();
