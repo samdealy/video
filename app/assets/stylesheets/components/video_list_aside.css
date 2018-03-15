@@ -20,7 +20,7 @@
   position: relative;
 }
 
-.video-list-item-aside span {
+.video-list-item-aside a ~ span {
   background-image: url(https://s3.amazonaws.com/fsp-video-dev/general/upload_icon_2.png);
   z-index: 2;
   position: absolute;

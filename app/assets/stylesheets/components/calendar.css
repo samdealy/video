@@ -1,0 +1,43 @@
+.calendar span {
+  display: block;
+  width: 70px;
+  text-align: center;
+}
+
+.bindings {
+  padding-left: 18px;
+  overflow: hidden;
+  display: flex
+}
+
+.calendar .bindings span {
+  width: 6px;
+  height: 9px;
+  margin-right: 7px;
+  background: #e7e9eb;
+  border: 1px solid #D0D5D9;
+  border-bottom-color: #c2c8ce;
+  border-radius: 2px;
+}
+
+.calendar .month {
+  margin-top: -7px;
+  padding: 11px 1px 4px;
+    background: #D0D5D9;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #FFF;
+  border-radius: 3px 3px 0 0;
+}
+
+.calendar .day {
+  padding: 8px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #D0D5D9;
+  border: 1px solid #e7e9eb;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  line-height: 20px;
+}

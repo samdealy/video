@@ -12,10 +12,12 @@ export default class VideoListItemAside extends React.Component {
   }
 
   render() {
+    const { timeStamp } = this.props;
     return(
       <aside className="video-list-item-aside">
         <Route exact path='/home' render={() => this.feedAside()} />
-        <Route exact path='/home/myvideos' component={MyVideosAside} />
+        <Route exact path='/home/myvideos'
+          render={() => <MyVideosAside timeStamp={timeStamp} />} />
       </aside>
     );
   }
