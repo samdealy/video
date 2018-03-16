@@ -7,9 +7,10 @@ import { fetchFeedVideos, resetFeedPage } from '../../actions/video_actions';
 
 const mapStateToProps = state => {
   const videos = getFeedVideos(state) || [];
-
-  const pageNumber = state.ui.feedPage;
-  return ({ pageNumber, videos });
+  const pageNumber = state.ui.feed.nextFeedPage;
+  const numberOfFeedVideos = state.ui.feed.numberOfFeedVideos;
+  
+  return ({ pageNumber, videos, numberOfFeedVideos });
 };
 
 const mapDispatchToProps = dispatch => {

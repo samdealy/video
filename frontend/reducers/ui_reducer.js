@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import feedPage from "./feed_page_reducer";
+import feed from './feed_reducer';
 
 export default combineReducers({
-  feedPage
+  feed
 });

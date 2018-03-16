@@ -31,10 +31,12 @@ export const receiveMyVideos = payload => {
 };
 
 export const receiveFeedVideos = payload => {
+  
   return({
     type: RECEIVE_FEED_VIDEOS,
     videos: payload.videos,
     users: payload.users,
+    numberOfFeedVideos: payload.number_of_feed_videos
   });
 };
 

@@ -29,18 +29,10 @@ class VideoList extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { videos }  = this.props;
-    const oldNumberOfVideos = videos.length;
-    const newNumberOfVideos = nextProps.videos.length;
-
-    if (this.noMoreVideosShouldReset(oldNumberOfVideos, newNumberOfVideos)) {
+    const { numberOfFeedVideos }  = this.props;
+    if (nextProps.videos.length === numberOfFeedVideos) {
       this.setState({ noMoreVideosText: true });
     }
-  }
-
-  noMoreVideosShouldReset(oldCount, newCount) {
-    const { match } = this.props;
-    return ((oldCount !== 0) && (oldCount === newCount) && (match.path === "/home")) ? true : false;
   }
 
   createVideoListItems() {
@@ -52,7 +44,6 @@ class VideoList extends React.Component {
 
   handleLoadMore(e) {
     const { action, incrementFeedPage, pageNumber } = this.props;
-
     action(pageNumber);
   }
 

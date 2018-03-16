@@ -23,7 +23,7 @@ export default (state = _nullUsers, action) => {
       newUsers = action.users || {};
       return newUsers;
     case RECEIVE_FOLLOW:
-      return action.users;
+      return Object.assign({}, state, action.users);
     default:
       return state;
   }

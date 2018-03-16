@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import VideoPlayer from '../../video_player/video_player';
-
+import { increaseViews } from '../../../actions/video_actions';
 const mapStateToProps = (state, { video }) => {
   const feedVideo = video || {};
 

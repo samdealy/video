@@ -64,7 +64,7 @@ class VideoPlayer extends React.Component {
 
   updateViews() {
     const { videoId, increaseViews} = this.props;
-    increaseViews(videoId);
+    increaseViews(videoId).then;
   }
 
   render() {

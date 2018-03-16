@@ -18,3 +18,5 @@ json.set! :users do
     end
   end
 end
+
+json.number_of_feed_videos @number_of_feed_videos
