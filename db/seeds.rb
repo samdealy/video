@@ -62,9 +62,9 @@ manta_description = "who knew that manta rays can fly? Or is it that they 'could
 Video.create([
 
   { title: "rothkorothkorothko pt.1", uploader_id: User.third.id, clip: video_url_18, description: rothko_descriptions[0] },
-  { title: "Father was an artist", uploader_id: User.fourth.id, clip: video_url_14 },
+  { title: "Father was an artist", uploader_id: User.fourth.id, clip: video_url_14, description: "Very bizarre, tbh. But I thought you should see it."},
   { title: "A seed sprouts", uploader_id: User.fifth.id, clip: video_url_23, description: "A cool timelapse I made." },
-  { title: "G R A S S H O P P E R", uploader_id: User.fourth.id, clip: video_url_15 },
+  { title: "G R A S S H O P P E R", uploader_id: User.fourth.id, clip: video_url_15, description: "A grass hopper takes flight!" },
   { title: "Seed timelapse", uploader_id: User.fifth.id, clip: video_url_22, description: "A cool timelapse I made." },
   { title: "Boys Latin (2/4)", uploader_id: User.first.id, clip: video_url_2 },
   { title: "Boys Latin (3/4)", uploader_id: User.first.id, clip: video_url_3 },
@@ -82,10 +82,10 @@ Video.create([
   { title: "Boys Latin (4/4)", uploader_id: User.first.id, clip: video_url_4 },
   { title: "rothkorothkorothko pt.3", uploader_id: User.third.id, clip: video_url_20, description: rothko_descriptions[2] },
   { title: "Pet Crab pt. 3", uploader_id: User.fourth.id, clip: video_url_13 },
-  { title: "City of Ink", uploader_id: User.second.id, clip: video_url_7 },
+  { title: "City of Ink", uploader_id: User.second.id, clip: video_url_7, description: "They built a city of ink and said LOOK." },
   { title: "rothkorothkorothko pt.2", uploader_id: User.third.id, clip: video_url_19, description: rothko_descriptions[1] },
-  { title: "THIS", uploader_id: User.second.id, clip: video_url_9 },
-  { title: "Pet Crab pt. 2", uploader_id: User.fourth.id, clip: video_url_12 },
+  { title: "THIS", uploader_id: User.second.id, clip: video_url_9, description: "INK is magical-- do you need a more compelling visual argument?" },
+  { title: "Pet Crab pt. 2", uploader_id: User.fourth.id, clip: video_url_12, description: "This is the real deal. A crab eats a potato chip, and it makes you wonder."},
   { title: "rothkorothkorothko pt.4", uploader_id: User.third.id, clip: video_url_21, description: rothko_descriptions[3] }
 
 ])
@@ -98,13 +98,12 @@ Video.create([
   ])
 end
 
+user_ids = [0,1,2,3,4]
 Video.all.each do |video|
-  5.times do |i|
+  shuffled_ids = user_ids.shuffle
+  shuffled_ids.each do |i|
     Comment.create(
       { user_id: User.all[i].id, video_id: video.id, body: Faker::Hipster.paragraph(2)  }
     )
   end
 end
-
-
-# "AWS": "arn:aws:iam::217745120435:user/SamDealy"
