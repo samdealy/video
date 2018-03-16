@@ -12,7 +12,7 @@ const mapStateToProps = ({ errors }) => {
     linkText: "Log in",
     linkPath: "log_in",
     nameClass: "login-input",
-    src: "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
+    src: "https://s3.amazonaws.com/fsp-video-dev/glacier.mp4"
   };
 };
 
@@ -23,4 +23,3 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
-

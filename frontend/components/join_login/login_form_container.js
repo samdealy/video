@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => {
     linkText: "Join",
     linkPath: "join",
     nameClass: "hidden",
-    src: "https://s3.amazonaws.com/fsp-video-dev/northern_lights+2.mp4"
+    src: "https://s3.amazonaws.com/fsp-video-dev/desert_video.mp4"
   };
 };
 
