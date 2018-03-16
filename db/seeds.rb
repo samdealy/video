@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Video.destroy_all
+Following.destroy_all
+Comment.destroy_all
 
 dealy_image   = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Dealy_Headshot_MLS.jpg"
 didion_image  = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didion.png"
@@ -35,19 +37,19 @@ video_url_10 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/The+Wr
 video_url_11 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/crab_pt_1.mp4"
 video_url_12 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/crab_pt_2.mp4"
 video_url_13 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/crab_pt_3.mp4"
-video_url_14 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/face_paint.mp4"
 video_url_15 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/grass_hopper.mp4"
+video_url_14 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/face_paint.mp4"
 video_url_16 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/japanese_rock.mp4"
 video_url_17 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/manta_rays.mp4"
 video_url_18 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_1.mp4"
-video_url_19 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_2.mp4"
-video_url_20 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_3.mp4"
-video_url_21 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_4.mp4"
+video_url_19 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_pt_2.mp4"
+video_url_20 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_pt_3.mp4"
+video_url_21 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/rothko_pt_4.mp4"
 video_url_22 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/seed_timelapse.mp4"
-video_url_24 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/sprouting_seed_1.mp4"
-video_url_25 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/pea_shoot.mp4"
-video_url_26 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/warhol_pt_1.mp4"
-video_url_27 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/warhol_pt_2.mp4"
+video_url_23 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/sprouting_seed_1.mp4"
+video_url_24 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/pea_shoot.mp4"
+video_url_25 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/warhol_pt_1.mp4"
+video_url_26 = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/warhol_pt_2.mp4"
 
 rothko_descriptions = []
 4.times do |i|
@@ -58,33 +60,37 @@ end
 manta_description = "who knew that manta rays can fly? Or is it that they 'could' fly?"
 
 Video.create([
-    { title: "Seed timelapse", uploader_id: User.fifth.id, clip: video_url_22, description: "A cool timelapse I made." },
-    { title: "Boys Latin (2/4)", uploader_id: User.first.id, clip: video_url_2 },
-    { title: "Boys Latin (4/4)", uploader_id: User.first.id, clip: video_url_4 },
-    { title: "ROCKERS", uploader_id: User.fourth.id, clip: video_url_16 },
-    { title: "C E R A M I C S", uploader_id: User.second.id, clip: video_url_6 },
-    { title: "Ink is Incredible", uploader_id: User.second.id, clip: video_url_8 },
-    { title: "Pet Crab pt. 1", uploader_id: User.fourth.id, clip: video_url_11 },
-    { title: "The Writing on the W A L L", uploader_id: User.fourth.id, clip: video_url_10 },
-    { title: "manta rays flying", uploader_id: User.fourth.id, clip: video_url_17,  description: manta_description },
-    { title: "Boys Latin (1/4)", uploader_id: User.first.id, clip: video_url_1 },
-    { title: "Pea shoot", uploader_id: User.fifth.id, clip: video_url_24, description: "A wonderful pea makes its way." },
-    { title: "Checking out sites", uploader_id: User.first.id, clip: video_url_5 },
-    { title: "Pet Crab pt. 2", uploader_id: User.fourth.id, clip: video_url_12 },
-    { title: "rothkorothkorothko pt.1", uploader_id: User.third.id, clip: video_url_18, description: rothko_description[0] },
-    { title: "Father was an artist", uploader_id: User.fourth.id, clip: video_url_14 },
-    { title: "Boys Latin (3/4)", uploader_id: User.first.id, clip: video_url_3 },
-    { title: "A seed sprouts", uploader_id: User.fifth.id, clip: video_url_23, description: "A cool timelapse I made." },
-    { title: "G R A S S H O P P E R", uploader_id: User.fourth.id, clip: video_url_15 },
-    { title: "Warhol? Again?", uploader_id: User.fifth.id, clip: video_url_27, description: "interesting person, no? YES." },
-    { title: "rothkorothkorothko pt.3", uploader_id: User.third.id, clip: video_url_20, description: rothko_description[2] },
-    { title: "Pet Crab pt. 3", uploader_id: User.fourth.id, clip: video_url_13 },
-    { title: "City of Ink", uploader_id: User.second.id, clip: video_url_7 },
-    { title: "rothkorothkorothko pt.2", uploader_id: User.third.id, clip: video_url_19, description: rothko_description[1] },
-    { title: "THIS", uploader_id: User.second.id, clip: video_url_9 },
-    { title: "rothkorothkorothko pt.4", uploader_id: User.third.id, clip: video_url_21, description: rothko_description[3] },
-    { title: "Warhol?", uploader_id: User.fifth.id, clip: video_url_26, description: "interesting person, no?" }
+
+  { title: "rothkorothkorothko pt.1", uploader_id: User.third.id, clip: video_url_18, description: rothko_descriptions[0] },
+  { title: "Father was an artist", uploader_id: User.fourth.id, clip: video_url_14 },
+  { title: "A seed sprouts", uploader_id: User.fifth.id, clip: video_url_23, description: "A cool timelapse I made." },
+  { title: "G R A S S H O P P E R", uploader_id: User.fourth.id, clip: video_url_15 },
+  { title: "Seed timelapse", uploader_id: User.fifth.id, clip: video_url_22, description: "A cool timelapse I made." },
+  { title: "Boys Latin (2/4)", uploader_id: User.first.id, clip: video_url_2 },
+  { title: "Boys Latin (3/4)", uploader_id: User.first.id, clip: video_url_3 },
+  { title: "Warhol pt2", uploader_id: User.fifth.id, clip: video_url_26, description: "warhol eats a burger again?" },
+  { title: "Boys Latin (1/4)", uploader_id: User.first.id, clip: video_url_1 },
+  { title: "ROCKERS", uploader_id: User.fourth.id, clip: video_url_16 },
+  { title: "C E R A M I C S", uploader_id: User.second.id, clip: video_url_6 },
+  { title: "Ink is Incredible", uploader_id: User.second.id, clip: video_url_8 },
+  { title: "Pet Crab pt. 1", uploader_id: User.fourth.id, clip: video_url_11 },
+  { title: "The Writing on the W A L L", uploader_id: User.fourth.id, clip: video_url_10 },
+  { title: "Pea shoot", uploader_id: User.fifth.id, clip: video_url_24, description: "A wonderful pea makes its way." },
+  { title: "Warhol pt1", uploader_id: User.fifth.id, clip: video_url_25, description: "warhol eats a burger?" },
+  { title: "manta rays flying", uploader_id: User.fourth.id, clip: video_url_17,  description: manta_description },
+  { title: "Checking out sites", uploader_id: User.first.id, clip: video_url_5 },
+  { title: "Boys Latin (4/4)", uploader_id: User.first.id, clip: video_url_4 },
+  { title: "rothkorothkorothko pt.3", uploader_id: User.third.id, clip: video_url_20, description: rothko_descriptions[2] },
+  { title: "Pet Crab pt. 3", uploader_id: User.fourth.id, clip: video_url_13 },
+  { title: "City of Ink", uploader_id: User.second.id, clip: video_url_7 },
+  { title: "rothkorothkorothko pt.2", uploader_id: User.third.id, clip: video_url_19, description: rothko_descriptions[1] },
+  { title: "THIS", uploader_id: User.second.id, clip: video_url_9 },
+  { title: "Pet Crab pt. 2", uploader_id: User.fourth.id, clip: video_url_12 },
+  { title: "rothkorothkorothko pt.4", uploader_id: User.third.id, clip: video_url_21, description: rothko_descriptions[3] }
+
 ])
+
+
 
 4.times do |i|
   Following.create([
@@ -95,7 +101,10 @@ end
 Video.all.each do |video|
   5.times do |i|
     Comment.create(
-      { user_id: User.all[i], video_id: video.id, body: Faker::Hipster.paragraph(2)  }
+      { user_id: User.all[i].id, video_id: video.id, body: Faker::Hipster.paragraph(2)  }
     )
   end
 end
+
+
+# "AWS": "arn:aws:iam::217745120435:user/SamDealy"
