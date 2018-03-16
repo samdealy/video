@@ -15,9 +15,8 @@ didion_image  = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didi
 ali_image     = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/ali.png"
 noah_image    = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/noah.png"
 larissa_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Larissa.png"
-
-users = User.create([
-    {username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image},
+me = User.create({username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image})
+other_users = User.create([
     {username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image},
     {username: "Mahershala Ali", email: "ali.com",  password: '123456', image: ali_image },
     {username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image},
@@ -94,7 +93,7 @@ Video.create([
 
 4.times do |i|
   Following.create([
-    { follower_id: User.first.id, leader_id: User.all[i+1].id }
+    { follower_id: me.id, leader_id: other_users[i].id }
   ])
 end
 
