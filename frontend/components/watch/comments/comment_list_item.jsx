@@ -1,5 +1,7 @@
 import React from "react";
 import EditCommentFormContainer from './comment_form/edit_comment_form_container';
+import TimeAgo from '../../time_ago/time_ago.jsx';
+
 
 export default class CommentListItem extends React.Component {
   constructor(props) {
@@ -47,7 +49,7 @@ export default class CommentListItem extends React.Component {
         <div className="comment-body">
           <div className="username-timestamp">
             <h4>{userName}</h4>
-            <h6>{timeStamp}</h6>
+            <h6><TimeAgo timeStamp={timeStamp} /></h6>
           </div>
           {bodyOrEdit}
         </div>

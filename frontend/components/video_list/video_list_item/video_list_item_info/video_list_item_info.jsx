@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-
+import TimeAgo from '../../../time_ago/time_ago.jsx'
 export default class VideoListItemInfo extends React.Component {
 
   render() {
@@ -20,7 +20,9 @@ export default class VideoListItemInfo extends React.Component {
             <div className="author-timestamp">
               <span className="from">from </span>
               <span className="username">{userName}</span>
-              <span className="timestamp">{timeStamp}</span>
+              <span className="timestamp">
+                <TimeAgo timeStamp={timeStamp} />
+              </span>
             </div>
           </div>
         </div>
