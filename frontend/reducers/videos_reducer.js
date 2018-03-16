@@ -5,8 +5,7 @@ export default (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_VIDEO:
-      const newState = merge({}, state, {[action.video.id]: action.video});
-      return newState;
+      return Object.assign({}, state, {[action.video.id]: action.video});
     case RECEIVE_MY_VIDEOS:
       return action.videos;
     case RECEIVE_FEED_VIDEOS:
