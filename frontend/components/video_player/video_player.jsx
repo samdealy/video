@@ -13,18 +13,18 @@ class VideoPlayer extends React.Component {
       hasEnded: false,
       duration: 0
     };
-    this.getDuration = this.getDuration.bind(this);
-    this.stopInterval = this.stopInterval.bind(this);
-    this.handlePlay = this.handlePlay.bind(this);
-    this.handleEnd = this.handleEnd.bind(this);
-    this.toggleShow = this.toggleShow.bind(this);
-    this.toggleHide = this.toggleHide.bind(this);
-    this.updateViews = this.updateViews.bind(this);
+
+    this.getDuration  = this.getDuration.bind(this);
+    this.handlePause  = this.handlePause.bind(this);
+    this.handlePlay   = this.handlePlay.bind(this);
+    this.handleEnd    = this.handleEnd.bind(this);
+    this.toggleShow   = this.toggleShow.bind(this);
+    this.toggleHide   = this.toggleHide.bind(this);
+    this.updateViews  = this.updateViews.bind(this);
   }
 
   componentDidMount() {
     const { match } = this.props;
-
     if (match.path === '/watch/:videoId') {
       this.props.fetchVideo(this.props.videoId);
     }
@@ -52,12 +52,13 @@ class VideoPlayer extends React.Component {
     }, 10);
   }
 
-  stopInterval() {
+  handlePause() {
     clearInterval(this.intervalId);
+    this.setState({ currentTime: this.videoEl.currentTime })
   }
 
   handleEnd() {
-    this.stopInterval();
+    this.handlePause();
     this.updateViews();
     this.setState({ currentTime: 0 });
   }
@@ -80,7 +81,7 @@ class VideoPlayer extends React.Component {
                  ref={ videoEl => this.videoEl = videoEl}
                  onLoadedMetadata={this.getDuration}
                  onPlay={this.handlePlay}
-                 onPause={this.stopInterval}
+                 onPause={this.handlePause}
                  onEnded={this.handleEnd} />
           <ControlBar videoEl={this.videoEl}
                       duration={this.state.duration}

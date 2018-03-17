@@ -5,20 +5,38 @@ export default class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0
+      width: 0,
+      progressBar: null,
+      progressBarContainer: null
     };
-    this.setRef = this.setRef.bind(this);
+    this.setProgressBar = this.setProgressBar.bind(this);
+    this.setProgressBarContainer = this.setProgressBarContainer.bind(this);
     this.skipAhead = this.skipAhead.bind(this);
   }
 
-  setRef(progressBar) {
-    this.progressBar = progressBar;
+  setProgressBar(progressBar) {
+    this.setState({ progressBar });
+  }
+
+  setProgressBarContainer(progressBarContainer) {
+    this.setState({ progressBarContainer });
   }
 
   skipAhead(e) {
     const { videoEl } = this.props;
-    const pos = (e.pageX  - this.progressBar.offsetLeft) / this.progressBar.offsetWidth;
-    videoEl.currentTime = pos * videoEl.duration;
+
+    videoEl.pause();
+    const newWidth = this.calculateNewWidth(e.pageX);
+    videoEl.currentTime = newWidth * videoEl.duration;
+    this.setState({ width: newWidth })
+    videoEl.play();
+  }
+
+  calculateNewWidth(cursorPosition) {
+    const { progressBar, progressBarContainer } = this.state;
+    const progressBarLeftPosition = progressBar.getBoundingClientRect().left
+    const totalWidth = progressBarContainer.offsetWidth;
+    return (cursorPosition  - progressBarLeftPosition) / totalWidth;
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,14 +48,11 @@ export default class ProgressBar extends React.Component {
   render() {
     const { duration } = this.props;
     return(
-      <div className="progress-bar-container">
-        <progress id="progress-bar"
-                  ref={this.setRef}
-                  value="0"
-                  min="0"
-                  style={this.state}
-                  max={this.duration}
-                  onClick={this.skipAhead}>
+      <div className="progress-bar-container"
+        ref={this.setProgressBarContainer} onClick={this.skipAhead}>
+        <progress id="progress-bar" value="0" min="0"
+          ref={this.setProgressBar}
+          style={this.state} max={this.duration} >
         </progress>
       </div>
     );
