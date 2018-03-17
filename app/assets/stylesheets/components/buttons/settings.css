@@ -23,3 +23,7 @@
 .settings-link span {
   margin-left: 5px;
 }
+
+.settings-link:hover {
+  background-color: #1a2e3b;
+}

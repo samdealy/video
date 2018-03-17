@@ -24,7 +24,7 @@ export default class ProgressBar extends React.Component {
 
   skipAhead(e) {
     const { videoEl } = this.props;
-    if (videoEl.ended) videoEl.play();
+    if (videoEl.ended || videoEl.paused) videoEl.play();
     videoEl.pause();
     const newWidth = this.calculateNewWidth(e.pageX);
     videoEl.currentTime = newWidth * videoEl.duration;

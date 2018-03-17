@@ -14,8 +14,11 @@ export default class PlayPauseButton extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.videoEl.ended) {
+    const { videoEl } = nextProps;
+    if (videoEl.ended || videoEl.paused) {
       this.setState({ icon: playIcon })
+    } else {
+      this.setState({ icon: pauseIcon })
     }
   }
 
