@@ -13,6 +13,7 @@ const mapStateToProps = (state, { match }) => {
 
   const followPresent = video.uploader_id !== currentUser.id ? true : false;
   const settingsPresent = !followPresent;
+  const myVideoClass = settingsPresent ? "my-video" : "";
 
   return ({
     className: 'player-video-info',
@@ -26,7 +27,8 @@ const mapStateToProps = (state, { match }) => {
     uploaderId: video.uploader_id || '',
     followPresent,
     settingsPresent,
-    statsPresent: true
+    statsPresent: true,
+    myVideoClass
   });
 };
 

@@ -1,3 +1,8 @@
+.player-video-info .user-list.my-video {
+  display: flex;
+  flex-direction: column;
+}
+
 .settings-link {
   box-sizing: border-box;
   height: 32px;
