@@ -10,11 +10,13 @@ const mapStateToProps = (state, { match }) => {
   const video = currentVideo(state, videoId) || {};
   const user = getUser(state, video.uploader_id) || {};
   const currentUser = getCurrentUser(state);
-  
+
   const followPresent = video.uploader_id !== currentUser.id ? true : false;
-  
+  const settingsPresent = followPresent;
+
   return ({
     className: 'player-video-info',
+    videoId,
     videoTitle: video.title || '',
     videoDescription: video.description || '',
     viewCount: video.views || '',
@@ -22,7 +24,8 @@ const mapStateToProps = (state, { match }) => {
     iconUrl: user.image_url || '',
     userName: user.username || '',
     uploaderId: video.uploader_id || '',
-    followPresent, 
+    followPresent,
+    settingsPresent,
     statsPresent: true
   });
 };

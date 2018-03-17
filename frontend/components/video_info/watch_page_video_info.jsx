@@ -4,6 +4,7 @@ import FollowButtonContainer from "../buttons/follow_button_container";
 import VideoStatsContainer from './video_stats_container';
 import videoStats from './video_stats_container';
 import TimeAgo from '../time_ago/time_ago.jsx';
+import SettingsLink from '../buttons/settings_link';
 
 export default class VideoInfo extends React.Component {
 
@@ -11,6 +12,11 @@ export default class VideoInfo extends React.Component {
     const { followPresent, uploaderId } = this.props;
     return followPresent ?
       <FollowButtonContainer uploaderId={uploaderId}/> : "";
+  }
+
+  settingsLink() {
+    const { settingsPresent, videoId } = this.props;
+    return settingsPresent ? <SettingsLink videoId={videoId} /> : "";
   }
 
   videoStats() {
@@ -25,6 +31,7 @@ export default class VideoInfo extends React.Component {
 
     const videoStats   = this.videoStats();
     const followButton = this.followButton();
+    const settingsLink = this.settingsLink();
 
     return(
       <div className={className}>
@@ -37,6 +44,7 @@ export default class VideoInfo extends React.Component {
         <ul className="user-list">
           <UserListItem userName={userName} iconUrl={iconUrl} />
           {followButton}
+          {settingsLink}
         </ul>
         {videoStats}
         <p>{videoDescription}</p>
