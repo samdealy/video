@@ -3,7 +3,7 @@ import UserListItem from '../user/user_list_item';
 import FollowButtonContainer from "../buttons/follow_button_container";
 import VideoStatsContainer from './video_stats_container';
 import videoStats from './video_stats_container';
-
+import TimeAgo from '../time_ago/time_ago.jsx';
 
 export default class VideoInfo extends React.Component {
 
@@ -29,7 +29,11 @@ export default class VideoInfo extends React.Component {
     return(
       <div className={className}>
         <h2 className="page-header">{videoTitle}</h2>
-        <div><span className="time-stamp">{videoTimeStamp}</span></div>
+        <div>
+          <span className="time-stamp">
+            <TimeAgo timeStamp={videoTimeStamp} />
+          </span>
+        </div>
         <ul className="user-list">
           <UserListItem userName={userName} iconUrl={iconUrl} />
           {followButton}

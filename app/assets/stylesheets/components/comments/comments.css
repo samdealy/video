@@ -93,6 +93,7 @@
   transition-duration: 0.8s;
   transition-property: all;
   transition-timing-function: ease-out;
+  min-height: 31px;
 }
 
 .new-comment-form textarea{
