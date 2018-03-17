@@ -1,5 +1,7 @@
 export const monthDay = (dateString) => {
-  const month = dateString.slice(0,3);
-  const day   = dateString.slice(4).split(',')[0];
+  const dateTime = new Date();
+  const locale   = "en-us";
+  const month    = dateTime.toLocaleString(locale, {month: "short"});
+  const day      = dateTime.getDate();
   return { month, day };
 };
