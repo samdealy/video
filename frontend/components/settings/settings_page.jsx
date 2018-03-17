@@ -24,7 +24,7 @@ class SettingsPage extends React.Component {
     if (videoUploaderId !== currentUserId && videoUploaderId !== null) {
       return(<Redirect to='/home'/>);
     }
-
+    
     return (
       <div className="settings-page-container">
         <SettingsAside

@@ -33,6 +33,7 @@ export default class VideoInfo extends React.Component {
     const followButton = this.followButton();
     const settingsLink = this.settingsLink();
 
+
     return(
       <div className={className}>
         <h2 className="page-header">{videoTitle}</h2>

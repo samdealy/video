@@ -12,7 +12,7 @@ const mapStateToProps = (state, { match }) => {
   const currentUser = getCurrentUser(state);
 
   const followPresent = video.uploader_id !== currentUser.id ? true : false;
-  const settingsPresent = followPresent;
+  const settingsPresent = !followPresent;
 
   return ({
     className: 'player-video-info',
