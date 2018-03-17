@@ -35,6 +35,9 @@
   padding-bottom: 18px;
   margin-top: 13px;
   border-bottom: 1px solid rgb(227, 232, 233);
+
+  display: flex;
+  flex-direction: column;
 }
 
 .player-video-info > * {

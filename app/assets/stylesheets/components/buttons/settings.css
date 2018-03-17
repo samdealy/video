@@ -1,0 +1,20 @@
+.settings-link {
+  box-sizing: border-box;
+  height: 32px;
+  width: 95px;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: rgb(58, 81, 97) ;
+  border-radius: 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 18px;
+  margin-bottom: 10px;
+}
+
+.settings-link span {
+  margin-left: 5px;
+}
