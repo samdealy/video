@@ -24,7 +24,7 @@ export default class ProgressBar extends React.Component {
 
   skipAhead(e) {
     const { videoEl } = this.props;
-
+    if (videoEl.ended) videoEl.play();
     videoEl.pause();
     const newWidth = this.calculateNewWidth(e.pageX);
     videoEl.currentTime = newWidth * videoEl.duration;
@@ -46,10 +46,10 @@ export default class ProgressBar extends React.Component {
   }
 
   render() {
-    const { duration } = this.props;
+    const { duration, videoEl } = this.props;
     return(
       <div className="progress-bar-container"
-        ref={this.setProgressBarContainer} onClick={this.skipAhead}>
+        ref={this.setProgressBarContainer} onClick={this.skipAhead} >
         <progress id="progress-bar" value="0" min="0"
           ref={this.setProgressBar}
           style={this.state} max={this.duration} >
