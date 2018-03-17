@@ -11,6 +11,7 @@ class VideoPlayer extends React.Component {
       showHide: "show",
       hasStarted: false,
       hasEnded: false,
+      duration: 0
     };
     this.getDuration = this.getDuration.bind(this);
     this.stopInterval = this.stopInterval.bind(this);
@@ -29,9 +30,8 @@ class VideoPlayer extends React.Component {
     }
   }
 
-  //Progress bar methods
   getDuration(e) {
-    this.duration = e.target.duration;
+    this.setState({ duration: e.target.duration });
   }
 
   toggleShow() {
@@ -83,7 +83,7 @@ class VideoPlayer extends React.Component {
                  onPause={this.stopInterval}
                  onEnded={this.handleEnd} />
           <ControlBar videoEl={this.videoEl}
-                      duration={this.duration}
+                      duration={this.state.duration}
                       currentTime={this.state.currentTime}
                       showHide={this.state.showHide} />
         </figure>

@@ -24,7 +24,10 @@ class ControlBar extends React.Component {
 
     return(
       <div className={showHide} id="video-controls" >
-         <div><PlayPauseButton videoEl={videoEl} /></div>
+         <div>
+           <PlayPauseButton videoEl={videoEl}
+             currentTime={currentTime} />
+         </div>
          <div className="playbar">
            <ProgressBar videoEl={videoEl}
                         duration={duration}
