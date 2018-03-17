@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { fullDate } from '../../util/dates.js';
 
 export default class SettingsAside extends React.Component {
 
   render() {
     const { title, timeStamp, thumbUrl, videoId } = this.props;
+    const dateTime = fullDate(timeStamp);
+
     return(
       <div className="settings-aside-wrapper">
         <div className="settings-aside">
@@ -12,7 +15,7 @@ export default class SettingsAside extends React.Component {
             <img src={thumbUrl}></img>
             <div className="thumbnail-info">
               <h4>{title}</h4>
-              <span>Uploaded {timeStamp}</span>
+              <span>Uploaded {dateTime}</span>
             </div>
           </Link>
         </div>
