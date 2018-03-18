@@ -1,31 +1,24 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Video.destroy_all
 Following.destroy_all
 Comment.destroy_all
 
+###################
 dealy_image   = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Dealy_Headshot_MLS.jpg"
 didion_image  = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didion.png"
 ali_image     = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/ali.png"
 noah_image    = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/noah.png"
 larissa_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Larissa.png"
 
-me = User.create({ username: "Sam Dealy", email: "me.com",   password: '123456', image: dealy_image })
 guest = User.create({ username: "Sweet Guest", email: "guest.com",   password: '123456' })
-
 other_users = User.create([
-    { username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image },
-    { username: "Mahershala Ali", email: "ali.com",  password: '123456', image: ali_image },
-    { username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image },
-    { username: "Larissa Jones",  email: "la.com",   password: '123456',  image: larissa_image }
-  ])
-
+    { username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image   },
+    { username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image  },
+    { username: "Mahershala Ali", email: "ali.com",  password: '123456', image: ali_image     },
+    { username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image    },
+    { username: "Larissa Jones",  email: "la.com",   password: '123456', image: larissa_image }
+])
+###################
 video_url_1  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_1_4.mp4"
 video_url_2  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_2_4.mp4"
 video_url_3  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_3_4.mp4"
@@ -62,7 +55,6 @@ end
 manta_description = "who knew that manta rays can fly? Or is it that they 'could' fly?"
 
 Video.create([
-
   { title: "rothkorothkorothko pt.1", uploader_id: User.third.id, clip: video_url_18, description: rothko_descriptions[0] },
   { title: "Father was an artist", uploader_id: User.fourth.id, clip: video_url_14, description: "Very bizarre, tbh. But I thought you should see it."},
   { title: "A seed sprouts", uploader_id: User.fifth.id, clip: video_url_23, description: "A cool timelapse I made." },
@@ -89,14 +81,11 @@ Video.create([
   { title: "THIS", uploader_id: User.second.id, clip: video_url_9, description: "INK is magical-- do you need a more compelling visual argument?" },
   { title: "Pet Crab pt. 2", uploader_id: User.fourth.id, clip: video_url_12, description: "This is the real deal. A crab eats a potato chip, and it makes you wonder."},
   { title: "rothkorothkorothko pt.4", uploader_id: User.third.id, clip: video_url_21, description: rothko_descriptions[3] }
-
 ])
-
-
-
-4.times do |i|
+###################
+5.times do |i|
   Following.create([
-    { follower_id: me.id, leader_id: other_users[i].id }
+    { follower_id: guest.id, leader_id: other_users[i].id }
   ])
 end
 
