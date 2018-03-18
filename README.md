@@ -28,6 +28,7 @@ contains no more new followed videos.
 This pagination scheme does not use an external gem; rather, it relies on a custom-designed interaction between the front end's redux store, and the backends videos controller.
 
 When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter.
+
 ```javascript
 // frontend/util/video_api_util.js
 export const fetchFeedVideos = pageNumber => (
@@ -38,9 +39,10 @@ export const fetchFeedVideos = pageNumber => (
 );
 ```
 In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` to determine how many videos to send back in its response.
-The videos are then sorted by time of upload (a video's id number corresponds to upload time).
+The videos are then sorted by time of upload (a video's id number corresponds to upload time). Take note of the `@number_of_feed_videos` instance variable!
 
 ```ruby
+# app/controllers/api/videos_controller.rb
 def feed_index
   @slice_factor= params[:request_counter].to_i * FEED_VIDEO_COUNT
   current_user_feed_videos = current_user.followed_videos
@@ -55,7 +57,20 @@ def feed_index
 end
 ```
 
-Now, the most difficult part of this feature is letting the frontend know when there are no more feed videos, and it should therefore no longer display a "Load More Videos" button, but display a "That's all folks!" message instead.
+Now, the most difficult part of this feature is having the front end video list component know that there are no more feed videos, and it should therefore no longer display a "Load More Videos" button, but display a "That's all folks!" message instead.
+At first, I tried to rely solely on my front end by checking to see how many videos were in the previous render and compare them to the incoming number of videos. But this approach didn't work because you could navigate away from the feed page, navigate back, and trigger the truth condition-- the number of videos on the previous render was, say, 6 and when you navigated back it was still 6, so the component would not render the load button.
+
+To solve this, I sent up the `@number_of_feed_videos` through my `api/videos/feed` jbuilder to the frontend. I created a feed reducer that listens for a `RECEIVE_FEED_VIDEOS` action, and updates both the `nextFeedPage` and `numberOfFeedVideos` parameters. Now, in my `video_list` component, the logic is quite simple.
+
+```javascript
+// frontend/components/video_list/video_list.jsx
+componentWillReceiveProps(nextProps) {
+  const { numberOfFeedVideos }  = this.props;
+  if (nextProps.videos.length === numberOfFeedVideos) {
+    this.setState({ noMoreVideosText: true });
+  }
+}
+```
 
 
 
