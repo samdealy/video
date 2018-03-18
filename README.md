@@ -124,3 +124,7 @@ calculateNewWidth(cursorPosition) {
   return (cursorPosition  - progressBarLeftPosition) / totalWidth;
 }
 ```
+
+
+## Features in Development
+Likes and liked videos that appear in the feed, fullscreen mode feature for the video player, volume controls, video tags, and video collections.
