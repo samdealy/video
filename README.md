@@ -29,6 +29,7 @@ This pagination scheme does not use an external gem; rather, it relies on a cust
 
 When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter. The page number will be used by the backend to determine how many videos to send back.
 ```javascript
+//frontend/util/video_api_util.js
 export const fetchFeedVideos = pageNumber => (
   $.ajax({
     method: 'GET',
