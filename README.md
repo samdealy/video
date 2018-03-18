@@ -1,7 +1,9 @@
 <p align="center">
   <img src='./app/assets/images/video_readme_logo.png' />
 </p>
+
 ***
+
 Video is an online video platform where users can upload, edit, and watch videos on a custom-built
 HTML5 video player. User experience centers on the feed feature, which displays videos from followed accounts.
 
@@ -17,7 +19,7 @@ Uploaded videos, background videos, and user icons, are stored on the cloud via 
 With a strong emphasis on not relying on external code sources,
 Video implements the core features of an online video provider (OVP). It handles back end and front end authentication,
 without the use of external libraries. Its upload feature allows users to view video thumbnails and add descriptions and titles.
-Its feed and custom video player are distinguishing features, and, again, are "home-rolled".
+Its "home-rolled" feed and custom video player are distinguishing features.
 
 #### Feed
 
