@@ -27,9 +27,8 @@ Its "home-rolled" feed and custom video player are distinguishing features.
 </p>
 The feed displays one of two collections of videos at a time: followed users' videos, and the user's own videos. The collection of followed videos displays multiples of three videos at a time, and a "load more videos" button loads three more videos until the user
 contains no more new followed videos.
-<p align="center">
-  <img float="right" width="250px" height="200px" src='./app/assets/images/read_me/load_more_button.png' />
-</p>
+
+![load-more-videos](./app/assets/images/read_me/load_more_button.png)
 
 This pagination scheme does not use an external gem; rather, it relies on a custom-designed interaction between the front end's redux store, and the backends videos controller.
 
@@ -79,7 +78,6 @@ componentWillReceiveProps(nextProps) {
 ```
 ![No-more-videos](./app/assets/images/read_me/no_more.png)
 
-  <img style="class: small-markdown-image"  src='./app/assets/images/read_me/no_more.png' />
 
 
 
