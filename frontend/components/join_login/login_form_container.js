@@ -11,15 +11,14 @@ const mapStateToProps = (state, ownProps) => {
     linkText: "Join",
     linkPath: "join",
     nameClass: "hidden",
-    src: "https://s3.amazonaws.com/fsp-video-dev/desert_video.mp4"
+    src: "https://s3.amazonaws.com/fsp-video-dev/desert_video.mp4",
   };
 };
 
 const dispatchStateToProps = (dispatch) => {
-  return { processForm: (user) => dispatch(login(user)) };
+  return {
+    processForm: (user) => dispatch(login(user))
+  };
 };
 
 export default connect(mapStateToProps, dispatchStateToProps)(SessionForm);
-
-//NOTE CSS: nameClass is now going to hide the First and last
-//name input depending on login or join. CSS

@@ -12,7 +12,7 @@ const mapStateToProps = ({ errors }) => {
     linkText: "Log in",
     linkPath: "log_in",
     nameClass: "login-input",
-    src: "https://s3.amazonaws.com/fsp-video-dev/glacier.mp4"
+    src: "https://s3.amazonaws.com/fsp-video-dev/glacier.mp4",
   };
 };
 

@@ -58,10 +58,18 @@
   padding-bottom: 13px;
 }
 
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.login-form a {
+
+.form-footer a {
   color: #00ADEF;
   margin-left: 8px;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 #link-title {
@@ -82,7 +90,31 @@
   text-align: center;
 }
 
+.demo-login-button {
+  box-sizing: border-box;
+  border: 1px solid #d0d8db;
+  padding: 15px;
+  width: 351px;
+  margin: 13px auto;
+  border-radius: .1875rem;
+  border-color: rgb(58, 81, 97);
+  background-color: rgb(58, 81, 97);
+  font-weight: 700;
+  color: white;
+  text-align: center;
+}
 
+.demo-login-button:hover {
+  border-color: #1A2E3B;
+  background-color: #1A2E3B;
+}
+
+.form-footer {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
 //errors
 .session-errors {
   padding: 0 25px;
@@ -114,7 +146,7 @@
   background-color: #5A9E02
 }
 
-.login-form a:hover {
+.form-footer a:hover {
   color: #08C;
   cursor: pointer;
 }
