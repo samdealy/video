@@ -86,7 +86,10 @@ componentWillReceiveProps(nextProps) {
 ```
 
 #### Custom Video Player
-The video player does not use the native HTML5 video tag's controls. Rather, it is custom styled and makes use of HTMLMediaElement functionality to implement play-pause, progress bar, and skip-ahead features. It displays the control bar when the video has not started, or when the user mouses over the video, and it updates the progress bar's width at an interval of 10ms.
+<p align="center">
+  <img src='./app/assets/images/first_player_demo.gif' />
+</p>
+The video player does not use the native HTML5 video tag's controls. Rather, it's custom styled and makes use of HTMLMediaElement functionality to implement play-pause, progress bar, and skip-ahead features. It displays the control bar when the video has not started, or when the user mouses over the video, and it updates the progress bar's width at an interval of 10ms.
 
 The skip-ahead feature was difficult to implement because I had to sync the `<video>` HTMLElements `currentTime` attribute to the
 `<progress>` bar's CSS width.
@@ -106,6 +109,9 @@ skipAhead(e) {
   videoEl.play();
 }
 ```
+
+<img align="right" src='./app/assets/images/second_player_demo.gif' />
+
 The trickiest problem is how to calculate the new width percentage based on a user's click position. The formula for the new width is rudimentary: `newWidth = (cursorPosition - progressBarLeftPosition) / totalWidth`, where `progressBarLeftPosition` is the progress bar's
 offset from the left side of the viewport, and the total width is the width of the progress bar container (a div element that wraps around the progress element). But how do you get the values of these three variables?
 
