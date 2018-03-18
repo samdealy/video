@@ -27,9 +27,9 @@ contains no more new followed videos.
 
 This pagination scheme does not use an external gem; rather, it relies on a custom-designed interaction between the front end's redux store, and the backends videos controller.
 
-When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter. The page number will be used by the backend to determine how many videos to send back.
+When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter.
 ```javascript
-//frontend/util/video_api_util.js
+// frontend/util/video_api_util.js
 export const fetchFeedVideos = pageNumber => (
   $.ajax({
     method: 'GET',
@@ -37,4 +37,27 @@ export const fetchFeedVideos = pageNumber => (
   })
 );
 ```
+In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` to determine how many videos to send back in its response.
+The videos are then sorted by time of upload (a video's id number corresponds to upload time).
+
+```ruby
+def feed_index
+  @slice_factor= params[:request_counter].to_i * FEED_VIDEO_COUNT
+  current_user_feed_videos = current_user.followed_videos
+  @number_of_feed_videos = current_user_feed_videos.length
+  @videos = current_user_feed_videos.sort_by{|vid| -1 * vid.id}[0...@slice_factor]
+
+  if @videos
+    render "api/videos/feed"
+  else
+    render json: { users: {}, videos: {} }
+  end
+end
+```
+
+Now, the most difficult part of this feature is letting the frontend know when there are no more feed videos, and it should therefore no longer display a "Load More Videos" button, but display a "That's all folks!" message instead.
+
+
+
+
 #### Custom Video Player
