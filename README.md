@@ -86,3 +86,37 @@ componentWillReceiveProps(nextProps) {
 ```
 
 #### Custom Video Player
+The video player does not use the native HTML5 video tag's controls. Rather, it is custom styled and makes use of HTMLMediaElement functionality to implement play-pause, progress bar, and skip-ahead features. It displays the control bar when the video has not started, or when the user mouses over the video, and it updates the progress bar's width at an interval of 10ms.
+
+The skip-ahead feature was difficult to implement because I had to sync the `<video>` HTMLElements `currentTime` attribute to the
+`<progress>` bar's CSS width.
+
+To achieve this, I set a React Ref (`videoEl`) on the `<video>` element, `<progress>` element, and `progressBarContainer` div element. By setting the ref on the `<video>` element I'm able to access the video's `duration` and `currentTime` attributes.
+On a progress bar click event, the `skipAhead` function is called, and it pauses the video, calculates the new width, sets the new video current time, sets the new width on the progress bar (expressed as a percentage), and then plays the video.
+
+```javascript
+// frontend/components/video_player/control_features/progress_bar.jsx
+skipAhead(e) {
+  const { videoEl } = this.props;
+  if (videoEl.ended || videoEl.paused) videoEl.play();
+  videoEl.pause();
+  const newWidth = this.calculateNewWidth(e.pageX);
+  videoEl.currentTime = newWidth * videoEl.duration;
+  this.setState({ width: newWidth })
+  videoEl.play();
+}
+```
+The trickiest problem is how to calculate the new width percentage based on a user's click position. The formula for the new width is rudimentary: `newWidth = (cursorPosition - progressBarLeftPosition) / totalWidth`, where `progressBarLeftPosition` is the progress bar's
+offset from the left side of the viewport, and the total width is the width of the progress bar container (a div element that wraps around the progress element). But how do you get the values of these three variables?
+
+ Well, you have to get into the nitty gritty of DOM element position attributes. First, the cursorPosition is given by `e.pageX`, which is passed in as a parameter. Second, `getBoundingClientRect` calculates the position of the progress bar from the left of the viewport. Third, find the `offsetWidth` on the `progressBarContainer`. I kept getting incorrect pixel measurements because I was finding the `offsetWidth` on the `progressBar`, whose width is always a fraction of the total width!
+
+```javascript
+// frontend/components/video_player/control_features/progress_bar.jsx
+calculateNewWidth(cursorPosition) {
+  const { progressBar, progressBarContainer } = this.state;
+  const progressBarLeftPosition = progressBar.getBoundingClientRect().left
+  const totalWidth = progressBarContainer.offsetWidth;
+  return (cursorPosition  - progressBarLeftPosition) / totalWidth;
+}
+```
