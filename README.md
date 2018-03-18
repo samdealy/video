@@ -78,7 +78,9 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
-![No-more-videos](./app/assets/images/read_me/no_more.png)
+
+<img align="right" width='250px' height="200px" src='./app/assets/images/read_me/no_more.png' />
+
 
 
 
