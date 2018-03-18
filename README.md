@@ -22,8 +22,14 @@ without the use of external libraries. Its upload feature allows users to view v
 Its "home-rolled" feed and custom video player are distinguishing features.
 
 #### Feed
+<p align="center">
+  <img src='./app/assets/images/read_me/feed_intro.png' />
+</p>
 The feed displays one of two collections of videos at a time: followed users' videos, and the user's own videos. The collection of followed videos displays multiples of three videos at a time, and a "load more videos" button loads three more videos until the user
 contains no more new followed videos.
+<p align="center">
+  <img src='./app/assets/images/read_me/load_more_button.png' />
+</p>
 
 This pagination scheme does not use an external gem; rather, it relies on a custom-designed interaction between the front end's redux store, and the backends videos controller.
 
@@ -38,16 +44,16 @@ export const fetchFeedVideos = pageNumber => (
   })
 );
 ```
-In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` to determine how many videos to send back in its response.
-The videos are then sorted by time of upload (a video's id number corresponds to upload time). Take note of the `@number_of_feed_videos` instance variable!
+In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` (which is set to 3) to determine how many videos to send back in its response. The videos are then sorted by time of upload (a video's id number corresponds to upload time). Take note of the `@number_of_feed_videos` instance variable!
 
 ```ruby
 # app/controllers/api/videos_controller.rb
 def feed_index
-  @slice_factor= params[:request_counter].to_i * FEED_VIDEO_COUNT
   current_user_feed_videos = current_user.followed_videos
   @number_of_feed_videos = current_user_feed_videos.length
-  @videos = current_user_feed_videos.sort_by{|vid| -1 * vid.id}[0...@slice_factor]
+
+  slice_idx = params[:request_counter].to_i * FEED_VIDEO_COUNT
+  @videos = current_user_feed_videos.sort_by{|vid| -1 * vid.id}[0...slice_idx]
 
   if @videos
     render "api/videos/feed"
@@ -71,8 +77,9 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
-
-
+<p align="center">
+  <img src='./app/assets/images/read_me/no_more.png' />
+</p>
 
 
 #### Custom Video Player
