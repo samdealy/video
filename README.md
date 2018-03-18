@@ -77,9 +77,10 @@ componentWillReceiveProps(nextProps) {
   }
 }
 ```
-<p align="center">
+![No-more-videos](./app/assets/images/read_me/no_more.png)
+
   <img style="class: small-markdown-image"  src='./app/assets/images/read_me/no_more.png' />
-</p>
+
 
 
 #### Custom Video Player
