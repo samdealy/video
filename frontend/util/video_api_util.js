@@ -30,10 +30,10 @@ export const increaseViews = videoId => (
   })
 );
 
-export const fetchFeedVideos = requestCounter => (
+export const fetchFeedVideos = pageNumber => (
   $.ajax({
     method: 'GET',
-    url: `/api/videos/feed/${requestCounter}`
+    url: `/api/videos/feed/${pageNumber}`
   })
 );
 
