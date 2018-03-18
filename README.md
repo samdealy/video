@@ -32,9 +32,11 @@ contains no more new followed videos.
 
 
 This pagination scheme does not use an external gem; rather, it relies on a custom-designed interaction between the front end's redux store, and the backends videos controller.
-<br>
-<br>
-When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter.
+
+
+
+
+ When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter.
 
 <img align="right" width='250px' height="200px" src='./app/assets/images/read_me/load_more_button.png' />
 
