@@ -78,7 +78,7 @@ componentWillReceiveProps(nextProps) {
 }
 ```
 <p align="center">
-  <img float="right" width="250px" height="200px" src='./app/assets/images/read_me/no_more.png' />
+  <img style="float: right;" width="250px" height="200px" src='./app/assets/images/read_me/no_more.png' />
 </p>
 
 
