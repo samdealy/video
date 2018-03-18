@@ -69,6 +69,8 @@ At first, I tried to rely solely on my front end by checking to see how many vid
 
 To solve this, I sent up the `@number_of_feed_videos` through my `api/videos/feed` jbuilder to the frontend. I created a feed reducer that listens for a `RECEIVE_FEED_VIDEOS` action, and updates both the `nextFeedPage` and `numberOfFeedVideos` parameters. Now, in my `video_list` component, the logic is quite simple.
 
+<img align="right" width='250px' height="200px" src='./app/assets/images/read_me/no_more.png' />
+
 ```javascript
 // frontend/components/video_list/video_list.jsx
 componentWillReceiveProps(nextProps) {
@@ -79,6 +81,4 @@ componentWillReceiveProps(nextProps) {
 }
 ```
 
-<img align="right" width='250px' height="200px" src='./app/assets/images/read_me/no_more.png' />
-<br>
 #### Custom Video Player
