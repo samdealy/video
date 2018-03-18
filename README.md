@@ -29,7 +29,7 @@ The feed displays one of two collections of videos at a time: followed users' vi
 contains no more new followed videos.
 
 
-<div style="float: right;">
+<div style="float:right;">
   <img width='250px' height="200px" src='./app/assets/images/read_me/load_more_button.png' />
 </p>
 
