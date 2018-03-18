@@ -36,6 +36,7 @@ This pagination scheme does not use an external gem; rather, it relies on a cust
 When the feed page first mounts or when the user clicks "load more videos", the front end dispatches a "requestFeedVideos" AJAX request that contains the requested page number as a parameter.
 
 <img align="right" width='250px' height="200px" src='./app/assets/images/read_me/load_more_button.png' />
+
 ```javascript
 // frontend/util/video_api_util.js
 export const fetchFeedVideos = pageNumber => (
