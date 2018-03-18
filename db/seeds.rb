@@ -15,12 +15,15 @@ didion_image  = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/didi
 ali_image     = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/ali.png"
 noah_image    = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/noah.png"
 larissa_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Larissa.png"
-me = User.create({username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image})
+
+me = User.create({ username: "Sam Dealy", email: "me.com",   password: '123456', image: dealy_image })
+guest = User.create({ username: "Sweet Guest", email: "guest.com",   password: '123456' })
+
 other_users = User.create([
-    {username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image},
-    {username: "Mahershala Ali", email: "ali.com",  password: '123456', image: ali_image },
-    {username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image},
-    {username: "Larissa Jones",  email: "la.com",   password: '123456',  image: larissa_image}
+    { username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image },
+    { username: "Mahershala Ali", email: "ali.com",  password: '123456', image: ali_image },
+    { username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image },
+    { username: "Larissa Jones",  email: "la.com",   password: '123456',  image: larissa_image }
   ])
 
 video_url_1  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_1_4.mp4"
