@@ -1,5 +1,6 @@
 <p align="center">
-  ![alt text](./app/assets/images/video_logo_black.png "Video Logo")
+  <img src='./app/assets/images/video_logo_black.png' />
+  <!-- ![alt text](./app/assets/images/video_logo_black.png "Video Logo") -->
 </p>
 
 Video is an online video platform where users can upload, edit, and watch videos on a custom-built
