@@ -5,7 +5,7 @@
 Video is an online video platform where users can upload, edit, and watch videos on a custom-built
 HTML5 video player. User experience centers on the feed feature, which displays videos from followed accounts.
 
-[Live Site](http://www.sdd-video.com/#/
+[Live Site](http://www.sdd-video.com/#/)
 
 ## Technology
 Video is a single-page-application that utilizes a Rails v5.1.5 back end (connected to a PostgreSQL database)
