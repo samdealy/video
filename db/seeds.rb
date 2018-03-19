@@ -10,7 +10,6 @@ ali_image     = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/ali.
 noah_image    = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/noah.png"
 larissa_image = "https://s3.amazonaws.com/fsp-video-dev/videos/avatar_seeds/Larissa.png"
 
-guest = User.create({ username: "Sweet Guest", email: "guest.com",   password: "123456" })
 other_users = User.create([
     { username: "Sam Dealy",      email: "me.com",   password: '123456', image: dealy_image   },
     { username: "Joan Didion",    email: "joan.com", password: '123456', image: didion_image  },
@@ -18,6 +17,7 @@ other_users = User.create([
     { username: "Noah Lennox",    email: "noah.com", password: '123456', image: noah_image    },
     { username: "Larissa Jones",  email: "la.com",   password: '123456', image: larissa_image }
 ])
+guest = User.create({ username: "Sweet Guest", email: "guest.com",   password: "123456" })
 ###################
 video_url_1  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_1_4.mp4"
 video_url_2  = "https://s3.amazonaws.com/fsp-video-dev/videos/video_seeds/Boys+Latin_2_4.mp4"

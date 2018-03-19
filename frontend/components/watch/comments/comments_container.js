@@ -9,10 +9,10 @@ const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
   const commentIds = video.comment_ids || [];
-  
+
   const comments = getComments(state, commentIds) || [];
   return ({
-    comments
+    comments: comments.reverse()
   });
 };
 
