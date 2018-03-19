@@ -43,9 +43,10 @@
   },
   "homepage": "https://github.com/samdealy/video#readme",
   "devDependencies": {
+    "eslint": "^4.19.0",
     "file-loader": "^1.1.11",
     "image-webpack-loader": "^4.1.0",
-    "url-loader": "^1.0.1",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "url-loader": "^1.0.1"
   }
 }

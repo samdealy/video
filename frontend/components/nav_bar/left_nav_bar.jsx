@@ -1,17 +1,17 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 export default ({ loggedIn }) => {
   let element2, element3;
   if (loggedIn) {
-    element2 = <Link to='/home/myvideos'><span className="my-videos">My Videos</span></Link>
-    element3 = ''
+    element2 = <Link to='/home/myvideos'><span className="my-videos">My Videos</span></Link>;
+    element3 = '';
   } else  {
-    element2 = <Link to='/join'><span id="join-button">Join</span></Link>
+    element2 = <Link to='/join'><span id="join-button">Join</span></Link>;
     element3 =
       <li>
         <Link to='/log_in'><span id="login">Log in</span></Link>
-      </li>
+      </li>;
   }
 
   const logo = loggedIn ? logoBlue : logoWhite;
@@ -22,5 +22,5 @@ export default ({ loggedIn }) => {
       <li>{element2}</li>
       {element3}
     </ul>
-  )
-}
+  );
+};

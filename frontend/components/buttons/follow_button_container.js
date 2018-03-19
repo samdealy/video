@@ -9,11 +9,8 @@ const mapStateToProps = (state, { uploaderId }) => {
   const currentUser = getCurrentUser(state);
   const alreadyFollows = currentUser.leader_ids[uploaderId] || false;
   const classState = alreadyFollows ? "following" : "not-following";
-  return ({
-    classState,
-    uploaderId,
-    alreadyFollows
-  });
+  
+  return ({ classState, uploaderId, alreadyFollows });
 };
 
 const mapDispatchToProps = dispatch => {

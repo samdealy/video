@@ -4,7 +4,6 @@ import WatchPageVideoInfo from '../video_info/watch_page_video_info';
 import { withRouter } from 'react-router-dom';
 import { currentVideo, getUser, getCurrentUser } from '../../reducers/selectors';
 
-
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
