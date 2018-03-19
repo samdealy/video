@@ -89,6 +89,7 @@ componentWillReceiveProps(nextProps) {
 </p>
 The video player does not use the native HTML5 video tag's controls. Rather, it's custom styled and makes use of HTMLMediaElement functionality to implement play-pause, progress bar, and skip-ahead features. It displays the control bar when the video has not started, or when the user mouses over the video, and it updates the progress bar's width at an interval of 10ms.
 
+
 The skip-ahead feature was difficult to implement because I had to sync the `<video>` HTMLElements `currentTime` attribute to the
 `<progress>` bar's CSS width.
 
