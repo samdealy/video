@@ -23,7 +23,7 @@ Its "home-rolled" feed and custom video player are distinguishing features.
 
 <img align='left' width="250px" height="250px" src='./app/assets/images/read_me/feed_intro.png' />
 
-The feed displays one of two collections of videos at a time: followed users' videos, and the user's own videos. The collection of followed videos displays multiples of three videos at a time, and a "load more videos" button loads three more videos until the user
+The feed displays one of two collections of videos at a time: followed users' videos and the user's own videos. The collection of followed videos displays multiples of three videos at a time, and a "load more videos" button loads three more videos until the user
 contains no more new followed videos.
 
 
