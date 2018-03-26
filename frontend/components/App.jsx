@@ -2,7 +2,6 @@ import React from 'react';
 import { Route } from 'react-router';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
-//Page Pages
 import NavBarContainer from './nav_bar/nav_bar_container.js';
 import Footer from './footer/footer';
 import LogInFormContainer from './join_login/login_form_container';
