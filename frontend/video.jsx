@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   let store;
 
-
   if (window.currentUser) {
     const { id } = window.currentUser;
     const preloadedState = {
