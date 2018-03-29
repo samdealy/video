@@ -7,7 +7,7 @@ export default (state = {}, action) => {
     case RECEIVE_VIDEO:
       return Object.assign({}, state, {[action.video.id]: action.video});
     case RECEIVE_MY_VIDEOS:
-      return action.videos;
+      return action.videos || {};
     case RECEIVE_FEED_VIDEOS:
       return action.videos || {};
     default:
