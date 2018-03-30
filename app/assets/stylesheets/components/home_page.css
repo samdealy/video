@@ -70,6 +70,12 @@
   color: #4bf;
 }
 
+.aside-header.built-using {
+  background: #ebeef1;
+  border-left: 5px solid #dbe0e6;
+  color: #98aabc;
+}
+
 .aside-header.contact-cv {
   background: #fdf0d5;
   border-left: 5px solid #fce4b3;
@@ -106,6 +112,8 @@ ul.video-list {
 img.contact-logo[alt='sd-logo'] {
   width: 48px;
 }
+
+
 
 .logo-list.skills .skills-logo {
   width: 30px;
