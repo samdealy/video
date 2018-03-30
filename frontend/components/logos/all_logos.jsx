@@ -5,11 +5,18 @@ const srcStart  = "https://s3.amazonaws.com/fsp-video-pro/site_logos/";
 const resumeSrc = "https://s3.amazonaws.com/fsp-video-pro/Samson_Dealy_CV.pdf"
 const className = "contact-logo";
 
+const personalSiteHref = "http://samdealy.io";
 const emailHref = "mailto:sam.dealy@gmail.com";
 const adobeHref = "assets/documents/Samson_Dealy_CV.pdf";
 const angelListHref = "https://angel.co/samson-dealy";
 const gitHubHref = 'https://github.com/samdealy';
 const LinkedinHref = 'https://linkedin.com/in/samson-dealy';
+
+
+export const SD = () => (
+  <Logo src={srcStart + 'sd.png'} className={className}
+    href={personalSiteHref} alt='sd-logo' />
+)
 
 export const Email = () => (
   <Logo src={srcStart + 'email_logo.png'} className={className}

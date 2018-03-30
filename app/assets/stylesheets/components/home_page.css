@@ -81,9 +81,14 @@ img.contact-logo:hover {
 ul.logo-list {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   margin-top: 27px;
 }
 
 ul.video-list {
   margin-top: 133px;
+}
+
+img.contact-logo[alt='sd-logo'] {
+  width: 48px;
 }
