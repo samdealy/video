@@ -40,6 +40,17 @@
   color: #4bf;
 }
 
+.feed-aside {
+  margin-left: 30px;
+}
+
+.about-me-text {
+  text-align: justify;
+  margin-top: 16px;
+  opacity: .7;
+}
+
+
 .aside-header {
   font-size: 18px;
   text-transform: uppercase;

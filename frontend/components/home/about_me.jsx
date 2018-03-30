@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return(
-    <div className="about-me-wrapper">
+    <div className="aside-section-wrapper">
       <div className="aside-header about-me-header">About me</div>
       <p className="about-me-text">
         I'm Sam Dealy, a software engineer based in New York City. I love building
