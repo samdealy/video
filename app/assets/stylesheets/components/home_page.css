@@ -84,11 +84,19 @@ img.contact-logo:hover {
   opacity: 1;
 }
 
-ul.logo-list {
+.aside-section-wrapper ul.logo-list {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-top: 27px;
+}
+
+.aside-section-wrapper ul.logo-list.contact-cv {
+  justify-content: flex-start;
+}
+
+ul.logo-list.contact-cv img {
+  margin-left: 27px;
 }
 
 ul.video-list {
