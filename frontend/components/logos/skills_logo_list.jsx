@@ -6,8 +6,8 @@ export default () => (
     <li><Rails /></li>
     <li><ReactLogo /></li>
     <li><Redux /></li>
+    <li><Postgres /></li>
     <li><Html /></li>
     <li><Css /></li>
-    <li><Postgres /></li>
   </ul>
 )
