@@ -1,5 +1,5 @@
 import React from 'react';
-import { SD, AngelList, GitHub, LinkedIn } from './all_logos';
+import { SD, AngelList, GitHub, LinkedIn } from './site_logos';
 
 export default () => (
   <ul className='logo-list'>

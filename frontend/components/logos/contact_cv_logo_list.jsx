@@ -1,5 +1,5 @@
 import React from 'react';
-import { Email, CV } from './all_logos';
+import { Email, CV } from './site_logos';
 
 export default () => (
   <ul className='logo-list contact-cv'>
