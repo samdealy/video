@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from './logo';
 
 const srcStart  = "https://s3.amazonaws.com/fsp-video-pro/site_logos/";
+const resumeSrc = "https://s3.amazonaws.com/fsp-video-pro/Samson_Dealy_CV.pdf"
 const className = "contact-logo";
 
 const emailHref = "mailto:sam.dealy@gmail.com";
@@ -17,7 +18,7 @@ export const Email = () => (
 
 export const Adobe = () => (
   <Logo src={srcStart + 'adobe_logo.png'} className={className}
-    href={emailHref} alt='adobe-logo' />
+    href={resumeSrc} alt='adobe-logo' />
 )
 
 export const AngelList = () => (
