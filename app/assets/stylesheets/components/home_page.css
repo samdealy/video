@@ -50,27 +50,92 @@
   opacity: .7;
 }
 
+.aside-section-wrapper {
+  margin-top: 100px;
+}
+
+#about-me {
+  margin-top: 126px;
+}
 
 .aside-header {
   font-size: 18px;
   text-transform: uppercase;
-  margin-top: 200px;
   padding: 7px 10px;
   font-weight: 700;
 }
 
-.about-me-header {
+.about-me {
     background: #fdebf3;
     border-left: 5px solid #eddbe3;
     color: #f49ac1;
 }
 
 .my-links {
+  background: #daf1ff;
+  border-left: 5px solid #bce6ff;
+  color: #4bf;
+}
+
+.aside-header.built-using {
+  background: #ebeef1;
+  border-left: 5px solid #dbe0e6;
+  color: #98aabc;
+}
+
+.aside-header.contact-cv {
   background: #fdf0d5;
   border-left: 5px solid #fce4b3;
   color: #f7b42c;
 }
 
+img.contact-logo {
+  opacity: .5;
+}
+
+img.contact-logo:hover {
+  opacity: 1;
+}
+
+.aside-section-wrapper ul.logo-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 27px;
+}
+
+.aside-section-wrapper ul.logo-list.contact-cv {
+  justify-content: flex-start;
+}
+
+ul.logo-list.contact-cv img {
+  margin-left: 27px;
+}
+
 ul.video-list {
   margin-top: 133px;
+}
+
+img.contact-logo[alt='sd-logo'] {
+  width: 48px;
+}
+
+.logo-list.skills .skills-logo {
+  width: 30px;
+  filter: grayscale(100%);
+  opacity: .5;
+}
+
+.logo-list.skills .skills-logo[alt='medium-css-logo'] {
+  width: 21px;
+}
+
+.logo-list.skills .skills-logo[alt='large-redux-logo'] {
+  width: 37px;
+}
+
+
+
+.logo-list.skills .skills-logo:hover {
+  opacity: 1;
 }
