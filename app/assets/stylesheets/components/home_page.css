@@ -106,3 +106,7 @@ ul.video-list {
 img.contact-logo[alt='sd-logo'] {
   width: 48px;
 }
+
+.logo-list.skills .skills-logo {
+  width: 30px;
+}
