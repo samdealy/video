@@ -25,7 +25,7 @@
     no-console: 0
     no-constant-condition: 1
     no-control-regex: 2
-    no-debugger: 1
+    no-: 1
     no-delete-var: 1
     no-dupe-args: 2
     no-dupe-keys: 2

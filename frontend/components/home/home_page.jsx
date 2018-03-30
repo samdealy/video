@@ -4,6 +4,7 @@ import UploadButton from '../buttons/upload_button';
 import FeedLinkBar from './feed_link_bar';
 import FeedVideoListContainer from './feed_video_list_container';
 import MyVideoListContainer from './my_video_list_container';
+import AboutMe from './about_me'
 
 class HomePage extends React.Component {
 
@@ -26,8 +27,8 @@ class HomePage extends React.Component {
           </div>
           <aside className="feed-aside">
             <UploadButton text={"Upload a video"} />
-            <div className="aside-section about-me">About me</div>
-            <div className="aside-section my-links">My Links</div>
+            <AboutMe />
+            <div className="aside-header my-links">My Links</div>
           </aside>
         </div>
       </div>

@@ -40,7 +40,18 @@
   color: #4bf;
 }
 
-.aside-section {
+.feed-aside {
+  margin-left: 30px;
+}
+
+.about-me-text {
+  text-align: justify;
+  margin-top: 16px;
+  opacity: .7;
+}
+
+
+.aside-header {
   font-size: 18px;
   text-transform: uppercase;
   margin-top: 200px;
@@ -48,7 +59,7 @@
   font-weight: 700;
 }
 
-.about-me {
+.about-me-header {
     background: #fdebf3;
     border-left: 5px solid #eddbe3;
     color: #f49ac1;
