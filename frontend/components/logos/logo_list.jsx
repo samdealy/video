@@ -5,6 +5,7 @@ export default () => (
   <ul className='logo-list'>
     <li><Email /></li>
     <li><Adobe /></li>
+    <li><GitHub /></li>
     <li><AngelList /></li>
     <li><LinkedIn /></li>
   </ul>

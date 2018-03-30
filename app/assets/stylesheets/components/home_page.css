@@ -70,6 +70,14 @@
   color: #f7b42c;
 }
 
+img.contact-logo {
+  opacity: .5;
+}
+
+img.contact-logo:hover {
+  opacity: 1;
+}
+
 ul.logo-list {
   display: flex;
   justify-content: space-around;
