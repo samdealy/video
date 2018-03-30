@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillMount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
@@ -22,6 +26,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.clearErrors();
     this.props.processForm(user).then( () => <Redirect to='/home' />);
   }
 
