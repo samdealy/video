@@ -23,7 +23,7 @@ export const Email = () => (
     href={emailHref} alt='email-logo' />
 )
 
-export const Adobe = () => (
+export const CV = () => (
   <Logo src={srcStart + 'adobe_logo.png'} className={className}
     href={resumeSrc} alt='adobe-logo' />
 )

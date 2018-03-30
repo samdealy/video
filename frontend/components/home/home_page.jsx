@@ -6,6 +6,7 @@ import FeedVideoListContainer from './feed_video_list_container';
 import MyVideoListContainer from './my_video_list_container';
 import AboutMe from './about_me';
 import MyLinks from './my_links';
+import ContactCV from './contact_cv';
 
 class HomePage extends React.Component {
 
@@ -30,6 +31,7 @@ class HomePage extends React.Component {
             <UploadButton text={"Upload a video"} />
             <AboutMe />
             <MyLinks />
+            <ContactCV />
           </aside>
         </div>
       </div>

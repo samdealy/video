@@ -1,5 +1,5 @@
 import React from 'react';
-import LogoList from '../logos/logo_list';
+import LogoList from '../logos/links_logo_list';
 
 export default () => (
   <div className="aside-section-wrapper">

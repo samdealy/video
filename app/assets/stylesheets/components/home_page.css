@@ -65,6 +65,12 @@
 }
 
 .my-links {
+  background: #daf1ff;
+  border-left: 5px solid #bce6ff;
+  color: #4bf;
+}
+
+.aside-header.contact-cv {
   background: #fdf0d5;
   border-left: 5px solid #fce4b3;
   color: #f7b42c;
