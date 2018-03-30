@@ -50,10 +50,17 @@
   opacity: .7;
 }
 
+.aside-section-wrapper {
+  margin-top: 100px;
+}
+
+#about-me {
+  margin-top: 126px;
+}
+
 .aside-header {
   font-size: 18px;
   text-transform: uppercase;
-  margin-top: 200px;
   padding: 7px 10px;
   font-weight: 700;
 }
