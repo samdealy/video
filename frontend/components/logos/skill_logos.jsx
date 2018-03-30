@@ -10,7 +10,7 @@ export const Rails = () => (
     className={className} alt='small-rails-logo' href='http://rubyonrails.org/' />
 )
 
-export const React = () => (
+export const ReactLogo = () => (
   <Logo src={srcStart + 'react_logo.png'}
     className={className} alt='small-react-logo' href='https://reactjs.org/' />
 )

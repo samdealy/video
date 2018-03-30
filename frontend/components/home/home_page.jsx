@@ -7,6 +7,7 @@ import MyVideoListContainer from './my_video_list_container';
 import AboutMe from './about_me';
 import MyLinks from './my_links';
 import ContactCV from './contact_cv';
+import BuiltUsing from './built_using.jsx';
 
 class HomePage extends React.Component {
 
@@ -32,6 +33,7 @@ class HomePage extends React.Component {
             <AboutMe />
             <MyLinks />
             <ContactCV />
+            <BuiltUsing />
           </aside>
         </div>
       </div>
