@@ -54,6 +54,12 @@ export const receiveErrors = errors => {
   });
 };
 
+export const fetchProfileVideos = userId => dispatch => {
+  return APIUtil.fetchProfileVideos(userId)
+    .then( videos => dispatch( receiveProfileVideos(videos)),
+           err    => dispatch( receiveErrors(err.responseJSON)));
+};
+
 export const fetchMyVideos = () => dispatch => {
   return APIUtil.fetchMyVideos()
     .then( videos => dispatch( receiveMyVideos(videos)),
