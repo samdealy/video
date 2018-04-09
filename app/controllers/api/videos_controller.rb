@@ -59,6 +59,12 @@ class Api::VideosController < ApplicationController
     render "api/videos/my_videos"
   end
 
+  def profile_videos_index
+    @user   = User.find(params[:user_id])
+    @videos = @user.videos
+    render "api/videos/profile_videos"
+  end
+
   private
   def video_params
     params.require(:video).permit(:clip, :title, :description, :views)
