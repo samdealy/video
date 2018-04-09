@@ -3,9 +3,9 @@ import * as APIUtil from '../util/video_api_util';
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_MY_VIDEOS = "RECEIVE_MY_VIDEOS";
 export const RECEIVE_FEED_VIDEOS = "RECEIVE_FEED_VIDEOS";
+export const RECEIVE_PROFILE_VIDEOS = "RECEIVE_PROFILE_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 export const RESET_FEED_PAGE = "RESET_FEED_PAGE";
-
 
 export const resetFeedPage = () => {
   return({
@@ -31,12 +31,19 @@ export const receiveMyVideos = payload => {
 };
 
 export const receiveFeedVideos = payload => {
-  
   return({
     type: RECEIVE_FEED_VIDEOS,
     videos: payload.videos,
     users: payload.users,
     numberOfFeedVideos: payload.number_of_feed_videos
+  });
+};
+
+export const receiveProfileVideos = payload => {
+  return({
+    type: RECEIVE_PROFILE_VIDEOS,
+    videos: payload.videos,
+    user: payload.user,
   });
 };
 

@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import configureStore  from './store/store';
 import Root from './components/root';
 
-//TODO delete
-import { clearErrors } from './actions/session_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -23,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   //TODO delete
-  window.clearErrors = clearErrors;
+
+
   ReactDOM.render(<Root store={ store }/>, root);
 });
