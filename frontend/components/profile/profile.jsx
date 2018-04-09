@@ -3,13 +3,10 @@ import { connect } from 'react-redux';
 import { clearVideos } from '../../actions/video_actions';
 
 const mapDispatchToProps = dispatch => {
-  return ({
-     clearVideos: () => dispatch(clearVideos())
-  })
+  return ({ clearVideos: () => dispatch(clearVideos()) })
 }
 
 class Profile extends React.Component {
-
   componentWillUnmount() {
     debugger
     this.props.clearVideos();
