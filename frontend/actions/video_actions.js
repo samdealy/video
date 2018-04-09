@@ -6,6 +6,13 @@ export const RECEIVE_FEED_VIDEOS = "RECEIVE_FEED_VIDEOS";
 export const RECEIVE_PROFILE_VIDEOS = "RECEIVE_PROFILE_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 export const RESET_FEED_PAGE = "RESET_FEED_PAGE";
+export const CLEAR_VIDEOS = "CLEAR_VIDEOS";
+
+export const clearVideos = () => {
+  return({
+    type: CLEAR_VIDEOS
+  });
+};
 
 export const resetFeedPage = () => {
   return({
