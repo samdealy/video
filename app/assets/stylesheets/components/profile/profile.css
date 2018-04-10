@@ -1,0 +1,32 @@
+.profile-nav {
+  height: 71px;
+  border-bottom: 1px solid #eef1f2;
+  position: relative;
+}
+
+.profile-header {
+  width: 270px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  top: -62px;
+}
+
+.profile-stats {
+  display: flex;
+  color: #8699a6;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.profile-stats li {
+  margin-right: 9px;
+}
+
+.profile-stats li:last-child {
+  margin-right: 0;
+}

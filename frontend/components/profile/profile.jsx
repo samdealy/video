@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { clearVideos } from '../../actions/video_actions';
+import ProfileHeaderContainer from './profile_header/profile_header_container';
 
 const mapDispatchToProps = dispatch => {
   return ({ clearVideos: () => dispatch(clearVideos()) })
@@ -15,7 +16,8 @@ class Profile extends React.Component {
   render() {
     return (
       <section className="profile-page">
-        <h1>Hello from profile</h1>
+        <div className='profile-nav'></div>
+        <ProfileHeaderContainer />
       </section>
     )
   }
