@@ -53,7 +53,12 @@
   font-family: Black-rose;
 }
 
+.loggedOut .upload-button {
+  display: none;
+}
+
 #search-bar {
+  display: none;
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.2);
   height: 27px;
@@ -80,6 +85,7 @@
 }
 
 #search-bar-wrapper svg {
+  display: none;
   margin-right: 3px;
   font-size: 13px;
   color: rgb(138, 149, 153);
