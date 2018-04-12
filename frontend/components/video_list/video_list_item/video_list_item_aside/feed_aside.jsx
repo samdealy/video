@@ -9,7 +9,9 @@ export default ({ iconUrl, userName, timeStamp, uploaderId }) => {
         </Link>
         <span className="action-icon"></span>
         <h6 className="action">Uploaded by</h6>
-        <h6 className="aside-username">{userName}</h6>
+        <Link to={`/user/${uploaderId}`}>
+          <h6 className="aside-username">{userName}</h6>
+        </Link>
       </div>
     );
 }
