@@ -8,10 +8,12 @@ import { createComment, editComment, deleteComment } from '../../../actions/comm
 const mapStateToProps = (state, { comment, match }) => {
   const currentComment = comment || {};
   const commentAuthor = state.entities.users[currentComment.user_id] || {};
+  const commentAuthorId = commentAuthor.id || "";
 
   return ({
     iconUrl: commentAuthor.image_url || "",
     userName: commentAuthor.username || "",
+    commentAuthorId,
     timeStamp: currentComment.timestamp || "",
     body: currentComment.body || "",
     commentId: currentComment.id || "",

@@ -7,6 +7,7 @@ import { currentVideo, getUser, getCurrentUser } from '../../reducers/selectors'
 const mapStateToProps = (state, { match }) => {
   const videoId = parseInt(match.params.videoId);
   const video = currentVideo(state, videoId) || {};
+  const uploaderId = video.uploader_id || "";
   const user = getUser(state, video.uploader_id) || {};
   const currentUser = getCurrentUser(state);
 
@@ -17,6 +18,7 @@ const mapStateToProps = (state, { match }) => {
   return ({
     className: 'player-video-info',
     videoId,
+    uploaderId,
     videoTitle: video.title || '',
     videoDescription: video.description || '',
     viewCount: video.views || '',

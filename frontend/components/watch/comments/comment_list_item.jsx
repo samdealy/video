@@ -1,6 +1,7 @@
 import React from "react";
 import EditCommentFormContainer from './comment_form/edit_comment_form_container';
 import TimeAgo from '../../time_ago/time_ago.jsx';
+import { Link } from 'react-router-dom';
 
 
 export default class CommentListItem extends React.Component {
@@ -34,7 +35,7 @@ export default class CommentListItem extends React.Component {
 
   render() {
     const { iconUrl, userName, timeStamp,
-            body, currentUserId, userId, commentId } = this.props;
+            body, currentUserId, userId, commentId, commentAuthorId } = this.props;
     const editDelete = currentUserId === userId ? this.editDelete() : "";
     const editForm = <EditCommentFormContainer commentId={commentId}
                       hideEditForm={this.hideEditForm} />  ;
@@ -44,11 +45,15 @@ export default class CommentListItem extends React.Component {
     return(
       <li className="user-list-item">
         <div className="comment-icon-wrapper">
-          <img className="user-icon" src={iconUrl}></img>
+          <Link to={`/user/${commentAuthorId}`}>
+            <img className="user-icon" src={iconUrl}></img>
+          </Link>
         </div>
         <div className="comment-body">
           <div className="username-timestamp">
-            <h4>{userName}</h4>
+            <Link to={`/user/${commentAuthorId}`}>
+              <h4>{userName}</h4>
+            </Link>
             <h6><TimeAgo timeStamp={timeStamp} /></h6>
           </div>
           {bodyOrEdit}
