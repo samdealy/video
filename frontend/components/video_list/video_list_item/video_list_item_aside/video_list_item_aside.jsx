@@ -6,9 +6,9 @@ import MyVideosAside from './my_videos_aside';
 export default class VideoListItemAside extends React.Component {
 
   feedAside() {
-    const { iconUrl, userName, timeStamp } = this.props;
+    const { iconUrl, userName, timeStamp, uploaderId } = this.props;
     return (<FeedAside iconUrl={iconUrl}
-              userName={userName} timeStamp={timeStamp} />);
+              userName={userName} uploaderId={uploaderId} timeStamp={timeStamp} />);
   }
 
   render() {
