@@ -21,10 +21,4 @@ const msp = (state, ownProps) => {
   });
 }
 
-const mdp = dispatch => {
-  return({
-    fetchProfileVideos: userId => dispatch(fetchProfileVideos(userId))
-  });
-}
-
-export default withRouter(connect(msp, mdp)(ProfileHeader));
+export default withRouter(connect(msp, null)(ProfileHeader));
