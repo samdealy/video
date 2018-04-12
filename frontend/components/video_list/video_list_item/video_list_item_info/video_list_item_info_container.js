@@ -11,10 +11,12 @@ const mapStateToProps = (state, { video }) => {
   const videoId      = currentVideo.id || "";
 
   const uploader     = getUser(state, currentVideo.uploader_id) || {};
+  const uploaderId   = uploader.id || "";
   const userName     = uploader.username || "";
   const iconUrl      = uploader.image_url || "";
 
-  return ({ title, description, timeStamp, videoId, userName, iconUrl });
+  return ({ title, description, timeStamp,
+    videoId, userName, uploaderId, iconUrl });
 };
 
 export default connect(mapStateToProps, null)(VideoListItemInfo);

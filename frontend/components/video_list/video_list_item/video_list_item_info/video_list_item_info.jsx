@@ -5,12 +5,12 @@ export default class VideoListItemInfo extends React.Component {
 
   render() {
     const { title, description, timeStamp,
-            videoId, userName, iconUrl } = this.props;
+            videoId, userName, uploaderId, iconUrl } = this.props;
 
     return(
       <div className="video-list-item-info">
         <div className="top-half">
-          <Link to='/'>
+          <Link to={`/user/${uploaderId}`}>
             <img className="user-icon" src={iconUrl}></img>
           </Link>
           <div className="title-user-timestamp">
@@ -19,7 +19,9 @@ export default class VideoListItemInfo extends React.Component {
             </Link>
             <div className="author-timestamp">
               <span className="from">from </span>
-              <span className="username">{userName}</span>
+              <Link to={`/user/${uploaderId}`}>
+                <span className="username">{userName}</span>
+              </Link>
               <span className="timestamp">
                 <TimeAgo timeStamp={timeStamp} />
               </span>

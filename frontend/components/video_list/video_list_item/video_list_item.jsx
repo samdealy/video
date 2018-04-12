@@ -10,7 +10,7 @@ class VideoListItem extends React.Component {
     const { video } = this.props;
     return(
       <li className="video-list-item">
-        <VideoListItemAsideContainer video={video} />
+        <VideoListItemAsideContainer  video={video} />
         <div className="video-player-video-info">
           <VideoListPlayerContainer   video={video} />
           <VideoListItemInfoContainer video={video} />
