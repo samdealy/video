@@ -16,7 +16,7 @@ const msp = (state, ownProps) => {
     userName: user.username || '',
     userImage: user.image_url || '',
     videoCount: videos.length || '',
-    followerCount: followerIds.length || 0,
+    followerCount: Object.keys(followerIds).length || 0,
     videos
   });
 }
