@@ -9,7 +9,7 @@ export default class ProfileHeader extends React.Component {
         <img className="user-icon" src={userImage} ></img>
         <h2>{userName}</h2>
         <ul className='profile-stats'>
-          <li>{videoCount} Videos</li>
+          <li>{videoCount || 0} Videos</li>
           <li><span>|</span></li>
           <li>{followerCount} Followers</li>
         </ul>
