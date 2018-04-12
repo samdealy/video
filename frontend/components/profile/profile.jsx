@@ -15,14 +15,14 @@ class Profile extends React.Component {
 
   componentDidMount() {
     const { userId, fetchProfileVideos } = this.props;
-    debugger
     fetchProfileVideos(userId);
+    window.scrollTo(0,0);
   }
 
   componentWillReceiveProps(nextProps) {
     const  nextUserId = nextProps.match.params.userId ;
     const { fetchProfileVideos } = this.props;
-    
+
     if(this.props.match.params.userId !== nextUserId) {
       fetchProfileVideos(nextUserId);
     }

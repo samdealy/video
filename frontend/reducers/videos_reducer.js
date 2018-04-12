@@ -11,7 +11,7 @@ export default (state = {}, action) => {
     case RECEIVE_VIDEO:
       return Object.assign({}, state, {[action.video.id]: action.video});
     case CLEAR_VIDEOS:
-      debugger
+      ''
       return {};
     case RECEIVE_MY_VIDEOS:
       return action.videos || {};
