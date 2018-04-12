@@ -28,7 +28,7 @@ class RightNavBar extends React.Component {
   }
 
   render() {
-    const { currentUser, loggedIn, logout, history } = this.props;
+    const { currentUser, currentUserId, loggedIn, logout, history } = this.props;
     let userIcon;
     if (loggedIn) {
       userIcon = <img className="user-icon" src={currentUser.image_url} alt="current-user-avatar"></img>;
@@ -42,26 +42,26 @@ class RightNavBar extends React.Component {
           <i className="fas fa-search"></i>
         </li>
         <li className="avatar-li" >
+          <Link to={`/user/${currentUserId}`}>
           <div className="hover-container" onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}>
             <div className="avatar-wrapper">{userIcon}</div>
             <div className={`icon-dropdown ${this.state.showHideDropdown}`}>
               <div className="dropdown-user-info-wrapper">
                 <div className="dropdown-user-info">
-                {userIcon}
-                <div className="view-profile-wrapper">
-                  <h4>{currentUser.username}</h4>
-                  <span>View profile</span>
+                  {userIcon}
+                  <div className="view-profile-wrapper">
+                    <h4>{currentUser.username}</h4>
+                    <span>View profile</span>
+                  </div>
                 </div>
-              </div>
               </div>
               <ul>
                 <li onClick={this.handleLogOut}>Log out</li>
               </ul>
             </div>
           </div>
+          </Link>
         </li>
-
-
         <li>
           <UploadButton text={"Upload"} />
         </li>

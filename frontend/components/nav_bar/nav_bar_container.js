@@ -8,10 +8,8 @@ import { logout } from '../../actions/session_actions';
 const mapStateToProps =  state => {
   const loggedIn = Boolean(state.session.currentUserId);
   const currentUser = loggedIn ? getCurrentUser(state) : {};
-  return {
-    loggedIn, 
-    currentUser
-  };
+  const currentUserId = currentUser.id || ""
+  return { loggedIn, currentUser, currentUserId };
 };
 
 const mapDispatchToProps = dispatch => {
