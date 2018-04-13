@@ -1,7 +1,8 @@
 import React from "react";
 import { pauseIcon, playIcon } from './play_pause_icons';
+import { withRouter } from 'react-router-dom';
 
-export default class PlayPauseButton extends React.Component {
+class PlayPauseButton extends React.Component {
 
   constructor(props) {
     super(props);
@@ -28,6 +29,7 @@ export default class PlayPauseButton extends React.Component {
 
   handleClick() {
     const { videoEl, toggleShowHide, currentTime } = this.props;
+    if(this.props.match.path === '/user/:userId') return;
     if (videoEl.paused || videoEl.ended) videoEl.play();
     else videoEl.pause();
 
@@ -48,3 +50,5 @@ export default class PlayPauseButton extends React.Component {
     );
   }
 }
+
+export default withRouter(PlayPauseButton);
