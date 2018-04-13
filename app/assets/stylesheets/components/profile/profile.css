@@ -30,3 +30,81 @@
 .profile-stats li:last-child {
   margin-right: 0;
 }
+
+.profile-page .icon-username-plays .user-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.profile-page .video-list-item .username {
+  color:  rgb(135, 156, 171);
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 1px;
+  margin-left: 4px;
+}
+
+.profile-page .separator {
+  font-size: 13px;
+  font-weight: 400;
+  color: #D0D8DB;
+  margin: 0 5px;
+}
+
+.profile-page .video-list-item-info .views {
+  color: rgb(138, 149, 153);
+  font-size: 12px;
+  margin-top: 1px;
+}
+
+.video-list-item-info.profile {
+  margin-top: 7px;
+  border: none;
+  background-color: transparent;
+}
+
+.icon-username-plays {
+  display: flex;
+  justify-content: space-between;
+  width: 157px;
+}
+
+.video-list-item-info.profile h3 {
+  color: rgb(23, 39, 46);
+  font-size: 14px;
+}
+
+.video-list-item-info.profile a {
+  display: flex;
+}
+
+
+.profile-page .video-list {
+  margin-top: 0;
+}
+
+.profile-page .video-list-item {
+  margin-top: 0;
+}
+
+.profile-page .video-list {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    ". video-left video-right .";
+  grid-gap: 30px;
+}
+
+
+.profile-page .video-list-item:nth-of-type(2n) {
+  grid-area: video-left;
+}
+
+.profile-page .video-list-item:nth-of-type(2n+1) {
+  grid-area: video-right;
+}
+
+.profile-page aside {
+  display: none;
+}

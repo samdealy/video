@@ -22,8 +22,8 @@ export default class ProfileVideoInfo extends React.Component {
           <Link to={`/user/${uploaderId}`}>
             <span className="username">{userName}</span>
           </Link>
-          <span> | </span>
-          <span>{viewsDisplay}</span>
+          <span className='separator'> | </span>
+          <span className='views'>{viewsDisplay}</span>
         </div>
       </div>
     )
