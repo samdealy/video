@@ -99,10 +99,13 @@
   .video-list-item-info {
     min-height: 0;
   }
+
   .video-list-item figure,  .video-list-item video,
-  .video-list-item .video-player-background, .video-player-info, .video-list-item-info {
+  .video-list-item .video-player-background {
     box-sizing: border-box;
     width: 442px;
+    height: 233.42px;
+    object-fit: inherit;
   }
 
   aside {
