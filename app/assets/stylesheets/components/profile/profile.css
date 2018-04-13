@@ -89,13 +89,12 @@
 
 .profile-page .video-list {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr 442px 442px 1fr;
   grid-template-rows: auto;
   grid-template-areas:
     ". video-left video-right .";
   grid-gap: 30px;
 }
-
 
 .profile-page .video-list-item:nth-of-type(2n) {
   grid-area: video-left;
@@ -105,6 +104,15 @@
   grid-area: video-right;
 }
 
+.profile-page .load-button-wrapper{
+  display: none;
+}
+
+.profile-page .video-list-item figure, .profile-page .video-list-item video,
+.profile-page .video-list-item .video-player-background, .profile-page .video-player-info, .profile-page .video-list-item-info {
+  box-sizing: border-box;
+  width: 442px;
+}
 .profile-page aside {
   display: none;
 }
