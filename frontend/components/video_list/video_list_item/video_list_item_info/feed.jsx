@@ -5,7 +5,7 @@ import TimeAgo from '../../../time_ago/time_ago.jsx';
 export default class FeedVideoInfo extends React.Component {
   render() {
     const { title, description, timeStamp,
-            videoId, userName, uploaderId, iconUrl, pageUrl } = this.props;
+            videoId, userName, uploaderId, iconUrl } = this.props;
 
     return(
         <div className="video-list-item-info">
