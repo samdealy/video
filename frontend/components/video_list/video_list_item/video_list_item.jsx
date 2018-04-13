@@ -6,7 +6,7 @@ import VideoListItemAsideContainer from './video_list_item_aside/video_list_item
 class VideoListItem extends React.Component {
 
   render() {
-    const { video } = this.props;
+    const { video, type } = this.props;
     return(
       <li className="video-list-item">
         <VideoListItemAsideContainer  video={video} />

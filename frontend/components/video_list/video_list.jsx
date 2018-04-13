@@ -38,7 +38,7 @@ class VideoList extends React.Component {
   createVideoListItems() {
     const { videos } = this.props;
     return videos.map( (video, i) => {
-      return <VideoListItem video={video} key={i} />;
+      return <VideoListItem video={video} key={i}  />;
     });
   }
 
