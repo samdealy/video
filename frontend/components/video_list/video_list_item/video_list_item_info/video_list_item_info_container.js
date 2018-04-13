@@ -11,7 +11,7 @@ const mapStateToProps = (state, { video, match }) => {
   const description  = currentVideo.description || "";
   const timeStamp    = currentVideo.timestamp || "";
   const videoId      = currentVideo.id || "";
-  const viewCount    = video.views || '0';
+  const viewCount    = currentVideo.views || '0';
 
   const uploader     = getUser(state, currentVideo.uploader_id) || {};
   const uploaderId   = uploader.id || "";
