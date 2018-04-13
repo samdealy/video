@@ -18,7 +18,6 @@ export default class ProfileVideoInfo extends React.Component {
           <Link to={`/user/${uploaderId}`}>
             <img className="user-icon" src={iconUrl}></img>
           </Link>
-
           <Link to={`/user/${uploaderId}`}>
             <span className="username">{userName}</span>
           </Link>
