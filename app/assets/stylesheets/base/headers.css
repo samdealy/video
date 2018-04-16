@@ -14,3 +14,9 @@
   color: rgb(26, 46, 59);
   padding-left:  16px;
 }
+
+.profile-header h2 {
+  color: rgb(26, 46, 59);
+  font-size: 28px;
+  font-weight: 700;
+}

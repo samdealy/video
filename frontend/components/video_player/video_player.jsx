@@ -21,6 +21,7 @@ class VideoPlayer extends React.Component {
     this.toggleShow   = this.toggleShow.bind(this);
     this.toggleHide   = this.toggleHide.bind(this);
     this.updateViews  = this.updateViews.bind(this);
+    this.handleClick  = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -63,16 +64,22 @@ class VideoPlayer extends React.Component {
     this.setState({ currentTime: 0 });
   }
 
+  handleClick() {
+    const { videoId } = this.props;
+    if(this.props.match.path === '/user/:userId')  {
+      this.props.history.push(`/watch/${videoId}`);
+    }
+  }
   updateViews() {
     const { videoId, increaseViews} = this.props;
     increaseViews(videoId).then;
   }
 
   render() {
-    const { videoClipUrl, clipType, hasStarted } = this.props;
+    const { videoClipUrl, clipType, hasStarted} = this.props;
 
     return(
-      <div className="video-player-background">
+      <div className="video-player-background" onClick={this.handleClick}>
         <figure className="video-player-size-container"
                 onMouseEnter={this.toggleShow}
                 onMouseLeave={this.toggleHide}>

@@ -43,3 +43,10 @@ export const fetchMyVideos = () => (
     url: `/api/videos/myvideos`
   })
 );
+
+export const fetchProfileVideos = userId => (
+  $.ajax({
+    method: 'GET',
+    url: `/api/videos/profile/${userId}`
+  })
+);

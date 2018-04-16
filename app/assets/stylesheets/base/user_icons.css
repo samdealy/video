@@ -5,6 +5,11 @@
   height: 36px;
 }
 
+.profile-header .user-icon {
+  width: 149px;
+  height: 150px;
+}
+
 .user-list-item .user-icon {
   width: 30px;
   height: 30px;

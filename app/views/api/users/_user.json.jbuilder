@@ -1,6 +1,6 @@
 json.extract! user, :id, :username, :email
 json.image_url asset_path(user.image.url)
-json.video_ids user.videos.map{|vid| vid.id}
+json.video_ids user.videos.sort_by{|vid| vid.created_at}.map{|vid| vid.id}
 
 follower_ids = user.followers.each_with_object({}) do |follower, hash|
    hash[follower.id] = true

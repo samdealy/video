@@ -26,7 +26,7 @@ export default class VideoInfo extends React.Component {
 
   render() {
     const { className, videoTitle, videoTimeStamp,
-          userName, iconUrl, videoDescription, myVideoClass
+          userName, iconUrl, videoDescription, myVideoClass, uploaderId
        } = this.props;
 
     const videoStats   = this.videoStats();
@@ -43,7 +43,7 @@ export default class VideoInfo extends React.Component {
           </span>
         </div>
         <ul className={`user-list ${myVideoClass}`}>
-          <UserListItem userName={userName} iconUrl={iconUrl} />
+          <UserListItem userName={userName} iconUrl={iconUrl} uploaderId={uploaderId} />
           {followButton}
           {settingsLink}
         </ul>

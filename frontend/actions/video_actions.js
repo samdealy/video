@@ -3,9 +3,16 @@ import * as APIUtil from '../util/video_api_util';
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_MY_VIDEOS = "RECEIVE_MY_VIDEOS";
 export const RECEIVE_FEED_VIDEOS = "RECEIVE_FEED_VIDEOS";
+export const RECEIVE_PROFILE_VIDEOS = "RECEIVE_PROFILE_VIDEOS";
 export const RECEIVE_VIDEO_ERRORS = "RECEIVE_VIDEO_ERRORS";
 export const RESET_FEED_PAGE = "RESET_FEED_PAGE";
+export const CLEAR_VIDEOS = "CLEAR_VIDEOS";
 
+export const clearVideos = () => {
+  return({
+    type: CLEAR_VIDEOS
+  });
+};
 
 export const resetFeedPage = () => {
   return({
@@ -31,7 +38,6 @@ export const receiveMyVideos = payload => {
 };
 
 export const receiveFeedVideos = payload => {
-  
   return({
     type: RECEIVE_FEED_VIDEOS,
     videos: payload.videos,
@@ -40,11 +46,25 @@ export const receiveFeedVideos = payload => {
   });
 };
 
+export const receiveProfileVideos = payload => {
+  return({
+    type: RECEIVE_PROFILE_VIDEOS,
+    videos: payload.videos,
+    user: payload.user,
+  });
+};
+
 export const receiveErrors = errors => {
   return({
     type: RECEIVE_VIDEO_ERRORS,
     errors
   });
+};
+
+export const fetchProfileVideos = userId => dispatch => {
+  return APIUtil.fetchProfileVideos(userId)
+    .then( videos => dispatch( receiveProfileVideos(videos)),
+           err    => dispatch( receiveErrors(err.responseJSON)));
 };
 
 export const fetchMyVideos = () => dispatch => {

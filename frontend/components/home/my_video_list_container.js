@@ -8,6 +8,7 @@ import { fetchMyVideos } from '../../actions/video_actions';
 const mapStateToProps = state => {
   const currentUserId = state.session.currentUserId;
   const videos = getUserVideos(state, currentUserId).reverse();
+  
   return ({ videos });
 };
 

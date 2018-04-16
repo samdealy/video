@@ -9,7 +9,7 @@ const mapStateToProps = state => {
   const videos = getFeedVideos(state) || [];
   const pageNumber = state.ui.feed.nextFeedPage;
   const numberOfFeedVideos = state.ui.feed.numberOfFeedVideos;
-  
+
   return ({ pageNumber, videos, numberOfFeedVideos });
 };
 

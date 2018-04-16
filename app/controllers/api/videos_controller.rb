@@ -46,7 +46,7 @@ class Api::VideosController < ApplicationController
     slice_idx = params[:request_counter].to_i * FEED_VIDEO_COUNT
     @videos = current_user_feed_videos
       .sort_by{|vid| -1 * vid.id}[0...slice_idx]
-
+    
     if @videos
       render "api/videos/feed"
     else
@@ -57,6 +57,12 @@ class Api::VideosController < ApplicationController
   def my_videos_index
     @videos = current_user.videos
     render "api/videos/my_videos"
+  end
+
+  def profile_videos_index
+    @user   = User.find(params[:user_id])
+    @videos = @user.videos
+    render "api/videos/profile_videos"
   end
 
   private
