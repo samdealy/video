@@ -24,7 +24,7 @@ export default (state = _nullUsers, action) => {
       return merge({}, state, newUser);
     case RECEIVE_FEED_VIDEOS:
       newUsers = action.users || {};
-      return newUsers;
+      return merge({}, state, newUsers);
     case RECEIVE_FOLLOW:
       return Object.assign({}, state, action.users);
     default:

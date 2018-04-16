@@ -42,7 +42,8 @@ export const receiveFeedVideos = payload => {
     type: RECEIVE_FEED_VIDEOS,
     videos: payload.videos,
     users: payload.users,
-    numberOfFeedVideos: payload.number_of_feed_videos
+    numberOfFeedVideos: payload.number_of_feed_videos,
+    feedVideoIds: payload.feed_video_ids
   });
 };
 

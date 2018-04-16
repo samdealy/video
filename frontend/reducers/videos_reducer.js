@@ -11,12 +11,15 @@ export default (state = {}, action) => {
     case RECEIVE_VIDEO:
       return Object.assign({}, state, {[action.video.id]: action.video});
     case CLEAR_VIDEOS:
-      ''
       return {};
     case RECEIVE_MY_VIDEOS:
       return action.videos || {};
     case RECEIVE_FEED_VIDEOS:
-      return action.videos || {};
+      // const newState = Object.assign({}, state);
+      // action.videos.forEach( vid =>{
+      //   newState[vid.id] = vid;
+      // });
+      return merge({}, state, action.videos) || {};
     case RECEIVE_PROFILE_VIDEOS:
       return action.videos || {};
     default:
