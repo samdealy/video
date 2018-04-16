@@ -11,8 +11,7 @@ export const currentVideo = (state, videoId) => {
 };
 
 export const getFeedVideos = state => {
-  const currentUser = getCurrentUser(state);
-  const feedVideoIds = currentUser.feed_video_ids || [];
+  const feedVideoIds = state.ui.feed.feedVideoIds || [];
   return feedVideoIds.map( videoId => state.entities.videos[videoId]);
 };
 
