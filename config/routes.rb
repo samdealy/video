@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :user, only: [:create]
+    resources :search, only: [:index]
     get "videos/feed/:request_counter", to: "videos#feed_index"
     get "videos/myvideos/", to: "videos#my_videos_index"
     get "videos/profile/:user_id", to:"videos#profile_videos_index"
