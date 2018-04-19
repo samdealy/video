@@ -20,9 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  //TODO delete
-  window.fetchSearch = fetchSearch;
-  window.dispatch = store.dispatch;
-
   ReactDOM.render(<Root store={ store }/>, root);
 });

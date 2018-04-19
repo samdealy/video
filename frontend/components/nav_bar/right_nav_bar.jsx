@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter, Link } from 'react-router-dom';
 import UploadButton from '../buttons/upload_button';
+import SearchBarContainer from '../search_bar/search_bar_container';
 
 class RightNavBar extends React.Component {
   constructor(props) {
@@ -37,10 +38,7 @@ class RightNavBar extends React.Component {
     let hoverOverIcon = false;
     return(
       <ul className="right-nav-section">
-        <li id="search-bar-wrapper">
-          <input id="search-bar" placeholder="Search for videos..."></input>
-          <i className="fas fa-search"></i>
-        </li>
+        <SearchBarContainer />
         <li className="avatar-li" >
           <Link to={`/user/${currentUserId}`}>
           <div className="hover-container" onMouseEnter={this.toggleDropdown} onMouseLeave={this.toggleDropdown}>
