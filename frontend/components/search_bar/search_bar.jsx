@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
-export default class SearchBar extends React.Component {
+class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,8 +29,11 @@ export default class SearchBar extends React.Component {
   }
 
   submitSearch() {
-    const { fetchSearch } = this.props;
-    if(this.state.prefix !== '') fetchSearch(this.state.prefix);
+    const { fetchSearch, history } = this.props;
+    if(this.state.prefix !== '') {
+      fetchSearch(this.state.prefix)
+        .then(history.push(`/search/${this.state.prefix}`));
+    }
   }
 
   render() {
@@ -46,3 +49,5 @@ export default class SearchBar extends React.Component {
     );
   }
 }
+
+export default withRouter(SearchBar);

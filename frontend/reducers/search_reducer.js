@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import videos from './search_video_reducer.js';
-import users from './search_user_reducer.js';
+import videoIds from './search_video_reducer.js';
+import userIds from './search_user_reducer.js';
 
 export default combineReducers({
-  videos,
-  users
+  videoIds,
+  userIds
 });

@@ -10,6 +10,16 @@ export const currentVideo = (state, videoId) => {
   return state.entities.videos[videoId];
 };
 
+export const getSearchVideos = state => {
+  const searchVideoIds =   state.ui.search.videoIds || [];
+  return searchVideoIds.map( videoId => state.entities.videos[videoId] );
+}
+
+export const getSearchUsers = state => {
+  const getSearchUsers = state.ui.search.userIds || [];
+  return getSearchUsers.map( userId => state.entities.users[userId] )
+}
+
 export const getFeedVideos = state => {
   const feedVideoIds = state.ui.feed.feedVideoIds || [];
   return feedVideoIds.map( videoId => state.entities.videos[videoId]);
