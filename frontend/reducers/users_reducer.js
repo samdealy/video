@@ -1,7 +1,10 @@
 import merge from 'lodash/merge';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
-import { RECEIVE_VIDEO, RECEIVE_MY_VIDEOS, RECEIVE_FEED_VIDEOS, RECEIVE_PROFILE_VIDEOS } from '../actions/video_actions';
+import { RECEIVE_VIDEO, RECEIVE_MY_VIDEOS,
+         RECEIVE_FEED_VIDEOS,
+         RECEIVE_PROFILE_VIDEOS } from '../actions/video_actions';
 import { RECEIVE_FOLLOW } from '../actions/follow_actions';
+import { RECEIVE_SEARCH } from '../actions/search_actions';
 
 const _nullUsers = Object.freeze({
   users: {}
@@ -26,6 +29,8 @@ export default (state = _nullUsers, action) => {
       newUsers = action.users || {};
       return merge({}, state, newUsers);
     case RECEIVE_FOLLOW:
+      return Object.assign({}, state, action.users);
+    case RECEIVE_SEARCH:
       return Object.assign({}, state, action.users);
     default:
       return state;
