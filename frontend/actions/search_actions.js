@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/search_util';
+import * as APIUtil from '../util/search_api_util';
 
 export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 export const RECEIVE_SEARCH_ERRORS = "RECEIVE_SEARCH_ERRORS";
@@ -18,7 +18,7 @@ export const receiveSearch = payload => {
   });
 }
 
-export const const fetchSearch = prefix => dispatch => {
+export const fetchSearch = prefix => dispatch => {
   return APIUtil.fetchSearch(prefix)
     .then( payload => dispatch(receiveSearch(payload)))
     .fail( err => dispatch(receiveSearchErrors(err.responseJSON)));

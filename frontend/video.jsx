@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   //TODO delete
   window.fetchSearch = fetchSearch;
+  window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={ store }/>, root);
 });
