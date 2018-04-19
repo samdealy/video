@@ -14,7 +14,9 @@ export const receiveSearch = payload => {
   return({
     type: RECEIVE_SEARCH,
     videos: payload.videos,
-    users: payload.users
+    users: payload.users,
+    video_ids: payload.video_ids,
+    user_ids: payload.user_ids
   });
 }
 
