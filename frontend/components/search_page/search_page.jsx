@@ -23,7 +23,6 @@ class SearchPage extends React.Component {
     }
     return(
       <div className="search-page">
-        <p>{resultNumber} results for y</p>
         <div className='search-aside-list'>
           <SearchAsideContainer />
           {list}

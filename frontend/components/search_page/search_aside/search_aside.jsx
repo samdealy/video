@@ -3,7 +3,7 @@ import React from 'react'
 export default class SearchAside extends React.Component {
   render() {
     return(
-      <div>search aside</div>
+      <div className='search-aside'>search aside</div>
     )
   }
 }
