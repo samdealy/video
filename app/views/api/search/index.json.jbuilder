@@ -15,7 +15,7 @@ all_users = @videos.map{ |vid| vid.uploader } + @users
 
 user_ids = []
 json.set! :users do
-  all_users.each do |user|
+  all_users.uniq.each do |user|
     user_ids << user.id
     json.set! user.id do
       json.partial! "api/users/user", user: user

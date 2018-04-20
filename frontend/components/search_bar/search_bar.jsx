@@ -32,7 +32,7 @@ class SearchBar extends React.Component {
     const { fetchSearch, history } = this.props;
     if(this.state.prefix !== '') {
       fetchSearch(this.state.prefix)
-        .then(history.push(`/search/${this.state.prefix}`));
+        .then(history.push(`/search/video/${this.state.prefix}`));
     }
   }
 

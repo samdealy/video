@@ -27,7 +27,8 @@ const App = () => (
     <ProtectedRoute exact path='/home' component={HomePageContainer} />
     <ProtectedRoute exact path='/home/myvideos' component={HomePageContainer} />
     <ProtectedRoute exact path='/user/:userId' component={ProfileContainer} />
-    <ProtectedRoute exact path='/search/:prefix' component={SearchPageContainer} />
+    <ProtectedRoute exact path='/search/video/:prefix' component={SearchPageContainer} />
+    <ProtectedRoute exact path='/search/user/:prefix' component={SearchPageContainer} />
     <ProtectedRoute Footer component={Footer} />
   </div>
 );

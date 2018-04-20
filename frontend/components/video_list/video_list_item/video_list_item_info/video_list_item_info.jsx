@@ -8,7 +8,7 @@ export default class VideoListItemInfo extends React.Component {
   render() {
     const { title, description, timeStamp, videoId, userName,
          uploaderId, iconUrl, pagePath, viewCount } = this.props;
-         
+
     if(pagePath === '/home' || pagePath === '/home/myvideos') {
       return(
         <FeedVideoInfo title={title} description={description} timeStamp={timeStamp}
