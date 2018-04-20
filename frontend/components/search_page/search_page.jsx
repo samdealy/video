@@ -6,6 +6,11 @@ import SearchVideoList from './search_list/search_video_list';
 
 class SearchPage extends React.Component {
 
+  componentDidMount() {
+    const { match } = this.props
+    this.props.fetchSearch(match.params.prefix);
+  }
+
   render() {
     const { videos, users, match } = this.props
 
@@ -19,7 +24,7 @@ class SearchPage extends React.Component {
     return(
       <div className="search-page">
         <p>{resultNumber} results for y</p>
-        <div>
+        <div className='search-aside-list'>
           <SearchAsideContainer />
           {list}
         </div>

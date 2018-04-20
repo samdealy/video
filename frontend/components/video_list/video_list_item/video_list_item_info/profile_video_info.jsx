@@ -8,7 +8,7 @@ export default class ProfileVideoInfo extends React.Component {
 
     const viewsDisplay = viewCount === 1 ?
       `${viewCount} play` : `${viewCount} plays`
-
+    
     return(
       <div className="video-list-item-info profile">
         <Link to={`/watch/${videoId}`}>

@@ -1,6 +1,6 @@
 import React from "react";
-import FeedVideoInfo from './feed';
-import ProfileVideoInfo from './profile';
+import FeedVideoInfo from './feed_video_info';
+import ProfileVideoInfo from './profile_video_info';
 
 
 export default class VideoListItemInfo extends React.Component {
