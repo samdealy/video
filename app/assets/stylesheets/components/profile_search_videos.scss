@@ -62,7 +62,7 @@
 
   .search-list {
     grid-template-columns: 320px 320px 320px;
-    grid-gap: 30px;
+    grid-gap: 22px;
     display: grid;
   }
 
@@ -76,7 +76,7 @@
   .video-list-item-info {
     min-height: 0;
   }
-  
+
   #playpause {
     cursor: pointer;
   }
