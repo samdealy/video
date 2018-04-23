@@ -27,7 +27,8 @@
 .user-search-list {
   display: grid;
   grid-template-columns: 320px 320px 320px;
-  grid-gap: 22px;
+  grid-column-gap: 32px;
+  grid-row-gap: 57px;
 }
 
 .user-search-list-item {
