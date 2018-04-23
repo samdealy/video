@@ -23,3 +23,38 @@
   margin-top: 94px;
   margin-right: 59px;
 }
+
+.user-search-list {
+  display: grid;
+  grid-template-columns: 320px 320px 320px;
+  grid-gap: 22px;
+}
+
+.user-search-list-item {
+  display: flex;
+}
+
+.user-search-list-item .user-icon {
+  width: 80px;
+  height: 80px;
+}
+
+ul.username-videos-followers {
+  margin-left: 20px;
+}
+
+.username-videos-followers h2 {
+  color: #456;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.username-videos-followers .user-info {
+  font-size: 12px;
+  color: rgb(68, 85, 102);
+  margin-top: 6px;
+}
+
+.username-videos-followers span:not(:first-child) {
+  margin-left: 4px;
+}

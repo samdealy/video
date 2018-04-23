@@ -19,8 +19,9 @@ export default class SearchUserListItem extends React.Component {
         <img className="user-icon" src={iconUrl} ></img>
         <ul className='username-videos-followers'>
           <li><h2>{userName}</h2></li>
-          <li>
+          <li className='user-info'>
             <span>{videosText}</span>
+            <span>|</span>
             <span>{followersText}</span>
           </li>
           <li>
