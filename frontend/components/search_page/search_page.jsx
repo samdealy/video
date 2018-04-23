@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import SearchAsideContainer from './search_aside/search_aside_container';
+import SearchAside from './search_aside';
 import SearchVideoList from './search_list/search_video_list';
 import SearchUserList from './search_list/search_user_list';
 
@@ -21,7 +21,7 @@ class SearchPage extends React.Component {
     return(
       <div className="search-page">
         <div className='search-aside-list'>
-          <SearchAsideContainer />
+          <SearchAside videos={videos} users={users} />
           {list}
         </div>
       </div>
