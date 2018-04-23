@@ -20,22 +20,25 @@ class SearchAside extends React.Component {
     const prefix = match.params.prefix;
 
     return(
-      <form className='search-aside'>
-        <label className='radio'>
-          <p>Videos <span>({numberOfVideos})</span></p>
-          <Link to={`/search/video/${prefix}`}>
-            <input onChange={() => {}} type='radio'
-              value='videos' checked={selectedOption === 'videos'}></input>
-          </Link>
-        </label>
-        <label className='radio'>
-          <p>People <span>({numberOfUsers})</span></p>
-          <Link to={`/search/user/${prefix}`}>
-            <input onChange={() => {}} type='radio'
-              value='people' checked={selectedOption === 'people'}></input>
-          </Link>
-        </label>
-      </form>
+      <div className='search-aside-wrapper'>
+        <h2>Show results for</h2>
+        <form className='search-aside'>
+          <label className='radio'>
+            <Link to={`/search/video/${prefix}`}>
+              <input onChange={() => {}} type='radio'
+                value='videos' checked={selectedOption === 'videos'}></input>
+              <p>Videos <span>({numberOfVideos})</span></p>
+            </Link>
+          </label>
+          <label className='radio'>
+            <Link to={`/search/user/${prefix}`}>
+              <input onChange={() => {}} type='radio'
+                value='people' checked={selectedOption === 'people'}></input>
+              <p>People <span>({numberOfUsers})</span></p>
+            </Link>
+          </label>
+        </form>
+    </div>
     )
   }
 }
