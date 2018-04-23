@@ -13,7 +13,7 @@ export default class SearchUserListItem extends React.Component {
 
     const followersText = numberOfFollowers === 1 ?
       `1 follower` : `${numberOfFollowers} followers`;
-
+    debugger
     return(
       <div className='user-search-list-item'>
         <img className="user-icon" src={iconUrl} ></img>

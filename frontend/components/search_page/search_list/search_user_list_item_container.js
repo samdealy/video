@@ -10,7 +10,7 @@ const msp = (state, { user }) => {
   const userName = user.username || "";
   const iconUrl = user.image_url || "";
 
-  const numberOfFollowers = Object.keys(user.follower_ids) || 0;
+  const numberOfFollowers = Object.keys(user.follower_ids).length || 0;
   const videoIds = user.video_ids || [];
   const numberOfVideos = videoIds.length || 0;
 
