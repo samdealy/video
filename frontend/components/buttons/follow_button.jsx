@@ -21,12 +21,12 @@ export default class FollowButton extends React.Component {
   }
 
   render() {
-    const { uploaderId, follow, unfollow,
+    const { userId, follow, unfollow,
             alreadyFollows, classState } = this.props;
     const buttonInnerHtml = this.determineHtml();
     const action = alreadyFollows ? unfollow : follow;
     return(
-      <button className={`follow-button ${classState}`}onClick={() => action(uploaderId)}
+      <button className={`follow-button ${classState}`}onClick={() => action(userId)}
               onMouseEnter={() => this.setState({ hover: true  })}
               onMouseLeave={() => this.setState({ hover: false })}>
         {buttonInnerHtml}
@@ -34,20 +34,3 @@ export default class FollowButton extends React.Component {
     );
   }
 }
-//
-//
-//   render() {
-//     const { uploaderId, alreadyFollows, follow, unfollow } = this.props;
-//     const buttonInnerHtml = alreadyFollows ? "Unfollow" : "Follow";
-//     const action = alreadyFollows ? unfollow : follow;
-//
-//     return(
-//       <button className="follow-button" onClick={() => action(uploaderId)}>
-//         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-//           <path d="M18 11h-5V6a1 1 0 1 0-2 0v5H6a1 1 0 0 0 0 2h5v5a1 1 0 0 0 2 0v-5h5a1 1 0 0 0 0-2z" fill="#1a2e3b"></path>
-//         </svg>
-//         <span>{text}</span>
-//       </button>
-//     );
-//   }
-// }

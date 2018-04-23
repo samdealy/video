@@ -5,18 +5,18 @@ import { withRouter } from 'react-router-dom';
 import { follow, unfollow } from '../../actions/follow_actions';
 import { getCurrentUser } from '../../reducers/selectors';
 
-const mapStateToProps = (state, { uploaderId }) => {
+const mapStateToProps = (state, { userId }) => {
   const currentUser = getCurrentUser(state);
-  const alreadyFollows = currentUser.leader_ids[uploaderId] || false;
+  const alreadyFollows = currentUser.leader_ids[userId] || false;
   const classState = alreadyFollows ? "following" : "not-following";
-  
-  return ({ classState, uploaderId, alreadyFollows });
+
+  return ({ classState, userId, alreadyFollows });
 };
 
 const mapDispatchToProps = dispatch => {
   return ({
-    follow: uploaderId => dispatch(follow(uploaderId)),
-    unfollow: uploaderId => dispatch(unfollow(uploaderId))
+    follow: userId => dispatch(follow(userId)),
+    unfollow: userId => dispatch(unfollow(userId))
   });
 };
 

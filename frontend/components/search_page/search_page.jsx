@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import SearchAsideContainer from './search_aside/search_aside_container';
 import SearchVideoList from './search_list/search_video_list';
+import SearchUserList from './search_list/search_user_list';
 
 
 class SearchPage extends React.Component {
@@ -14,13 +15,9 @@ class SearchPage extends React.Component {
   render() {
     const { videos, users, match } = this.props
 
-    if(match.path === '/search/video/:prefix') {
-      var list = <SearchVideoList videos={videos} />
-      var resultNumber = videos.length;
-    } else {
-      var list = '';
-      var resultNumber = users.length;
-    }
+    const list = match.path === '/search/video/:prefix' ?
+      <SearchVideoList videos={videos} /> : <SearchUserList users={users} />
+
     return(
       <div className="search-page">
         <div className='search-aside-list'>

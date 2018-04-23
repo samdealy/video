@@ -11,7 +11,7 @@ export default class VideoInfo extends React.Component {
   followButton() {
     const { followPresent, uploaderId } = this.props;
     return followPresent ?
-      <FollowButtonContainer uploaderId={uploaderId}/> : "";
+      <FollowButtonContainer userId={uploaderId}/> : "";
   }
 
   settingsLink() {
