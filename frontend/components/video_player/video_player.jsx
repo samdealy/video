@@ -65,8 +65,9 @@ class VideoPlayer extends React.Component {
   }
 
   handleClick() {
-    const { videoId } = this.props;
-    if(this.props.match.path === '/user/:userId')  {
+    const { videoId, match } = this.props;
+    debugger
+    if(match.path === '/user/:userId' || match.path === '/search/video/:prefix')  {
       this.props.history.push(`/watch/${videoId}`);
     }
   }

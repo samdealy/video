@@ -28,8 +28,10 @@ class PlayPauseButton extends React.Component {
   }
 
   handleClick() {
-    const { videoEl, toggleShowHide, currentTime } = this.props;
-    if(this.props.match.path === '/user/:userId') return;
+    const { videoEl, toggleShowHide, currentTime, match } = this.props;
+    if(match.path === '/user/:userId' || match.path === '/search/video/:prefix') {
+      return;
+    }
     if (videoEl.paused || videoEl.ended) videoEl.play();
     else videoEl.pause();
 

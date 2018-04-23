@@ -13,6 +13,7 @@ class SearchVideoList extends React.Component {
     const resultsNumber = videos.length;
     const resultsText   = videos.length === 1 ?
       `1 result` : `${resultsNumber} results`;
+      
     const prefix = match.params.prefix;
     return(
       <div className="results-video-list">
