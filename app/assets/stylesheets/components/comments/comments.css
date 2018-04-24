@@ -34,6 +34,9 @@
   border-bottom: 1px solid rgb(227, 232, 233);
 }
 
+
+
+
 .user-list-item .comment-body h4 {
   margin: 0;
   color: rgb(26, 46, 59);
@@ -94,6 +97,18 @@
   transition-property: all;
   transition-timing-function: ease-out;
   min-height: 31px;
+}
+
+@media(max-width: 887px) {
+  .comments-section textarea {
+    width: 50%;
+  }
+}
+
+@media(max-width: 590px) {
+  .comment-body, .comments-section textarea {
+    width: 30%;
+  }
 }
 
 .new-comment-form textarea{
