@@ -23,6 +23,18 @@
   grid-row-gap: 57px;
 }
 
+@media(max-width: 1033px) {
+  .user-search-list {
+    margin-left: 20px;
+    grid-template-columns: 320px 320px;
+  }
+}
+@media(max-width: 625px) {
+  .user-search-list {
+    grid-template-columns: 320px;
+  }
+}
+
 .user-search-list-item {
   display: flex;
 }
