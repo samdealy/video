@@ -10,6 +10,17 @@
   height: 34px;
 }
 
+.profile-page .follow-button {
+  margin-right: 30px;
+  margin-left: 5px;
+}
+
+@media(max-width:420px) {
+  .profile-page .follow-button {
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+}
 .follow-button svg {
   height: 14px;
 }
