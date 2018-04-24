@@ -106,7 +106,7 @@
 }
 
 @media(max-width: 590px) {
-  .comment-body, .comments-section textarea {
+  .comment-body, .comments-section textarea, .player-video-info p {
     width: 30%;
   }
 }
