@@ -27,6 +27,7 @@ class SearchAside extends React.Component {
             <Link to={`/search/video/${prefix}`}>
               <input onChange={() => {}} type='radio'
                 value='videos' checked={selectedOption === 'videos'}></input>
+              <span className='custom-radio'></span>
               <p>Videos <span>({numberOfVideos})</span></p>
             </Link>
           </label>
@@ -34,6 +35,7 @@ class SearchAside extends React.Component {
             <Link to={`/search/user/${prefix}`}>
               <input onChange={() => {}} type='radio'
                 value='people' checked={selectedOption === 'people'}></input>
+              <span className='custom-radio'></span>
               <p>People <span>({numberOfUsers})</span></p>
             </Link>
           </label>
