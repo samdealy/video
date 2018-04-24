@@ -47,22 +47,25 @@ export const fetchFeedVideos = pageNumber => (
   })
 );
 ```
-In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` (which is set to 3) to determine how many videos to send back in its response. The videos are then sorted by time of upload (a video's id number corresponds to upload time). Take note of the `@number_of_feed_videos` instance variable!
+In the backend, the `pageNumber` is multiplied by `FEED_VIDEO_COUNT` (set to three) to determine which set of videos to query from the database. The videos are then sorted by time of upload and sent to the corresponding view.
 
 ```ruby
 # app/controllers/api/videos_controller.rb
 def feed_index
-  current_user_feed_videos = current_user.followed_videos
-  @number_of_feed_videos = current_user_feed_videos.length
+  offset_idx = (params[:request_counter].to_i - 1) * FEED_VIDEO_COUNT
+  @number_of_feed_videos = current_user.followed_videos.count
+  @next_feed_videos = current_user.followed_videos
+    .order(:created_at)
+    .reverse_order
+    .offset(offset_idx)
+    .limit(FEED_VIDEO_COUNT)
 
-  slice_idx = params[:request_counter].to_i * FEED_VIDEO_COUNT
-  @videos = current_user_feed_videos.sort_by{|vid| -1 * vid.id}[0...slice_idx]
-
-  if @videos
+  if @next_feed_videos
     render "api/videos/feed"
   else
     render json: { users: {}, videos: {} }
   end
+
 end
 ```
 
