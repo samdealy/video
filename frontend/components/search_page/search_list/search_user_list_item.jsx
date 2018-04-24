@@ -13,12 +13,16 @@ export default class SearchUserListItem extends React.Component {
 
     const followersText = numberOfFollowers === 1 ?
       `1 follower` : `${numberOfFollowers} followers`;
-    
+
     return(
       <div className='user-search-list-item'>
-        <img className="user-icon" src={iconUrl} ></img>
+        <Link to={`/user/${userId}`}>
+          <img className="user-icon" src={iconUrl} ></img>
+        </Link>
         <ul className='username-videos-followers'>
-          <li><h2>{userName}</h2></li>
+          <Link to={`/user/${userId}`}>
+            <li><h2>{userName}</h2></li>
+          </Link>
           <li className='user-info'>
             <span>{videosText}</span>
             <span>|</span>
