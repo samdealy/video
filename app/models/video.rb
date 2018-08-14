@@ -1,6 +1,6 @@
 class Video < ApplicationRecord
   validates :uploader_id, uniqueness: { scope: :title, message: "video titles must be unique"},
-    unless: Proc.new {|video| video.title.blank? }
+    unless: Proc.new { |video| video.title.blank? }
 
   belongs_to :uploader, class_name: :User
   has_many :comments, dependent: :destroy
